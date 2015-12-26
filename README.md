@@ -1,1 +1,1 @@
-Tutaj bedzie cos napisane
+Tutaj będzie coś napisane
