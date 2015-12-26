@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>创建新的已安装映像 - Update Tool 联机帮助</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+
+
+
+<a name="tasks-creating-image"></a><h4>创建新的已安装映像</h4>
+<p>如果需要创建新的空安装映像并将其与一个或多个组件系统信息库相关联，可使用 Update Tool GUI 的&ldquo;新建映像&rdquo;功能。创建空安装映像后，可从系统信息库中选择附加软件组件，并将它们安装到新映像中。</p>
+<p>
+    <ol><li><p>在工具栏上，单击&ldquo;新建&rdquo;。</p><p>Update Tool 会显示&ldquo;创建新的安装映像&rdquo;窗口。</p><p></p></li>
+<li><p>在&ldquo;映像标题&rdquo;框中，输入安装映像的名称。</p><p>由于该名称将作为已安装映像的名称显示在&ldquo;应用程序映像&rdquo;窗格中，因此该标题应相对简短一些。</p><p></p></li>
+<li><p>在&ldquo;映像目录&rdquo;框中，输入用于放置映像的目录的完整路径。</p><p>或者，单击&ldquo;...&rdquo;按钮并导航到（或者创建）目录。</p><p>所有的附加软件组件都将安装在该位置下。</p><p></p></li>
+<li><p>在&ldquo;映像说明&rdquo;框中，输入映像的可选说明。</p></li>
+<li><p>在&ldquo;系统信息库&rdquo;区域，使用&ldquo;添加...&rdquo;按钮向映像添加一个或多个系统信息库。</p><p>对于所添加的每个系统信息库，必须提供系统信息库的发布者名称，并输入系统信息库的发布者 URL。</p><p>查看可用附加软件组件和更新的列表时，发布者名称将出现在&ldquo;来源&rdquo;列下方。</p><p></p></li>
+<li><p>单击&ldquo;确定&rdquo;。</p><p>Update Tool 会将映像添加到&ldquo;应用程序映像&rdquo;窗格的列表中，联系系统信息库，收集可安装组件的列表，并在&ldquo;可用附加软件&rdquo;下显示该列表。</p></li></ol>
+</p>
+
+<p>可在安装映像中添加发布者的多个系统信息库，但必须将其中之一标记为首选发布者。首选发布者中的附加软件将优先于通过与安装映像关联的其他发布者提供的同名附加软件。</p>
+
+<p>有关首选发布者及其对安装和更新组件的影响的更多信息，请参见<a href="repositories.html">系统信息库和发布者</a>部分。</p>
+
+<p>现在已准备好<a href="tasks-installing-add-ons.html">浏览并安装与新映像相关联的附加软件组件</a>。</p>
+
+
+
+</body>
+</html>
+

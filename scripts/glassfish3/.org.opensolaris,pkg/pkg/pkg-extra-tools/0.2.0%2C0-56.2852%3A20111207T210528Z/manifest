@@ -1,0 +1,34 @@
+set name=fmri value=pkg://stable.glassfish.org/pkg-extra-tools@0.2.0,0-56.2852:20111207T210528Z
+set name=authority value=stable.glassfish.org
+set name=description value="pkg(5) Extra Tools"
+set name=info.classification value=":System Tools"
+set name=pkg.detailed_url value=http://wikis.oracle.com/display/updatecenter/Release+Notes+for+Update+Center+2.3
+set name=pkg.summary value="pkg(5) Extra Tools"
+set name=pkg.description value="The Image Packaging System, also known as pkg(5), is a network-centric packaging system. This package provides an evolving set of tools intended to ease the process of creating and maintaining packages and pre-installed pkg(5) images.  As these tools mature and evolve, they will likely be integrated in some form into the core pkg(5) package."
+set name=info.upstream_url value=http://java.net/projects/updatecenter2
+set name=info.maintainer_url value=http://java.net/projects/updatecenter2
+depend fmri=pkg:/pkg@1.122.2-56 type=optional
+file ef10e13f6d90cfd39cfb6e86c5cf15cc47e84a21 chash=1d6f54e70c43efce436adf2ab18b421acde8988a group=sys mode=0664 owner=root path=pkg/bin/builder.py pkg.csize=1499 pkg.size=3507 timestamp=20111207T210518Z
+file 1c55d79c30f72f2264dd3920b4f865dfcbb6f7fe chash=2ffbc5f4a3f4621e8628a89e1bef1bbca8f267d1 group=sys mode=0664 owner=root path=pkg/bin/tarpkgs.py pkg.csize=1551 pkg.size=3270 timestamp=20111207T210518Z
+file b8f3d75df2b1b09c21081e7b1548fa8ba5928052 chash=b5fa6e76cf395e90f2e7745bab59c5868613e9af group=sys mode=0755 owner=root path=pkg/bin/archivepkgs.bat pkg.csize=1105 pkg.size=2284
+file 64d73dff1beeae6ff6e3350d612d270e13c514e5 chash=f5c589734bd0c769342fce54b9ec44d19fa3bd9d group=sys mode=0664 owner=root path=pkg/bin/depotthread.py pkg.csize=2618 pkg.size=7372 timestamp=20111207T210518Z
+file df4f639ae457a03f9e2f797c018eed851264f4e6 chash=002c1d7c86e24644de46cb8c0d0c23b80aa58cb4 group=sys mode=0755 owner=root path=pkg/bin/makemanifest pkg.csize=1658 pkg.size=3468
+file e876252e93a7fedeae58c0e65a9044b2ab6572ea chash=8b25ab66fd4bbd66f3a653c811fd30506f44063e group=sys mode=0755 owner=root path=pkg/bin/archivepkgs pkg.csize=1657 pkg.size=3466
+file 5298aa11df671da20c46202567fa945eb4d5c88e chash=ace8c0913828ce9a4c089109bee523b65cec8729 group=sys mode=0755 owner=root path=pkg/bin/makepkgs pkg.csize=1653 pkg.size=3464
+file 86d1fc48688174d69390e903d3429f72aba90c27 chash=ae98da2b53e21c5a103ae9ae095b24122d5cfaea group=sys mode=0755 owner=root path=pkg/bin/copypkgs pkg.csize=1651 pkg.size=3464
+file 47eb898b1a6653c4ce8b0a60b12e46b094aaf161 chash=341b92d1833bb7569c97b0666ba866aaa13c89e0 group=sys mode=0664 owner=root path=pkg/bin/makepkgs.py pkg.csize=6757 pkg.size=25474 timestamp=20111207T210518Z
+file 191fc368f49b1f4aac73b51ffeae712ada6d5bf4 chash=b27f63111dace5ecd0a31b4fc7cf87987de8f6d4 group=sys mode=0664 owner=root path=pkg/bin/makemanifest.py pkg.csize=2347 pkg.size=6230 timestamp=20111207T210518Z
+file 2c584153e3c56e5a7b00c737136c3a8494dfc62a chash=94042a83d22bb368395683bf40b38d7a3b2365cd group=sys mode=0664 owner=root path=pkg/bin/archivepkgs.py pkg.csize=2784 pkg.size=7265 timestamp=20111207T210518Z
+file 304a9b871d7c0b3a9118291eb03f7c377fab4327 chash=dda4be7d8cb2d7366e395b7c297a7c60a5a8ca0b group=sys mode=0755 owner=root path=pkg/bin/makeimage.bat pkg.csize=1102 pkg.size=2284
+file 087b918d62577a22b9a5388f4cd24ff751cb919e chash=354cd07ccedf87ee6ba00f48e8419921d82701d4 group=sys mode=0755 owner=root path=pkg/bin/makeimage pkg.csize=1656 pkg.size=3466
+file 8cd8fb1f525047703352eb5537f11f7cac064256 chash=cdbef84426ca769af0dfee606cb717bb0e2d9bc0 group=sys mode=0755 owner=root path=pkg/bin/makepkgs.bat pkg.csize=1102 pkg.size=2282
+file 13587185d8afbc53c796ad409dbabd06726245cf chash=51a1854da61eb2c6bb15bf732799786227ac5752 group=sys mode=0664 owner=root path=pkg/lib/pkg-ant-tasks.jar pkg.csize=18846 pkg.size=20960
+file 7ab81d6b4171b9e335f02d6fe799429d769e00c5 chash=abaa514f0bd56aef1225ac7bd610a5e123924013 group=sys mode=0664 owner=root path=pkg/bin/makeimage.py pkg.csize=2734 pkg.size=7033 timestamp=20111207T210518Z
+file 7847f1e753fb56f1e63bd788802ea26a2819f6cc chash=aa82d9dcd275ded3a17e665c209a7ad0e662d6f0 group=sys mode=0755 owner=root path=pkg/bin/cmprepo pkg.csize=1654 pkg.size=3462
+file e7b5734ec1b7f86bec6f8e2b8bb20fc2111e0a76 chash=c6d361e8cabf4b1d16775d00e689e563384a9aa0 group=sys mode=0664 owner=root path=pkg/lib/pkg-ant-tasks.xml pkg.csize=2021 pkg.size=6060
+file c5fcbd59a977e64f991975d0493e58d067cf7f53 chash=10420baef95d423f763b7afa91a5afb16a542dc4 group=sys mode=0755 owner=root path=pkg/bin/makemanifest.bat pkg.csize=1107 pkg.size=2286
+file c2472e3d213c86710bb74185aae573ad867fa012 chash=cb8b10233ff9e11a3227165f6bb7164e113c93a6 group=sys mode=0755 owner=root path=pkg/bin/copypkgs.bat pkg.csize=1101 pkg.size=2282
+file e27da47a68c7a48bbadf1cf900f8a765cc1266f8 chash=13a8b223ae23954a52ed307ea2a172bae606a1d9 group=sys mode=0664 owner=root path=pkg/bin/copypkgs.py pkg.csize=1899 pkg.size=4361 timestamp=20111207T210518Z
+file 9681f2295ef1c0efae3dc6b08a70590f11bfe71b chash=9fd7adfbc2b641329489c778d59c2df202418ee0 group=sys mode=0755 owner=root path=pkg/bin/cmprepo.bat pkg.csize=1103 pkg.size=2280
+file ae4b6feed19f260b88a841db2dec057bc5ef6ec8 chash=6792d5e304c59748a44eef362a8e6ca1733867da group=sys mode=0664 owner=root path=pkg/bin/cmprepo.py pkg.csize=2400 pkg.size=6916 timestamp=20111207T210518Z
+license 05d6bfb532fbc5527a58d40fdcdeabb0ce0f9304 chash=17f4d5f8079d912bf6b7e57c23533c5d012d9193 license=CDDLv1.0 pkg.csize=5906 pkg.size=18083

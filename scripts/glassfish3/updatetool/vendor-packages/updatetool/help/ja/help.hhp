@@ -1,0 +1,79 @@
+; DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+;
+; Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+;
+; The contents of this file are subject to the terms of either the GNU
+; General Public License Version 2 only ("GPL") or the Common Development
+; and Distribution License("CDDL") (collectively, the "License").  You
+; may not use this file except in compliance with the License.  You can
+; obtain a copy of the License at
+; https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+; or packager/legal/LICENSE.txt.  See the License for the specific
+; language governing permissions and limitations under the License.
+;
+; When distributing the software, include this License Header Notice in each
+; file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+;
+; GPL Classpath Exception:
+; Oracle designates this particular file as subject to the "Classpath"
+; exception as provided by Oracle in the GPL Version 2 section of the License
+; file that accompanied this code.
+;
+; Modifications:
+; If applicable, add the following below the License Header, with the fields
+; enclosed by brackets [] replaced by your own identifying information:
+; "Portions Copyright [year] [name of copyright owner]"
+;
+; Contributor(s):
+; If you wish your version of this file to be governed by only the CDDL or
+; only the GPL Version 2, indicate your decision by adding "[Contributor]
+; elects to include this software in this distribution under the [CDDL or GPL
+; Version 2] license."  If you don't indicate a single choice of license, a
+; recipient has the option to distribute your version of this file under
+; either the CDDL, the GPL Version 2 or to extend the choice of license to
+; its licensees as provided above.  However, if you add GPL Version 2 code
+; and therefore, elected the GPL Version 2 license, then the option applies
+; only if the new code is made subject to such option by the copyright
+; holder.
+ 
+ [OPTIONS]
+Compatibility=1.1
+Contents file=help.hhc
+Display compile progress=No
+Title=Update Tool Help
+Default topic=files/home.html
+
+[FILES]
+files/add-ons.html
+files/categories.html
+files/command-line-interface.html
+files/components.html
+files/home.html
+files/images.html
+files/key-concepts.html
+files/notifier.html
+files/preferences.html
+files/repositories.html
+files/tasks-adding-image.html
+files/tasks-checking-for-updates.html
+files/tasks-checking-versions.html
+files/tasks-installing-add-ons.html
+files/tasks-notifications.html
+files/tasks-overview.html
+files/tasks-removing-components.html
+files/tasks-setting-network.html
+files/tasks-setting-notifier.html
+files/ui-component-list.html
+files/ui-dependencies-tab.html
+files/ui-desktop-notifier.html
+files/ui-featured-software.html
+files/ui-overview-tab.html
+files/ui-files-tab.html
+files/ui-image-details-tab.html
+files/ui-installed-images.html
+files/ui-license-tab.html
+files/ui-menu-bar.html
+files/ui-overview.html
+files/ui-software-update.html
+files/ui-tool-bar.html
+files/tasks-creating-image.html

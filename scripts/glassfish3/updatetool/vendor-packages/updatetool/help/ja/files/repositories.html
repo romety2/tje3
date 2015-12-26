@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>リポジトリと発行元 - アップデートツールオンラインヘルプ</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="repositories"></a><h4>リポジトリと発行元</h4>
+<p>インストールイメージは、1 つ以上のコンポーネントのネットワークリポジトリと関連付けられています。各リポジトリは、発行元および関連付けられた URL によって表されます。発行元名はインストールイメージごとに一意であり、そのリポジトリを管理する組織またはプロジェクトと、内容についての明確な有効範囲の両方を表します。アップデートツールは、コンポーネントのリスト表示の「公開元」列で発行元を表示します。</p>
+
+<p><b>複数のリポジトリのソフトウェアの互換性</b></p>
+<p>独自のインストールイメージを作成する際、または既存のインストールイメージに関連付けられたリポジトリのリストを変更する際には、既存のソフトウェアと互換性のあるコンポーネントを含んでいるリポジトリのみを参照するようにしてください。</p>
+
+<p>他のリポジトリからアドオンとアップデートをインストールすることも可能ですが、リポジトリを管理する組織またはプロジェクトが新しいアドオンまたはアップデートと既存のソフトウェアの組み合わせを検証していない場合は、それらが既存のソフトウェアで正しく機能しない可能性があります。</p>
+
+<p><b>リポジトリの内容</b></p>
+<p>それぞれのリポジトリには、リポジトリ内に含まれるすべてのコンポーネントのカタログリストが含まれます。アップデートツールは、ローカルに維持されているカタログとネットワークベースのカタログの両方にアクセスして、入手可能なアップデートおよびアドオンを一覧表示します。</p>
+
+<p>それぞれのコンポーネントには、コンポーネントの内容のマニフェストが含まれます。アップデートツールはマニフェスト情報にアクセスして、インストールされているファイルおよびその他のコンポーネント固有の情報を一覧表示します。</p>
+
+<p><b>優先発行元</b></p>
+<p>インストールイメージに関連付けられている発行元のリポジトリのいずれかを、「優先」発行元として指定する必要があります。この設定により、1 つのインストールイメージに複数の発行元のリポジトリが関連付けられている場合、ソフトウェアアップデートツール、デスクトップ通知、および pkg コマンド行インタフェース (CLI) がどのように機能するかが決まります。</p>
+
+<p>同じ名前のアドオンコンポーネントが複数の発行元のリポジトリ内に存在し、それらの発行元の 1 つが優先発行元として指定されている場合、アップデートツールと pkg CLI は、優先発行元のリポジトリ内の名前付きのパッケージを一覧表示およびインストールします。</p>
+
+<p>アップデートツールの「最近のバージョンを表示」機能を使用する場合、または pkg CLI を使用してアドオンのインストール時にソースリポジトリを指定する場合は、指定したソースリポジトリからアドオンがインストールされます。</p>
+
+<p>優先発行元からコンポーネントがインストールされた場合、ソフトウェアアップデートツールおよびデスクトップ通知は、優先発行元からのみ、そのコンポーネントに対するアップデートを検索します。</p>
+
+<p>パッケージが優先発行元以外からインストールされた場合、ソフトウェアアップデートツールおよびデスクトップ通知は、パッケージが最初にインストールされたリポジトリから入手可能なアップデートのみを一覧表示します。</p>
+
+<p>デフォルトでは、アップデートツールは各パッケージの最新バージョンのみを一覧表示します。「表示」 -&gt; 「最近のバージョンを表示」コマンドを使用してこの動作を上書きし、すべてのリポジトリから入手可能なアップデートを一覧表示することができます。</p>
+
+<p><b>リポジトリのリストの変更</b></p>
+<p>インストールイメージに関連付けられたリポジトリのリストを変更するには、変更するイメージを選択してから、次のいずれかの操作を実行します。</p>
+
+<ul><li>右クリックしてコンテキストメニューを表示し、「プロパティー」を選択します。</li>
+<li>「イメージの詳細」タブの「プロパティーを編集...」ボタンを選択します。</li>
+<li>メインメニューの「ファイル」 -&gt; 「イメージのプロパティー」を選択します。</li></ul>
+
+<p><b>リポジトリ情報のローカルでの保存場所</b></p>
+<p>インストールイメージに関連付けられたリポジトリのリストおよびカタログのローカルコピーとコンポーネントのマニフェストは、それぞれのインストールイメージ内のディレクトリ .org.opensolaris,pkg/ に保存されています。</p> 
+
+</body>
+</html>
+

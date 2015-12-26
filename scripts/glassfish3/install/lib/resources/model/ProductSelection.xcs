@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICE OR THIS HEADER.
+
+Copyright 2006, 2007 Sun Microsystems, Inc. All rights reserved.
+Use is subject to license terms.
+
+The contents of this file are subject to the terms of the Common Development
+and Distribution License("CDDL") (the "License"). You may not use this file
+except in compliance with the License.
+
+You can obtain a copy of the License at https://openinstaller.dev.java.net/license.html
+or http://openinstaller.dev.java.net/license.txt . See the License for the
+specific language governing permissions and limitations under the License.
+
+When distributing the Covered Code, include this CDDL Header Notice in each
+file and include the License file at http://openinstaller.dev.java.net/license.txt .
+If applicable, add the following below this CDDL Header, with the fields
+enclosed by brackets [] replaced by your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+ident "@(#)%Name% %Revision% %Date% SMI"
+-->
+<oor:component-schema oor:version="1.1" oor:name="ProductSelection" oor:package="org.openinstaller.productselection"
+ xsi:schemaLocation="http://openoffice.org/2001/registry"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:oor="http://openoffice.org/2001/registry"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xml:lang='en-US'>
+  <component>
+    <group oor:name="product">
+      <prop oor:name="PRODUCT_SELECTION" oor:type="xs:string" oor:nillable="true">
+        <value/>
+        <info>
+          <desc xml:lang="en-US">A list of product components to perform either at install or uninstall time.</desc>
+        </info>
+        <actions>
+          <onSet><![CDATA[
+              import org.openinstaller.provider.dependency.DependencyControl;
+              import org.openinstaller.util.install.Common;
+              import org.openinstaller.util.EnhancedException;
+              import org.openinstaller.core.PROCESSING_MODE;
+              import org.openinstaller.bus.ControlBus;
+              import org.openinstaller.bus.BusRequest;
+              import org.openinstaller.bus.BusResponse;
+              import java.util.List;
+              import java.util.ArrayList;
+              import org.openinstaller.provider.dependency.ComponentDescriptor;
+              import java.util.logging.Level;
+              import java.util.logging.Logger;
+              import org.openinstaller.contracts.product.ProductNodeInterface;
+              import org.openinstaller.provider.conf.ConfigHelper;
+
+              public ProductNodeInterface getHybrid (ComponentDescriptor aComp) {
+                if (aComp == null) {
+                  throw new EnhancedException("CANNOT_GET_HYBRID_ADAPTER", new String[] {});
+                }
+                LOGGER.finest("ProductSelection.xcs : getHybrid(" + aComp.getIdentityIdentifier() + ")");
+                DependencyControl theDC = new DependencyControl(DependencyControl.COMMAND.GET_PRODUCT_NODE,
+                  aComp.getIdentityIdentifier());
+                BusRequest theBR = new BusRequest("GenComp", theDC);
+                BusResponse theResp =
+                  ControlBus.getInstance().publishRequest(theBR, "svc://general/Dependency");
+                if (theResp.getException() != null) {
+                  throw new EnhancedException("CANNOT_GET_HYBRID_ADAPTER", new String[]{"component=" + aComp.getIdentityIdentifier()});
+                }
+                return ((ProductNodeInterface)theResp.getResult());
+              }
+
+              LOGGER.finest("ProductSelection.xcs : Starting");
+              Object theProductsList = thisProperty.getUnconfirmedValue();
+
+              if (!(theProductsList instanceof String)) {
+                LOGGER.finest("ProductSelection.xcs :the attempted value is not a string but " + theProductsList.getClass());
+                throw new EnhancedException("UNEXPECTED_DATA_TYPE", new String[]{});
+              }
+
+              String thePrev = thisProperty.getPreviousValue();
+              if (theProductsList.equals(thePrev)) {
+                return;
+              }
+              LOGGER.finest("ProductSelection.xcs : UnconfirmedValue = " + theProductsList);
+              String[] theStringList = ((String)(theProductsList)).split(",");
+              for (String theProduct : theStringList) {
+                DependencyControl theDC = new DependencyControl(
+                    DependencyControl.COMMAND.FORCE_SELECT_ELEMENT,  theProduct);
+                BusRequest theBR = new BusRequest("Force selecting", theDC);
+                BusResponse theResp = bus.publishRequest(theBR, "svc://general/Dependency");
+              }
+              DependencyControl.COMMAND theCmd;
+              String mode = Common.getProcessingMode();
+              if (mode.equals(PROCESSING_MODE.INSTALL.name())) {
+                theCmd = DependencyControl.COMMAND.GET_SEQUENCED_COMPONENT;
+              } else if (mode.equals(PROCESSING_MODE.REMOVE.name())) {
+                theCmd = DependencyControl.COMMAND.GET_REVERSE_SEQUENCED_COMPONENT;
+              } else {
+                throw new EnhancedException("UNEXPECTED_PROCESSING_MODE", new String[]{});
+              }
+              DependencyControl theDC = new DependencyControl(theCmd, null);
+              BusRequest theBR = new BusRequest("ComponentList", theDC);
+              BusResponse theResp =
+                ControlBus.getInstance().publishRequest(theBR, "svc://general/Dependency");
+              if (theResp == null) {
+                throw new EnhancedException("CANNOT_CREATE_HYBRID_COMP", new String[]{"operation=" + aOp.toString()});
+              }
+              java.util.List theComps = (java.util.List) theResp.getResult();
+              List theModesList = (List) ConfigHelper.getValue("PageFlow.Mode.ACTIVE_MODES_LIST");
+              // remove old values that we set if user went past this page and came back
+              List theOldIsSelectedsList = (List) ConfigHelper.getValue("ProductSelection.product.LAST_IS_SELECTEDS");
+              for (String theOldIsSelected : theOldIsSelectedsList) {
+                theModesList.remove(theOldIsSelected);
+              }
+              theOldIsSelectedsList = new ArrayList();
+              if (null != theComps) {
+                for (ComponentDescriptor theComp : theComps) {
+                  try {
+                    String theName = getHybrid(theComp).getID();
+                    String theIsSelected = "[" + theName + "_is_selected]";
+                    LOGGER.finest("ProductSelection.xcs : " + theIsSelected);
+                    theModesList.add(theIsSelected);
+                    theOldIsSelectedsList.add(theIsSelected);
+                  } catch (Exception theEx) {
+                    throw new EnhancedException("CANNOT_CREATE_HYBRID_COMP", theEx, new String[] {"component=" + theComp});
+                  }
+                }
+                ConfigHelper.setValue("PageFlow.Mode.ACTIVE_MODES_LIST", theModesList);
+              } else {
+                LOGGER.finest("No sequenced products found");
+              }
+              ConfigHelper.setValue("ProductSelection.product.LAST_IS_SELECTEDS", theOldIsSelectedsList);
+            ]]></onSet>
+        </actions>
+      </prop>
+      <prop oor:name="LAST_IS_SELECTEDS" oor:type="xs:string-list" oor:separator="," oor:nillable="false" oor:transient="true">
+        <value/>
+        <info>
+          <desc xml:lang="en-US">Holds products which were marked as set by us in PageFlow.Mode.ACTIVE_MODES_LIST on the last visit to this page.</desc>
+        </info>
+      </prop>
+    </group>
+  </component>
+</oor:component-schema>

@@ -1,0 +1,10 @@
+set name=fmri value=pkg://contrib.glassfish.org/glassfish-dcom@1.0.0,2.6.38.11-0.2:20120215T124236Z
+set name=authority value=contrib.glassfish.org
+set name=info.maintainer value=dev@glassfish-repo.java.net
+set name=info.classification value="Application Servers"
+set name=pkg.description value="GlassFish  Server setup-local-dcom. After this component is installed, you can use the setup-local-dcom subcommand to set up the Distributed Component Object Model (DCOM) protocol on a Windows host"
+set name=pkg.summary value="setup-local-dcom asadmin subcommand"
+depend fmri=pkg:/glassfish-cluster type=require
+license 6bf7e16fe0d776536970c55d1796d45c32e57b33 chash=9e1916f7890a4eed0c2335496e0d9b00fa2c7f70 license="CDDL 1.1 + GPLv2/CPE" pkg.csize=944 pkg.size=1901
+dir group=sys mode=0755 owner=nobody path=glassfish/lib/asadmin
+file 12f25d87f2b6530dba5ccdf3868d61608a5fcb01 chash=d367fd19898e810e17b7d77ad096908c72b8c349 group=sys mode=0644 owner=nobody path=glassfish/lib/asadmin/setup-local-dcom.jar pkg.csize=68953 pkg.size=70462

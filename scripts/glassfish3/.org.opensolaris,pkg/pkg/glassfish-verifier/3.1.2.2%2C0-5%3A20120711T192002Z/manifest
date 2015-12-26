@@ -1,0 +1,16 @@
+set name=fmri value=pkg://stable.glassfish.org/glassfish-verifier@3.1.2.2,0-5:20120711T192002Z
+set name=authority value=stable.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="GlassFish Verifier Tool checks a Java EE application file, including Java classes and deployment descriptors, for compliance with Java EE specifications. GlassFish Server is a modular, lightweight, and extensible Java EE 6 application server built on OSGi. Key features include fast startup time, improved developer productivity, hybrid OSGi/Java EE applications, high availability clustering, centralized administration, and overall ease-of-use."
+set name=pkg.summary value="GlassFish Verifier Tool"
+depend fmri=pkg:/glassfish-common type=require
+depend fmri=pkg:/glassfish-javahelp type=require
+depend fmri=pkg:/glassfish-cmp type=require
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/modules
+dir group=sys mode=0755 owner=root path=glassfish/bin
+file 7b0d65977bfcc26d50a062da02ba71db888ffaf5 chash=b84b2cb13c22cdf3aede5da5200b805f90d4ddb2 group=sys mode=0644 owner=root path=glassfish/modules/verifier-jdk-extension-bundle.jar pkg.csize=2375 pkg.size=3120
+file 879784fa821e4ecea4134e6fb990aad2a43bc945 chash=416847db37774c1b1179a504d167647b3ea69827 group=sys mode=0644 owner=root path=glassfish/modules/verifier.jar pkg.csize=1275960 pkg.size=1408999
+file 36fa58548d7af1d1f0ad4f74688c7889f27a86b9 chash=8b055e89dfe218e78ab553b01ee55b8716576221 group=sys mode=0755 owner=root path=glassfish/bin/verifier.bat pkg.csize=1088 pkg.size=2287
+file 8bbea0ba0645319af037f6646b11fc2f31e44890 chash=0e6f14669326cad948ed37bc926f59bb0662c6e4 group=sys mode=0755 owner=root path=glassfish/bin/verifier pkg.csize=1107 pkg.size=2236

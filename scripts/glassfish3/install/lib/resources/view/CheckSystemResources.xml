@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ DO NOT ALTER OR REMOVE COPYRIGHT NOTICE OR THIS HEADER.
+
+ Copyright 2006, 2007 Sun Microsystems, Inc. All rights reserved.
+ Use is subject to license terms.
+
+ The contents of this file are subject to the terms of the Common Development
+ and Distribution License("CDDL") (the "License"). You may not use this file
+ except in compliance with the License.
+
+ You can obtain a copy of the License at https://openinstaller.dev.java.net/license.html
+ or http://openinstaller.dev.java.net/license.txt . See the License for the
+ specific language governing permissions and limitations under the License.
+
+ When distributing the Covered Code, include this CDDL Header Notice in each
+ file and include the License file at http://openinstaller.dev.java.net/license.txt .
+ If applicable, add the following below this CDDL Header, with the fields
+ enclosed by brackets [] replaced by your own identifying information:
+ "Portions Copyrighted [year] [name of copyright owner]"
+
+ ident "@(#)%Name% %Revision% %Date% SMI"
+
+ APOC file for CheckSystemResources page.
+-->
+<apt:template apt:name="CheckSystemResources" xmlns:apt="http://www.sun.com/jds/apoc/2004/template"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:oor="http://openoffice.org/2001/registry"
+  xsi:schemaLocation="http://www.sun.com/jds/apoc/2004/template ../../../consumables/schemas/config/apoc/policytemplate.xsd">
+  <apt:category apt:name="CheckSystemResources" apt:label="SystemResources">
+   <apt:page apt:name="CheckSystemResources" apt:label="SystemResources" >
+  <apt:section apt:name="CheckSystemResources" apt:label="SystemResources" >
+        <apt:property apt:name="SYSTEM_RESOURCES_STATUS"
+         apt:dataPath=""
+         apt:type="xs:string">
+         <apt:prop-value></apt:prop-value>
+         <apt:visual>
+            <apt:htmlPanel/>
+         </apt:visual>
+        </apt:property>
+  </apt:section>
+  <apt:scriptHandler apt:scriptLanguage="beanshell" >
+  <apt:scriptCode><![CDATA[
+import org.openinstaller.bus.*;
+import org.openinstaller.core.*;
+import org.openinstaller.provider.dependency.*;
+import org.openinstaller.provider.system.*;
+import org.openinstaller.provider.system.SystemResources.ResourceType;
+import org.openinstaller.util.Msg;
+import org.openinstaller.util.*;
+import java.util.logging.Logger;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.io.File;
+
+void run ()  {
+    // Retrieve the container to fill in the values
+    systemresources_status = wizard.getComponentByName((Container)content, "SYSTEM_RESOURCES_STATUS");
+
+    // Retrieve the status of system resource validation
+    BusResponse theResp = (BusResponse)Scripting.getInterpreter().get("theResponse");
+    if (theResp != null && null == theResp.getException()) {
+      Map theResourceStatus = (Map) theResp.getResult();
+      String theFontStart = "<font face='Sans-Serif' size='3'>";
+      StringBuilder theContent = new StringBuilder("<html>");
+      theContent.append("<body>");
+      theContent.append(theFontStart);
+      theContent.append("<table border='0'>");
+      theContent.append("<tr><th align='left'>").append(theFontStart).append(Msg.get("RESOURCE",new String[] {}))
+          .append("</font></th><th align='left'>").append(theFontStart).append(Msg.get("STATUS",new String [] {}))
+          .append("</font></th></tr>");
+      boolean theLowDiskSpace = false;
+      Set theStatusSet = theResourceStatus.entrySet();
+      for (Iterator theIter = theStatusSet.iterator(); theIter.hasNext();) {
+        Map.Entry theResourceEntry = theIter.next();
+        String theResourceKey = theResourceEntry.getKey();
+        String theResourceValue = theResourceEntry.getValue();
+        if (theResourceKey.equalsIgnoreCase(Msg.get(ResourceType.DISK.name(), new String[] {}))) {
+          if (theResourceValue.equalsIgnoreCase(Msg.get("low", new String[] {}))) {
+            theLowDiskSpace = true;
+          }
+        }
+        theContent.append("<tr>");
+        theContent.append("<td>" + theFontStart + theResourceKey + "</font></td>");
+        theContent.append("<td>" + theFontStart + theResourceValue + "</font></td>");
+        theContent.append("</tr>");
+      }
+      theContent.append("</table><p><br><br>");
+      theContent.append("</font>");
+      theContent.append("</body>");
+      theContent.append("</html>");
+      // Set the content in the html panel
+      systemresources_status.setText(theContent.toString());
+      // Don't let the user proceed if the disk space is low.
+      if (theLowDiskSpace) {
+        String theMsg = Msg.get("LOW_DISK_SPACE", null);
+        JOptionPane.showMessageDialog(frame, theMsg, Msg.get("warning", new String[] {}), JOptionPane.WARNING_MESSAGE);
+        wizard.enableNext(false);
+      } else {
+        wizard.enableNext(true);
+      }
+      wizard.enableCancel(true);
+      wizard.enableHelp(true);
+      wizard.enableBack(true);
+    } else {
+      String theMsg = Msg.get("INTERNAL_FATAL_ERROR",
+      new String[]{EnhancedException.getLastCause(theResp.getException()).getLocalizedMessage()});
+      JOptionPane.showMessageDialog(frame, theMsg, Msg.get("ERROR", new String[] {}), JOptionPane.ERROR_MESSAGE);
+      bus.publishEvent(new BusEvent("shutdown"));
+    }
+  }
+
+return (Runnable)this;]]>
+  </apt:scriptCode>
+  </apt:scriptHandler>
+ </apt:page>
+ </apt:category>
+</apt:template>

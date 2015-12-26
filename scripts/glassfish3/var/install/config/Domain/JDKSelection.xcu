@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:component-data xmlns:ns1="http://openinstaller.org/config/V1" xmlns:ns2="http://openoffice.org/2001/registry" ns2:readonly="true" ns2:finalized="true" ns2:package="org.openinstaller.JDKSelection">
+    <node ns2:name="directory">
+        <prop ns2:type="xs:boolean" ns2:name="JDK_FROM_LIST_CHOICE">
+            <value>false</value>
+        </prop>
+        <prop ns2:type="xs:boolean" ns2:name="JDK_TYPED_IN_CHOICE">
+            <value>false</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="JDK_LIST">
+            <value></value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="JDK_VERSIONRANGE">
+            <value>JDK[1.6--INFINITY)</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="JDK_TYPE_IN">
+            <value></value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="HIDDEN_JDK">
+            <value></value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="SELECTED_JDK">
+            <value></value>
+        </prop>
+        <prop ns2:type="xs:boolean" ns2:name="SELECT_JDK_TO_INSTALL">
+            <value>true</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="ONLOAD">
+            <value>true</value>
+        </prop>
+    </node>
+</ns2:component-data>

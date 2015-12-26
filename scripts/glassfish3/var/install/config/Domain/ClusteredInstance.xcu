@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:component-data xmlns:ns1="http://openinstaller.org/config/V1" xmlns:ns2="http://openoffice.org/2001/registry" ns2:readonly="true" ns2:finalized="true" ns2:package="com.sun.PH">
+    <node ns2:name="Configuration">
+        <prop ns2:type="xs:string" ns2:name="SERVER_ADMIN_PORT">
+            <value>4848</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="INSTANCE_NAME">
+            <value>instance1</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="SERVER_HOST_NAME">
+            <value>localhost</value>
+        </prop>
+        <prop ns2:type="xs:boolean" ns2:name="CREATE_CLUSTER">
+            <value>false</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="CLUSTER_NAME">
+            <value>c1</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="DOMAIN_NAME">
+            <value>domain1</value>
+        </prop>
+    </node>
+</ns2:component-data>

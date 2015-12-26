@@ -1,0 +1,292 @@
+set name=fmri value=pkg://contrib.glassfish.org/jmaki@1.8.1,8.11.1-2.0:20081106T175753Z
+set name=authority value=contrib.glassfish.org
+set name=info.classification value=Scripting
+set name=pkg.description value="jMaki is a client server frame work for building Ajax enabled web applications."
+set name=pkg.summary value="jMaki Ajax Framework"
+license 52ea9adabc25448e24b210829782e76711f91cd3 license="Berkeley Software Distribution (BSD) License" pkg.size=1723
+dir group=sys mode=0755 owner=nobody path=jmaki
+file a5db285cb5acab3dc1f32257f85d4462dfb533d1 group=sys mode=0644 owner=nobody path=jmaki/build.properties.sample pkg.size=523
+file 8f8c0a90dc64acdfa32a052813e64a7ee265c18a group=sys mode=0644 owner=nobody path=jmaki/README.txt pkg.size=3509
+dir group=sys mode=0755 owner=nobody path=jmaki/core
+dir group=sys mode=0755 owner=nobody path=jmaki/css
+dir group=sys mode=0755 owner=nobody path=jmaki/lib
+dir group=sys mode=0755 owner=nobody path=jmaki/samples
+dir group=sys mode=0755 owner=nobody path=jmaki/scripts
+dir group=sys mode=0755 owner=nobody path=jmaki/widgets
+file 59179ed97fe42f9936491e3664237058c3c56710 group=sys mode=0644 owner=nobody path=jmaki/core/build.xml pkg.size=3266
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web
+file e210d49f9f72c8d5abfe808afae6545a654fca96 group=sys mode=0644 owner=nobody path=jmaki/core/web/favicon.ico pkg.size=3638
+file fb0b99dd85bfce5cc47c24f4b4e321debb715f9a group=sys mode=0644 owner=nobody path=jmaki/core/web/index.jsp pkg.size=3066
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web/images
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web/WEB-INF
+file 5a0e1fc5fe5bf7de9e2fc5ccd8b3b1ea00cd16a5 group=sys mode=0644 owner=nobody path=jmaki/core/web/images/jmaki-seal.png pkg.size=5464
+file a25bbfd3c8ee44be66740dd4b9add1679e5786de group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/config.json pkg.size=132
+file f52c2a002c16d00c65acdd4a7fb5ebd0a1512c6d group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/xhp.json pkg.size=1204
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web/resources/hello
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web/resources/hello2
+dir group=sys mode=0755 owner=nobody path=jmaki/core/web/resources/xsl
+file a458edd2d72e347b31eecef4cd0f7139f253f5fc group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/hello/component.css pkg.size=27
+file 84fbd944900db76572906f33cacd8ccf183e2d00 group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/hello/component.htm pkg.size=38
+file ab2f2f1503bf1f4463fda40674cbb57855cf9e3c group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/hello/component.js pkg.size=175
+file b16adf4078d6b96f807e710a4d909775f9175af9 group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/hello2/component.css pkg.size=29
+file 8d10051c23704389f369dba1e83074d5a71ebbbf group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/hello2/component.htm pkg.size=39
+file 2a3162c5cb6bd2b8a21a0b52740e6b428eaec700 group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/hello2/component.js pkg.size=190
+file 7e6ac92c6fdeac690e5a6c8248f5638ecae808ac group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/xsl/flickr-rss.xsl pkg.size=1989
+file 6ebd881874081576e597cecaf65c4aa44e808511 group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/xsl/flickr-search.xsl pkg.size=2027
+file a98fe42b7acb8a59323688b61c01307b3c6c5b1b group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/xsl/rss.xsl pkg.size=8756
+file 60211fc043529ad8c50b7caea3fc464408b77fcc group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/xsl/yahoo-geocoder.xsl pkg.size=1025
+file 4ce1f50c9241362cc500d058afba49b9d33ad9c4 group=sys mode=0644 owner=nobody path=jmaki/core/web/resources/xsl/yahoo-weather.xsl pkg.size=3680
+file dda9cdc7d4bf870effc4318358c63f91026a793f group=sys mode=0644 owner=nobody path=jmaki/core/web/WEB-INF/web.xml pkg.size=2234
+file 94dd3bdab6c20e93d778b1a63c6e1c3f375de856 group=sys mode=0644 owner=nobody path=jmaki/css/container-2fixed-right-sidebars.css pkg.size=492
+file a44cdc25ca42f69a29136896d669198d0dc21981 group=sys mode=0644 owner=nobody path=jmaki/css/container-2fixed-right-sidebars.html pkg.size=683
+file 75d7f6f6dcac5534bb400a5aada0ad3e30d5fd36 group=sys mode=0644 owner=nobody path=jmaki/css/container-right-sidebars.css pkg.size=281
+file 42af8760f48e3b157eb2cfbbcd324b85fe8990f9 group=sys mode=0644 owner=nobody path=jmaki/css/container-right-sidebars.html pkg.size=526
+file cd722134d25a6523649914e2423d3adf2cb8ebe8 group=sys mode=0644 owner=nobody path=jmaki/css/index.html pkg.size=7881
+file 0a1359bcfa6ab49c82c7c27fd409c470df45995f group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-2-row-right-sidebar-footer.css pkg.size=800
+file d59da34c4bf9edc7144f3162fa1fa5797b6a636c group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-2-row-right-sidebar-footer.html pkg.size=1483
+file 557046ca66dee5b5228bc318d878b6e8799e6adc group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-2column-footer.css pkg.size=714
+file 0b8f2bffd0452f5ba509b73e67721c60cb2d76c8 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-2column-footer.html pkg.size=1402
+file 870a828d3c5075cbe2570df8baf403b3949119de group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-2fixed-right-sidebars.css pkg.size=924
+file 7967d950a2aef4713278f6d4c64f4d1566558786 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-2fixed-right-sidebars.html pkg.size=1597
+file 6b5ee89d693570d5b6fddadd17d030af5b203028 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-3column-fixed-sidebars.css pkg.size=817
+file b1958a7c7c0c740b65ce3c73e87406a13565549c group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-3column-fixed-sidebars.html pkg.size=1562
+file 5f267eb0be75df1029cbe72f3200cdeee6112fcf group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-3column-footer.css pkg.size=772
+file a7a7300a596826d07cd795bd600ac58cc305d06d group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-3column-footer.html pkg.size=1583
+file 39ef1debc169c7f625da49cfdbc68cc7369f3e5a group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-3column.css pkg.size=678
+file 4ca7c9042245944ccb1e9fac0218befa3d606466 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-3column.html pkg.size=1542
+file cc839b845110e737ff7dc88e1357513e69da3d82 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-centered.css pkg.size=583
+file e94e4eb5bf8559680612905c0a7d00053393aa37 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-centered.html pkg.size=1200
+file 045695f06ae12dbef839045488ba95f1132ec031 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-no-css.html pkg.size=361
+file 4459c056cea8546e0724a680bf2287d055e74f33 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-right-sidebar.css pkg.size=621
+file 8144c7e8ca9c46a36d3a798e4dbdb85445a6f6dd group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-right-sidebar.html pkg.size=1393
+file 51928c7322dc10bb3abf7f9ca7181389d0a08bb8 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard-footer.css pkg.size=792
+file ef3750e45cb3fea57dc3e276b83075983583cfca group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard-footer.html pkg.size=1414
+file 92716640b16fef55cd7cbd5a6b542dd66f051fcd group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard-no-sidebars.css pkg.size=444
+file 2a3961115da03280ff922db229cc38e4ad816f43 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard-no-sidebars.html pkg.size=1191
+file 23ff51dc9c8f9e3d84ac9d0c837511dcbf7423c7 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard-right-sidebar.css pkg.size=699
+file f2d545b4b64848a44a97c8f5c5f4de3f47762621 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard-right-sidebar.html pkg.size=1559
+file b2c69ee3fb5f73191da550f053de5c735e3f7879 group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard.css pkg.size=611
+file e3ae72c86ac133e3b7a01f05ad364eea051a8e9e group=sys mode=0644 owner=nobody path=jmaki/css/jmaki-standard.html pkg.size=1357
+dir group=sys mode=0755 owner=nobody path=jmaki/css/images
+dir group=sys mode=0755 owner=nobody path=jmaki/css/test
+dir group=sys mode=0755 owner=nobody path=jmaki/css/themes
+file 0fc9281c60c62ece3e5151fa52b579c2bc91df28 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-2-row-right-sidebar-footer.jpg pkg.size=1357
+file 1d4182a906d3a0144aa7c68f9e09e032f551bf95 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-2column-footer.jpg pkg.size=1425
+file dae104503998f91ad2b42ee4c12a455b029845ba group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-2fixed-right-sidebars.jpg pkg.size=1194
+file bbe8136392c8a3adda7f807bfd07ade75204664a group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-3column-fixed-sidebars.jpg pkg.size=1234
+file 0c4334d54cfe34e8eeaaa7ab36e12b84e0f72661 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-3column-footer.jpg pkg.size=1566
+file ee784807c83b7890760ddf47f33ee13fd356d68a group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-3column-layout-footer.jpg pkg.size=1606
+file 7fc61f77fd1e51ee6f138387e3f338de318b9ce0 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-3column.jpg pkg.size=1548
+file dafad79d5fe81f7774b51ef370fe47e6bf8eb229 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-centered.jpg pkg.size=1235
+file f96562a8520e48ce054a1815e4f8ada3bd2321aa group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-no-css.jpg pkg.size=673
+file be65c442873763f04d2ff7fe6549d23488e8d069 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-right-sidebar.jpg pkg.size=971
+file bc101537b3297c6d098ccd39c4be4dcd444e0f2e group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-standard-footer.jpg pkg.size=1055
+file 997f86ec5b39c561a7ae88ce87e40654cea76dc5 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-standard-layout.jpg pkg.size=817
+file 27adf558a9da4dffb76790547bf790add7163bf8 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-standard-no-sidebars.jpg pkg.size=853
+file 739c875fd0e980c9b825719fd61cbeddaf1e7e01 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-standard-right-sidebar.jpg pkg.size=1306
+file ffeb3da2ed083492c8a0905aa9f9e6d73ddb55d0 group=sys mode=0644 owner=nobody path=jmaki/css/images/jmaki-standard.jpg pkg.size=988
+file b9265c78605559179cd34dfb4dbe3c20742e8737 group=sys mode=0644 owner=nobody path=jmaki/css/test/index.html pkg.size=4718
+file 1c12c8fc74e049ba516daae954f1784981f62782 group=sys mode=0644 owner=nobody path=jmaki/css/test/jmaki-2column-footer.html pkg.size=2163
+file a8c98f8fce35415c565a3a67c65998acc5399781 group=sys mode=0644 owner=nobody path=jmaki/css/test/jmaki-centered.html pkg.size=1912
+file ca244ad28d52695a168476b40e1afd5fb25ffe5e group=sys mode=0644 owner=nobody path=jmaki/css/test/jmaki-standard-footer.html pkg.size=2119
+file d7083ac6b0f188e7efd8eadf449daddbb0a8fba7 group=sys mode=0644 owner=nobody path=jmaki/css/test/jmaki-standard.html pkg.size=2069
+file 914d959f9fd394c0039fcb7707c82df383ed579a group=sys mode=0644 owner=nobody path=jmaki/css/themes/themes.properties pkg.size=71
+dir group=sys mode=0755 owner=nobody path=jmaki/css/themes/images
+dir group=sys mode=0755 owner=nobody path=jmaki/css/themes/kame
+dir group=sys mode=0755 owner=nobody path=jmaki/css/themes/ocean
+dir group=sys mode=0755 owner=nobody path=jmaki/css/themes/orange
+file 7b0eba171467c212ea73348f72fe220ed885d708 group=sys mode=0644 owner=nobody path=jmaki/css/themes/images/bg-charcol.gif pkg.size=1848
+file 260147146290ad5ac3b6e4e99bfa473f7efe75d7 group=sys mode=0644 owner=nobody path=jmaki/css/themes/images/bg-cobalt.gif pkg.size=1601
+file 3319914db5841ee49e384b98aa90c29893a3ac2b group=sys mode=0644 owner=nobody path=jmaki/css/themes/images/bg-evergreen.gif pkg.size=1814
+file da39a3ee5e6b4b0d3255bfef95601890afd80709 group=sys mode=0644 owner=nobody path=jmaki/css/themes/kame/theme.css
+file da39a3ee5e6b4b0d3255bfef95601890afd80709 group=sys mode=0644 owner=nobody path=jmaki/css/themes/ocean/theme.css
+file 2f1a6de2dccb9140906a06f3069ee2233d0ca9a9 group=sys mode=0644 owner=nobody path=jmaki/css/themes/orange/theme.css pkg.size=706
+file d7bcb2f984c4daa6ed8ed24b6e9a7319e06f8464 group=sys mode=0644 owner=nobody path=jmaki/lib/ajax-wrapper-comp-1.8.1.jar pkg.size=239313
+file 5675fd96b29656504b86029551973d60fb41339b group=sys mode=0644 owner=nobody path=jmaki/lib/commons-beanutils.jar pkg.size=188671
+file e2822f655f2c182681c2cf27f224a425ccb2983d group=sys mode=0644 owner=nobody path=jmaki/lib/commons-digester.jar pkg.size=168446
+file 2366159e25523d99e96d05211a2fa5399c938735 group=sys mode=0644 owner=nobody path=jmaki/lib/commons-fileupload.jar pkg.size=22379
+file f029a2aefe2b3e1517573c580f948caac31b1056 group=sys mode=0644 owner=nobody path=jmaki/lib/commons-logging.jar pkg.size=38015
+file 1033bc3f5e304f447d7987f0f5db8c6133d9695b group=sys mode=0644 owner=nobody path=jmaki/lib/commons-validator.jar pkg.size=84462
+file f91d4528652d713faa54039b26af468a1229328b group=sys mode=0644 owner=nobody path=jmaki/lib/jakarta-oro.jar pkg.size=65425
+file 258a5c352ad9d395c48cef32038d82da5a5bbf7d group=sys mode=0644 owner=nobody path=jmaki/lib/jmaki-tools-1.1.jar pkg.size=25954
+file b9344b315136a850fdba406e4c2cde048f519e8a group=sys mode=0644 owner=nobody path=jmaki/lib/jsf-facelets.jar pkg.size=298368
+file 0e3dc8198a8d1ec35821b1f153b88df01a860726 group=sys mode=0644 owner=nobody path=jmaki/lib/jsfcompounds-core-0.0.6.jar pkg.size=67302
+file e749de55a88f61457866d80da527f5a01bc9c6f3 group=sys mode=0644 owner=nobody path=jmaki/lib/jsp-api-2.0.jar pkg.size=48457
+file 82bb3b420dd0024a86e7ef0f777b9de01d306e67 group=sys mode=0644 owner=nobody path=jmaki/lib/org.json-0.0.2.jar pkg.size=41943
+file 3fc542fe8bb8164e8d3e840fe7403bc0518053c0 group=sys mode=0644 owner=nobody path=jmaki/lib/servlet-api-2.4.jar pkg.size=97693
+file 1d772f30aff9ae4af06e3e4893fbc116619f2bed group=sys mode=0644 owner=nobody path=jmaki/lib/struts.jar pkg.size=549876
+file 5f74bc982b1f40b34e6bb1c7f8c6572aef3ef678 group=sys mode=0644 owner=nobody path=jmaki/samples/build.xml pkg.size=6057
+file 458536c87b60a3775e8edb0685bfbc2c805e13f1 group=sys mode=0644 owner=nobody path=jmaki/samples/samples.properties pkg.size=1446
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/facelets
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample
+file 9ce2b9ad31c0088bbfd47a2e2f31443bf9cdfa47 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/build.xml pkg.size=3317
+file 9697d4a5aebbe0c21c9b189112f3327436497114 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/README.txt pkg.size=1791
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/web
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/java
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/java/com
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/java/com/sun
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/java/com/sun/grizzly
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/java/com/sun/grizzly/comet
+file bcbaab6abe7c9b7c537d7009ce2db90524255107 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/java/com/sun/grizzly/comet/CometServlet.java pkg.size=5428
+file 8bf947f21191442badfbfeec306f4168f7011a2d group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/resources/config.json pkg.size=152
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/resources/grizzly
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words
+file 48dca5f0c3e8169c1a4697e37c22734ac2588ecc group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words/component.css pkg.size=36
+file 13657db8bd917d5fb026bbb834448654925942f6 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words/component.htm pkg.size=40
+file 296f46daa3a7a5900d92bdbd6e1648175197ab9e group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words/component.js pkg.size=6651
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words/images
+file 68f441b0d59cfa1e8fbc203724f4ecab994eaedc group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words/images/blank.gif pkg.size=70
+file 962f2072f6ccc7a7cc455bcac1369d301b6872e3 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/src/resources/grizzly/words/images/flickr-word.jpg pkg.size=3755
+file e210d49f9f72c8d5abfe808afae6545a654fca96 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/web/favicon.ico pkg.size=3638
+file bec2f809b3fa3032f1cc0497dc6c2a7dabff626f group=sys mode=0644 owner=nobody path=jmaki/samples/comet/web/glue.js pkg.size=6123
+file a2a5c6e6ad93dc1731eede6ee244317c1540a8b7 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/web/index.jsp pkg.size=2684
+file 92f2a1b8e5f26f377114888acf74fe3e61e2cedd group=sys mode=0644 owner=nobody path=jmaki/samples/comet/web/jmaki-standard-no-sidebars.css pkg.size=237
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/web/images
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/comet/web/WEB-INF
+file 5a0e1fc5fe5bf7de9e2fc5ccd8b3b1ea00cd16a5 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/web/images/jmaki-seal.png pkg.size=5464
+file 2d7eae3a5f1f26bfd098b2239a8e4f93d162e919 group=sys mode=0644 owner=nobody path=jmaki/samples/comet/web/WEB-INF/web.xml pkg.size=1685
+file fe6704bb3e98509b97141d6496bb008f5ba50037 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/build.xml pkg.size=2304
+file f74343a06113f8035f24f7742a38c611eb5f5e6b group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/README pkg.size=1189
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/facelets/web
+file f2bd9d114cc6f2ed55ce5be18e09313ae99e05af group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/books.json pkg.size=448
+file e210d49f9f72c8d5abfe808afae6545a654fca96 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/favicon.ico pkg.size=3638
+file e4d7ad77e1b931c09b243227ef5626803d1c54c5 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/index.html pkg.size=382
+file d36fad38b3ab4f3069aab8edd9f224cb7a7c1016 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/jmaki-2column-footer.css pkg.size=678
+file d21872d44f95bb88e974a557e3d3ecca0dd3f6be group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/main.xhtml pkg.size=1467
+file 5373a0803887f2a49cdd674cc7252808d1310d64 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/template.xhtml pkg.size=1995
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/facelets/web/images
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/facelets/web/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/facelets/web/WEB-INF
+file 5a0e1fc5fe5bf7de9e2fc5ccd8b3b1ea00cd16a5 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/images/jmaki-seal.png pkg.size=5464
+file d3aa8bdf53fefb505c923dba1dfc1a6d88bdbfbf group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/resources/config.json pkg.size=126
+file 92c999d36cc6adceba2722fa70d25fba87e748eb group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/WEB-INF/faces-config.xml pkg.size=399
+file f51a47998ad28754e2bde6d59bb91396c2894ec8 group=sys mode=0644 owner=nobody path=jmaki/samples/facelets/web/WEB-INF/web.xml pkg.size=1741
+file af76f28f5490a66488c49770eb6cc027bac8d7cb group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/build.xml pkg.size=2983
+file cd5d9605e5be4a2e5e4ef600d51816f899986869 group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/README.txt pkg.size=1160
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/src
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/web
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/src/java
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/src/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/src/java/jmaki
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/src/java/jmaki/services
+file d1c11ef2f59aa569d51a65174878b2303d07a9c1 group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/src/java/jmaki/services/GenericService.java pkg.size=7553
+file 8bf947f21191442badfbfeec306f4168f7011a2d group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/src/resources/config.json pkg.size=152
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/web/java
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/web/shared
+file 416c7ed7f561d700684702f671fc75470287b6fa group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/web/java/index.jsp pkg.size=4803
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/web/java/WEB-INF
+file 49f27f7f6d40a44a1e1e899be28d7e35e151096c group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/web/java/WEB-INF/web.xml pkg.size=934
+file e210d49f9f72c8d5abfe808afae6545a654fca96 group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/web/shared/favicon.ico pkg.size=3638
+file 2cc4f40c0922af06cf7a56939c68e42ec2231614 group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/web/shared/jmaki-standard-no-sidebars.css pkg.size=237
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/genericservice/web/shared/images
+file 5a0e1fc5fe5bf7de9e2fc5ccd8b3b1ea00cd16a5 group=sys mode=0644 owner=nobody path=jmaki/samples/genericservice/web/shared/images/jmaki-seal.png pkg.size=5464
+file db1192aea1308822706d5e15659060bcb9fd9e4c group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/build.xml pkg.size=9410
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared
+file fac50d8f6c74b72fd7ccccce2162d0d5b71ca2ed group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/index.jsp pkg.size=2997
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/cl-mashup
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/containers
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/getwidgetdata
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/loadtable
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/mapit
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/rssData
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/java/WEB-INF
+file 27773386b4e3e3863dc3fe6a18061ff12d736b93 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/cl-mashup/index.jsp pkg.size=3454
+file c94c756060acb5dac1d40f7035eda3e01e4f7714 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/containers/ads-blogs-2.jsp pkg.size=278
+file 4bf887cd1c53463b19dacdfcdebc7f87599824df group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/containers/ads-blogs.jsp pkg.size=288
+file 19f3d87da94e6f552202bc25a62a98c9771d2285 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/containers/description.jsp pkg.size=841
+file 23cd7bf01997aad3a6197f664bdd678bc4437078 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/containers/index.jsp pkg.size=8056
+file 484cd069c2cb6f165b87366d7ee94ffb500264e4 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/containers/main.jsp pkg.size=826
+file 299d7eeb6cac92267cbfb005d7ae31c0d9ef7b3e group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/getwidgetdata/editorContents.jsp pkg.size=2553
+file b6e2c480381dda77d86fd23e9d69e525f516960a group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/getwidgetdata/glue.js pkg.size=995
+file 13853a85e997fcc35c5679c34d66e5ef72c00cb5 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/getwidgetdata/index.jsp pkg.size=3038
+file e0538536eace88372b954411d3fc8db6053e74ba group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/getwidgetdata/service.jsp pkg.size=99
+file 017407aef5c87c0bd8eecacaf9bacaac6c2fd7b7 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/loadtable/index.jsp pkg.size=5219
+file 181a0be8caaa2e0e9871a0b51b011bf486c64ee2 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/mapit/index.jsp pkg.size=3174
+file 661cf102b5be92596bc7df97af197a5294441ca8 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/resources/config.json pkg.size=417
+file 5d4fb3d3f487bc404f70eeb8397438336e060fd6 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/rssData/index.jsp pkg.size=2960
+file 7327614eb38ca751e1a4e49663924a8615e2ab6e group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/java/WEB-INF/web.xml pkg.size=875
+file e210d49f9f72c8d5abfe808afae6545a654fca96 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/favicon.ico pkg.size=3638
+file f4342a1a346b19f051d44f0e0a07ad64aeafe24b group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/jmaki-2column-footer.css pkg.size=568
+file b4c824eea1b6b77ec80f6c39a5aff59207b16930 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/jmaki-standard-footer.css pkg.size=626
+file d8f8219856a838026e01ff9c0828d3235b8f6376 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/jmaki-standard-no-sidebars.css pkg.size=216
+file b180a49c871d3eb727f76a0ee91974540d436a16 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/jmaki-standard-right-sidebar.css pkg.size=518
+file e666978ce69b0cf99fd03f20a21d0e0248082ae6 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/jmaki-standard.css pkg.size=576
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/cl-mashup
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/containers
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/images
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/loadtable
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/rssData
+file 9397f93c6e17fd819d1da8361aa32c3c818500ef group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/cl-mashup/glue.js pkg.size=2573
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/containers/images
+file 18c67f5cc017bc518e34b6122cab4c752ce32dcf group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/containers/images/greg.jpg pkg.size=20564
+file 49daf48828432d53ebd68ecc26e360847cbff764 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/containers/images/jmaki-seal-button.png pkg.size=2069
+file b245dddaa6665667d05f122abcc5784f2563a50e group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/containers/images/ludo.jpg pkg.size=23059
+file 5a0e1fc5fe5bf7de9e2fc5ccd8b3b1ea00cd16a5 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/images/jmaki-seal.png pkg.size=5464
+file 6e541f7770347e0668514763829ac7ad6cc075e2 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/loadtable/glue.js pkg.size=926
+file 661cf102b5be92596bc7df97af197a5294441ca8 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/config.json pkg.size=417
+file ac7b7311c01c2bcb216cc91af013a419a4c7a41d group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/xhp.json pkg.size=577
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2
+file 910e3b46847f8f3547ae601e3422bcfd20737e2d group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/component.css pkg.size=1997
+file 8ebad1832ceff3fda12b933455addf39416de126 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/component.htm pkg.size=46
+file c9861405fe699c6eab6045ff907a98401ab98218 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/component.js pkg.size=8203
+file f0fb3702e28043ea5b85ec5a7f84929fbc42e024 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/widget.json pkg.size=2353
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/images
+file 915c06353de58319bf6c3dbba01f639a9c9ac5f4 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/images/bg-webtop-blue.png pkg.size=226
+file d6cbfc66bda68466bc6c377586486800a7599783 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/images/bg-webtop-green.png pkg.size=157
+file caced538713b1de909362e649371446aac5f8cde group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/images/bg-webtop-l-blue.png pkg.size=705
+file c034242eabddc3f3eca43d2321be166958772dca group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/resources/jmaki/menu2/images/bg-webtop-l-green.png pkg.size=182
+file b4baf1ef7c0db3a901193ba393459cc555d225f8 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/rssData/glue.js pkg.size=1391
+file 4ffeea301d7e7fd3241080ff1573a18b9bdfe319 group=sys mode=0644 owner=nobody path=jmaki/samples/jmaki/web/shared/rssData/rssdata-2column-footer.css pkg.size=644
+file 11fba646496c5136cc4cbc4651191887489d4aaf group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/build.xml pkg.size=3877
+file 7c0bf1fe61a1b315c724b93c7c0735c3422a98a6 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/README-JAVA.txt pkg.size=979
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/src
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/web
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/src/com
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp/struts
+file 99816d71c5fe885fcff1d2681579715311837863 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp/struts/ApplicationResource.properties pkg.size=1075
+file f7565d8dc270a91dd3b11266a0b43293a61e80e7 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp/struts/JmakiAction.java pkg.size=1535
+file d549f6151d6d3f96a18d3e3692a06b7bb0b2f53f group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp/struts/ListItem.java pkg.size=517
+file 4fd6e1aca327438a56547a1b2de1ee520241614c group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp/struts/NewStrutsAction.java pkg.size=1866
+file d4e741f28d8a98544b9aeb01e08c99f49aeddc62 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/src/com/myapp/struts/NewStrutsActionForm.java pkg.size=1385
+file efb41eced2502859b908f922419fb4ffcc6c9ab8 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/data.jsp pkg.size=521
+file e210d49f9f72c8d5abfe808afae6545a654fca96 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/favicon.ico pkg.size=3638
+file e9979cb6ebe46c684cc098d0e49151e4d03ba6d6 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/glue.js pkg.size=760
+file aca43ba26910712cef3af1da4ff7169a186e35d5 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/index.jsp pkg.size=2829
+file a2d65ebad0fbe90e29403b0082ea270ef0b09642 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/jmaki-standard-no-sidebars.css pkg.size=321
+file d941145885a58137b87c9b345933383da0740d45 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/loginSuccessful.jsp pkg.size=1503
+file 3168dcda8970e0c3e3246073de22f98c59e52757 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/welcomeStruts.jsp pkg.size=709
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/web/images
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/web/META-INF
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/web/resources
+dir group=sys mode=0755 owner=nobody path=jmaki/samples/strutsExample/web/WEB-INF
+file 5a0e1fc5fe5bf7de9e2fc5ccd8b3b1ea00cd16a5 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/images/jmaki-seal.png pkg.size=5464
+file fa34acfcded166589275d56dd67947810440842d group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/META-INF/context.xml pkg.size=68
+file a4bc4e7b19720ba1170c178039eb7e59bdf93a32 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/resources/config.json pkg.size=125
+file dce6ded5ebc64f2e5edd0398e059d3dd63d9fce7 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/WEB-INF/struts-config.xml pkg.size=3135
+file efe5a28bb97de4cab3eb0c1d3224778600d84bee group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/WEB-INF/tiles-defs.xml pkg.size=1332
+file 2735040b219de5d900b0e2c2d221c16bc8dc4872 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/WEB-INF/validation.xml pkg.size=2042
+file 1e958ce2f7fde8fb5a0d28656a8f6c3130beaa71 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/WEB-INF/validator-rules.xml pkg.size=13431
+file f4e0007bf1c59716e04f22bd199ec0612520efa1 group=sys mode=0644 owner=nobody path=jmaki/samples/strutsExample/web/WEB-INF/web.xml pkg.size=1511
+file 866b6c7d66025e56d0d9c0c308ee7f328bd04fca group=sys mode=0644 owner=nobody path=jmaki/scripts/glue.js pkg.size=1032
+file 7c56afebd8028ed4e59ca36721924d48ae95b4f0 group=sys mode=0644 owner=nobody path=jmaki/scripts/jmaki-min.js pkg.size=22659
+file ea65ce2b0dd7b7c3e35840d2c5a228b10fe97c9e group=sys mode=0644 owner=nobody path=jmaki/scripts/jmaki.js pkg.size=84399
+file 271dbb36fdd8482db8f00044618d2b97c68a0316 group=sys mode=0644 owner=nobody path=jmaki/scripts/system-glue.js pkg.size=4076
+file bacbb74d373efca6c35c22391ebc7357ca3ddc57 group=sys mode=0644 owner=nobody path=jmaki/scripts/wfactory.js pkg.size=3980
+file a01c0d796b63636d28e191349b3770b2dd4bc245 group=sys mode=0644 owner=nobody path=jmaki/widgets/jmaki-1.8.1.zip pkg.size=160035
+file 64a2df4a41a917240872b56f1e462184d22907f0 group=sys mode=0644 owner=nobody path=jmaki/widgets/jmaki-dijit-1.8.1.zip pkg.size=2754321
+file 0ac53de5dd8db4a94ae83632e7adacb05651b428 group=sys mode=0644 owner=nobody path=jmaki/widgets/jmaki-extras-1.8.1.zip pkg.size=329904
+file ca453219d5322b15895fbbfc9782e2e61b280cdc group=sys mode=0644 owner=nobody path=jmaki/widgets/jmaki-google-1.8.1.zip pkg.size=52612
+file a7f14ee1cba0f3becd1b513b9be1eda1e0e29521 group=sys mode=0644 owner=nobody path=jmaki/widgets/jmaki-spry-1.8.1.zip pkg.size=302333
+file 4b4d35e9948e440cdc4dafa0c90c2fea548b3358 group=sys mode=0644 owner=nobody path=jmaki/widgets/jmaki-yahoo-1.8.1.zip pkg.size=1008671

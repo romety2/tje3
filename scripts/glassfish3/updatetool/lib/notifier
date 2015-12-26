@@ -1,0 +1,251 @@
+#!/bin/sh
+#
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+#
+# Copyright (c) 2010 Oracle and/or its affiliates. All rights reserved.
+#
+# The contents of this file are subject to the terms of either the GNU
+# General Public License Version 2 only ("GPL") or the Common Development
+# and Distribution License("CDDL") (collectively, the "License").  You
+# may not use this file except in compliance with the License.  You can
+# obtain a copy of the License at
+# https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+# or packager/legal/LICENSE.txt.  See the License for the specific
+# language governing permissions and limitations under the License.
+#
+# When distributing the software, include this License Header Notice in each
+# file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+#
+# GPL Classpath Exception:
+# Oracle designates this particular file as subject to the "Classpath"
+# exception as provided by Oracle in the GPL Version 2 section of the License
+# file that accompanied this code.
+#
+# Modifications:
+# If applicable, add the following below the License Header, with the fields
+# enclosed by brackets [] replaced by your own identifying information:
+# "Portions Copyright [year] [name of copyright owner]"
+#
+# Contributor(s):
+# If you wish your version of this file to be governed by only the CDDL or
+# only the GPL Version 2, indicate your decision by adding "[Contributor]
+# elects to include this software in this distribution under the [CDDL or GPL
+# Version 2] license."  If you don't indicate a single choice of license, a
+# recipient has the option to distribute your version of this file under
+# either the CDDL, the GPL Version 2 or to extend the choice of license to
+# its licensees as provided above.  However, if you add GPL Version 2 code
+# and therefore, elected the GPL Version 2 license, then the option applies
+# only if the new code is made subject to such option by the copyright
+# holder.
+#
+
+#
+# Login startup task used to launch the notifier.
+# This script should only be started as part of a registered login task.
+#
+
+START_NOTIFIER_VERSION=5
+UNIX_PREFS_DIR=.updatetool
+DARWIN_PREFS_DIR="Library/Application Support/updatetool"
+
+termHandler() {
+    kill -TERM $_pid > /dev/null 2>&1
+    exit 0
+}
+
+intHandler() {
+    kill -INT $_pid > /dev/null 2>&1
+    exit 0
+}
+
+quitHandler() {
+    kill -QUIT $_pid > /dev/null 2>&1
+    exit 0
+}
+
+trap "termHandler" TERM
+trap "intHandler" INT
+trap "quitHandler" QUIT
+
+
+find_newest_image () {
+
+    if [ -f "$1" ]; then 
+        OLDIFS=$IFS   
+        IFS="   
+"
+        for new_image_path in `cat "$1"` ;
+        do
+            if [ $debug = 1 ]; then
+                echo Checking: $new_image_path
+            fi  
+            if [ -f "$new_image_path/updatetool/bin/updatetool" -a \
+                 -f "$new_image_path/updatetool/lib/version" ]; then
+                version="`cat $new_image_path/updatetool/lib/version`"
+                if [ $version -gt $NEWESTVERSION ]; then
+ 
+                    if [ $debug = 1 ]; then
+                        echo Found newer image at: $new_image_path
+                        echo New version: $version
+                        echo Old image: $NEWESTIMAGE
+                        echo Old image version: $NEWESTVERSION
+                    fi
+                    NEWESTIMAGE=$new_image_path
+                    NEWESTVERSION=$version
+                fi
+            else
+                if [ $debug = 1 ]; then
+                    echo Not a valid image.
+                fi
+            fi   
+        done    
+        IFS=$OLDIFS
+    fi   
+ 
+    if [ $NEWESTVERSION -eq 0 ]; then
+        # We did not find a valid image path
+        status=1 
+    else
+        status=0 
+    fi   
+}
+
+check_and_update_version () {
+    if [ -f "$NEWESTIMAGE/updatetool/lib/notifier" ]; then
+        version=`"$NEWESTIMAGE/updatetool/lib/notifier" --version`
+
+        if [ $version -gt $START_NOTIFIER_VERSION ]; then
+            if [ $debug = 1 ]; then
+                echo Updating notifier version from $START_NOTIFIER_VERSION to $version
+            fi
+            /bin/cp "$NEWESTIMAGE/updatetool/lib/notifier" "$HOME/$PREFS_DIR/"
+            status=$?
+            if [ $status = 0 ]; then
+                restart=1
+            fi
+        fi
+    fi
+}
+
+# Usage
+usage () {
+    echo
+    echo "notifier --help|--version"
+    echo
+    echo "     --help     Display usage information"
+    echo "     --version  Display notifier script version"
+    echo
+    exit $status
+}
+
+# Version
+get_version () {
+    echo $START_NOTIFIER_VERSION
+    exit $status
+}
+
+#set -x
+
+debug=0
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+      --help           ) usage ;;
+      --version        ) get_version ;;
+      --debug          ) debug=1; shift ;;
+      *                ) status=2; usage ;;
+    esac
+done
+
+os_name=`uname -s`
+if [ $os_name = "Darwin" ]; then
+    PREFS_DIR=$DARWIN_PREFS_DIR
+else
+    PREFS_DIR=$UNIX_PREFS_DIR
+fi
+
+# If we are not in debug mode we sleep for five minutes prior to launching
+# the notifier.  This is to avoid competing for resources when the user
+# initially logs into the system.  We don't need to run immediately.
+if [ $debug != 1 ]; then
+    sleep 300
+fi
+
+while true
+do
+
+    restart=0
+    status=0
+    version=0
+    NEWESTIMAGE=""
+    NEWESTVERSION=0
+
+    # find_newest_image will update NEWESTIMAGE and NEWESTVERSION only if
+    # it finds an image with a newer version.  Otherwise it leaves these
+    # two vars unchanged.
+    find_newest_image "$HOME/$PREFS_DIR/notifier.cfg"
+    find_newest_image "$HOME/$PREFS_DIR/imagelist-1.cfg"
+    find_newest_image "$HOME/$PREFS_DIR/imagelist.cfg"
+
+    if [ $status = 0 ]; then
+        echo "$NEWESTIMAGE" > "$HOME/$PREFS_DIR/notifier.cfg"
+        check_and_update_version
+        if [ $restart = 1 ]; then
+            if [ $debug = 1 ]; then
+                echo Restarting: $HOME/$PREFS_DIR/notifier
+                "$HOME/$PREFS_DIR/notifier" --debug
+            else
+                "$HOME/$PREFS_DIR/notifier"
+            fi
+        else
+            if [ $debug = 1 ]; then
+                echo Launching: $NEWESTIMAGE/updatetool/bin/updatetool --notifier --timerdebug --silentstart --check-and-exit
+                "$NEWESTIMAGE/updatetool/bin/updatetool" --notifier --timerdebug --silentstart --check-and-exit &
+            else
+                "$NEWESTIMAGE/updatetool/bin/updatetool" --notifier --silentstart --check-and-exit &
+            fi
+            _pid=$!
+            wait $_pid
+            _status=$?
+
+            # If the exit code from the notifier is 99 that signals that
+            # the user shutdown the notifier.  In response the notifier
+            # scheduler should exit.
+            if [ $_status = 99 ]; then
+                if [ $debug = 1 ]; then
+                    echo "Notifier Scheduler exiting (received 99 code)"
+                fi
+                status=0
+                break
+            fi
+            # Wake up every six hours and launch the notifier.  The notifier
+            # will quickly exit if it is not time to perform a check.
+            if [ $debug = 1 ]; then
+                echo Sleeping 60 seconds...
+                sleep 60 &
+                _pid=$!
+                wait $_pid
+            else
+              # See issue 1943
+              for i in 1 2 3 4 5 6 7 8 9 10 11 12
+              do
+                  sleep 1800 &
+                  _pid=$!
+                  wait $_pid
+              done
+            fi
+        fi
+    else
+        # Remove an existing notifier.cfg if an image could not be located.
+        if [ -f "$HOME/$PREFS_DIR/notifier.cfg" ]; then
+            /bin/rm "$HOME/$PREFS_DIR/notifier.cfg"
+        fi
+
+        if [ $debug = 1 ]; then
+            echo "Could not locate a valid image."
+        fi
+        break
+    fi
+done
+
+exit $status

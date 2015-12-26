@@ -1,0 +1,181 @@
+Update Tool Notifier
+--------------------
+
+How to run:
+-----------
+
+On Windows the notifier is registered as a login startup task when the
+updatetool is installed via the update tool GUI.   It is not registered 
+automatically on other platforms or when updatetool is installed via the CLI.
+
+To manulally register it as a login start up task on Windows:
+
+	updatetoolconfig.bat --register
+
+You must relogin to start it.  To unregister it manually on Windows:
+
+	updatetoolconfig.bat --unregister
+
+You must run updatetoolconfig.bat --unregister from the same image that
+initially registered it (or use the --force option).  
+
+If you want to start it manually: 
+
+From the distro:
+
+        updatetool --notifier  or updatetool -n
+
+        or updatetool --n --help  to see available options
+
+From the workspace dev are:
+
+On Linux/Solaris:
+        ./run -n
+
+On Windows
+        ./run.bat -n
+
+This won't be interesting unless there are updates available.  See
+"How to test:" below for a more interesting way to run the notifier.
+
+How it works:
+-------------
+
+On startup it checks for updates in all images known to the updatetool.
+The location of these images are stored in the updatetool's preferences
+file.
+
+If it finds updates are available it will display an icon in the desktop
+tasktray as well as a balloon notification.  The balloon notification will
+remain until it is dismissed or the next update check interval.  The
+taskbar icon will remain until the next check interval.  At that point
+if there are no updates to be installed the icon will be removed.
+
+If at launch it does not find any updates no icon or balloon help is
+displayed.   
+
+By default the tool looks for updates ever 24 hours.  
+
+
+How to test:
+------------
+
+To shorten the update check interval start the notifier with the
+--interval=<seconds> option. 
+
+To have the tool think that uninstalled packages are really updates
+run the notifier with the --uninstalled option.
+
+To have the tool think that installed packages are really updates
+run the notifier with the --installed option.
+
+For example:
+
+% run -n --uninstalled --interval=30
+
+The above will have the tool check for uninstalled pkgs every 30 seconds.
+The uninstalled packages will be reported as Updates.
+
+Modifying the start up task:
+-----------------------------
+
+You can use updatetool/bin/updatetoolconf to modify the login start-up task:
+
+updatetoolconfig [--help] --register|--unregister|--list [--force]
+
+Update Tool notification tasktray integration utility
+
+    --help       Display usage info
+    --register   Register the notifier startup task
+    --unregister Unregister the notifier startup task
+    --list       List current registered task
+    --force      Overwrite an existing startup-task if it exists
+
+This tool currently only works on Windows.
+
+Notes on installation of the notifier:
+--------------------------------------
+
+The following is applicable to Windows.
+
+When the updatetool pkg is installed via the GUI an IPS action will be 
+run to register the notifier as a login startup task (if one has not already
+been registered).  Because the notifier monitors all images known
+to the Update Tool there is not a need to install a notifier per image.
+
+The notifier is unregistered when the updatetool from the pkg that
+actually successfully registered the task is uninstalled via the GUI.  If 
+you uninstall an updatetool pkg that did not successfully register the
+notifier as a startup task the notifier will not be unregistered.
+
+The notifier can be registered/unregistered manually using the 
+updatetoolconfig utility (see prior section).
+
+TODO:
+-----
+* When the notifier is registered as a startup task during installation
+  it is not started until the user logins in.  This should be changed
+  to launch the notifier at installation.
+
+* Investigate why the size of the python process grows over time
+
+* Handle preferences locking between notifier and ut
+
+* Add proxy auth to prefs and support to use system proxy
+
+* Dock/taskbar integration on MacOS (balloon)
+
+* Determine how to integrate as a startup task on Gnome and MacOS
+
+* Provide a means within the GUI to add/remove notifier start-up task
+
+* Determine how to handle multiple installations of notifiers on non-Windows
+  platforms.
+
+* Improve exception/error handling
+
+* GUI needs to confirm before applying updates when launched via the notifier.
+
+* .bat or .exe for GUI? 
+
+Known issues:
+-------------
+
+* The notifier is only registered when UT is installed via the GUI.  It
+  is not registered when pkg is called directly.  Installers will
+  need to interact directly with updatettoolconfig.bat.  This needs to
+  be thought through a bit more.
+
+* Currently we ignore the opt-in settings.   We default to daily.
+
+* On CDE it displays an icon somewhere on the screen.  The update notification
+  is displayed pretty much where ever.
+
+* On the Java Desktop the update notification is not displayed in the 
+  correct location.
+
+* On the Java Desktop when the update notification balloon is displayed
+  an item for the balloon is added to the taskbar.  This is in addition
+  to the icon for the notifier that is also displayed in the toolbar.
+
+* On Ubuntu the update notification may overlap the taskbar in some cases.
+
+* On Windows if the taskbar is set to retract when not in use we can't figure
+  out where to display the notification so we default to the bottom corner.
+
+* It has never been tested on Mac OS.
+
+* If the taskbar icon is displayed, it does not automatically get removed
+  when all the updates are applied.  It remains until the next update
+  check interval.  If at that point it determines there are no updates it
+  will be removed from the taskbar.
+
+* If it encounters certain errors it prints a debug message.
+
+* We only use the 24x24 icon at this point.  
+
+* On Windows the "Update Tool Notifier" startup item does not appear in
+  the Windows System Configuration Utility (msconfig).
+
+* If the user changes the update check frequency a running notifier will
+  not apply the changes until it is restarted.

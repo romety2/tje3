@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>Dep&oacute;sitos y editores - Ayuda en l&iacute;nea de Update Tool</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="repositories"></a><h4>Dep&oacute;sitos y editores</h4>
+<p> Las im&aacute;genes de instalaci&oacute;n est&aacute;n asociadas a uno o varios dep&oacute;sitos de red de componentes. Cada dep&oacute;sito presenta un editor y una URL asociada. El nombre de un editor es exclusivo en cada imagen de instalaci&oacute;n y representa tanto a la organizaci&oacute;n como al proyecto que administra el dep&oacute;sito y un &aacute;mbito de contenido bien definido. Update Tool muestra el editor en la columna &quot;Origen&quot; de las vistas de listado de componentes.</p>
+
+<p><b>Compatibilidad de software de varios dep&oacute;sitos</b></p>
+<p>Cuando cree su propia imagen de instalaci&oacute;n o modifique la lista de dep&oacute;sitos asociados a una imagen de instalaci&oacute;n existente, aseg&uacute;rese de que consulta s&oacute;lo aquellos dep&oacute;sitos que contienen componentes que son compatibles con el software existente.</p>
+
+<p>Aunque pueda instalar complementos y actualizaciones de otros dep&oacute;sitos, es posible que estos no funcionen correctamente con el software existente a menos que la organizaci&oacute;n o el proyecto que administra los dep&oacute;sitos haya validado esas combinaciones.</p>
+
+<p><b>Contenido de los dep&oacute;sitos</b></p>
+<p> Cada dep&oacute;sito incluye un cat&aacute;logo que lista los componentes que contiene.  Update Tool accede a los cat&aacute;logos mantenidos tanto en red como localmente para poder listar las actualizaciones y complementos disponibles.</p>
+
+<p> Cada componente incluye un manifiesto de su contenido.  Update Tool accede a la informaci&oacute;n de los manifiestos para listar los archivos instalados y proporcionar informaci&oacute;n espec&iacute;fica de los componentes.</p>
+
+<p><b>Editor preferido</b></p>
+<p>Uno de los dep&oacute;sitos del editor asociados a una imagen de instalaci&oacute;n debe identificarse como editor &quot;preferido&quot;. Esta configuraci&oacute;n ayuda a Update Tool, a la herramienta Software Update, al notificador de escritorio y a la interfaz de l&iacute;nea de comandos (CLI) pkg a determinar c&oacute;mo ser&aacute; el funcionamiento cuando haya varios dep&oacute;sitos asociados a una imagen de instalaci&oacute;n.</p>
+
+<p>Cuando hay un componente de complemento con el mismo nombre en varios dep&oacute;sitos del editor y uno de estos est&aacute; marcado como editor preferido, Update Tool y CLI pkg enumerar&aacute;n e instalar&aacute;n dicho paquete desde el dep&oacute;sito del editor preferido.</p>
+
+<p>Cuando se utiliza la funci&oacute;n de Update Tool &quot;Mostrar las versiones recientes&quot; o se especifica el dep&oacute;sito de origen al instalar el complemento mediante CLI pkg, el complemento se instalar&aacute; desde el dep&oacute;sito de origen que se haya especificado.</p>
+
+<p>Si se ha instalado un componente desde el editor preferido, Update Tool, Software Update y el notificador de escritorio s&oacute;lo buscar&aacute;n las actualizaciones de este componente desde ese editor.</p>
+
+<p>Si el paquete se ha instalado desde un editor no preferido, Update Tool, Software Update y el notificador de escritorio s&oacute;lo enumerar&aacute;n las actualizaciones que est&eacute;n disponibles desde el dep&oacute;sito desde el que se instal&oacute; originalmente el paquete.</p>
+
+<p>Update Tool muestra de forma predeterminada s&oacute;lo la versi&oacute;n m&aacute;s reciente de cada paquete. Puede utilizar el comando Ver -&gt; Mostrar las versiones recientes para anular este comportamiento y enumerar todas las actualizaciones disponibles de todos los dep&oacute;sitos:</p>
+
+<p><b>Modificaci&oacute;n de lista de dep&oacute;sitos</b></p>
+<p>Para modificar la lista de dep&oacute;sitos asociados a una imagen de instalaci&oacute;n tiene que seleccionar la imagen en cuesti&oacute;n y realizar una de las siguientes operaciones:</p>
+
+<ul><li>Haga clic con el bot&oacute;n derecho para ver el men&uacute; contextual y seleccione Propiedades...</li>
+<li>Seleccione el bot&oacute;n Editar propiedades... en la ficha Detalles de la imagen.</li>
+<li>Seleccione Archivo -&gt; Propiedades de la imagen en el men&uacute; principal.</li></ul>
+
+<p><b>Almacenamiento local de informaci&oacute;n sobre el dep&oacute;sito</b></p>
+<p>La lista de dep&oacute;sitos que se encuentran asociados a una imagen de instalaci&oacute;n, las copias locales de cat&aacute;logos y los manifiestos se guardan en el directorio .org.opensolaris,pkg/ de cada una de las im&aacute;genes.</p> 
+
+</body>
+</html>
+

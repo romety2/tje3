@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DO NOT ALTER OR REMOVE COPYRIGHT NOTICE OR THIS HEADER.
+
+  Copyright 2006, 2007 Sun Microsystems, Inc. All rights reserved.
+  Use is subject to license terms.
+
+  The contents of this file are subject to the terms of the Common Development
+  and Distribution License("CDDL") (the "License"). You may not use this file
+  except in compliance with the License.
+
+  You can obtain a copy of the License at https://openinstaller.dev.java.net/license.html
+  or http://openinstaller.dev.java.net/license.txt . See the License for the
+  specific language governing permissions and limitations under the License.
+
+  When distributing the Covered Code, include this CDDL Header Notice in each
+  file and include the License file at http://openinstaller.dev.java.net/license.txt .
+  If applicable, add the following below this CDDL Header, with the fields
+  enclosed by brackets [] replaced by your own identifying information:
+  "Portions Copyrighted [year] [name of copyright owner]"
+
+  ident "@(#)%Name% %Revision% %Date% SMI"
+-->
+<apt:template apt:name="License" xmlns:apt="http://www.sun.com/jds/apoc/2004/template"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:oor="http://openoffice.org/2001/registry"
+  xsi:schemaLocation="http://www.sun.com/jds/apoc/2004/template ../../../consumables/schemas/config/apoc/policytemplate.xsd">
+ <apt:category apt:name="License" apt:label="License" >
+
+ <apt:page apt:name="License_page" apt:label="LicensePage" >
+
+  <apt:section apt:name="license" apt:label="LICENSE" >
+        <apt:property apt:name="LICENSE_TEXT1"
+         apt:dataPath=""
+         apt:type="xs:string">
+         <apt:prop-value>$License_LICENSE_TEXT1</apt:prop-value>
+         <apt:visual>
+            <apt:htmlPanel/>
+         </apt:visual>
+        </apt:property>
+     <apt:property apt:name="LICENSE_TEXT2"
+         apt:dataPath=""
+         apt:type="xs:string">
+       <apt:prop-value>$License_LICENSE_TEXT2</apt:prop-value>
+       <apt:visual>
+            <apt:textArea apt:rows="9" apt:columns="33" apt:readOnly="true"/>
+         </apt:visual>
+     </apt:property>
+
+     <apt:property apt:name="ACCEPT_LICENSE"
+         apt:dataPath="license.ACCEPT_LICENSE"
+         apt:type="xs:string">
+       <apt:prop-value>1</apt:prop-value>
+       <apt:visual>
+          <apt:radioButtons />
+       </apt:visual>
+       <apt:constraints>
+         <apt:enumeration apt:value="0" apt:label="$LICENSE_ACCEPT_TEXT" apt:toolTip="$LICENSE_ACCEPT_TOOLTIP"/>
+         <apt:enumeration apt:value="1" apt:label="$LICENSE_DECLINE_TEXT" apt:toolTip="$LICENSE_DECLINE_TOOLTIP"/>
+       </apt:constraints>
+       <apt:scriptHandler apt:scriptLanguage="beanshell">
+          <apt:scriptCode ><![CDATA[
+            theAcceptAL = new ActionListener() {
+              actionPerformed(e) {
+                decline = wizard.getComponentByName(content, "1");
+                if(decline.isSelected()) {
+                  wizard.enableNext(false);
+                } else {
+                  wizard.enableNext(true);
+                }
+              }
+            };
+            return theAcceptAL;]]>
+        </apt:scriptCode>
+      </apt:scriptHandler>
+     </apt:property>
+  </apt:section>
+  <apt:scriptHandler apt:scriptLanguage="beanshell" >
+  <apt:scriptCode><![CDATA[
+    run() {
+      wizard.enableCancel(true);
+      wizard.enableHelp(true);
+      wizard.enableBack(true);
+
+      // Default the license agreement text to the beginning of the text
+      myComp = wizard.getComponentByName(content, "LICENSE_TEXT2");
+      myComp.setCaretPosition(0);
+
+      wizard.enableNext(wizard.getComponentByName((Container)content, "0").isSelected());
+     }
+
+    return (Runnable)this;
+  ]]></apt:scriptCode>
+  </apt:scriptHandler>
+  </apt:page>
+</apt:category>
+</apt:template>
+

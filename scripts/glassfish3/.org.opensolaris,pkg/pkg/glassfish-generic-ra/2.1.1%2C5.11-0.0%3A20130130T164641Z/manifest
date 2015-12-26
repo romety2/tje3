@@ -1,0 +1,14 @@
+set name=fmri value=pkg://stable.glassfish.org/glassfish-generic-ra@2.1.1,5.11-0.0:20130130T164641Z
+set name=authority value=stable.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="Generic  JMS RA is a Java EE Connector Architecture 5 compliant resource adapter that allows users to integrate with various JMS service providers. More details are available on Generic RA website - https://genericjmsra.dev.java.net"
+set name=pkg.summary value="Generic Resource Adapter for JMS"
+depend fmri=pkg:/glassfish-common type=require
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/lib
+dir group=sys mode=0755 owner=root path=glassfish/lib/addons
+dir group=sys mode=0755 owner=root path=glassfish/lib/addons/resourceadapters
+dir group=sys mode=0755 owner=root path=glassfish/lib/addons/resourceadapters/genericjmsra
+file 69b6733afc689ad418e95a4f42156a255a3703e2 chash=32d64b91f7046a8e82eb2bc666fc63a586eeecb0 group=sys mode=0644 owner=root path=glassfish/lib/addons/resourceadapters/genericjmsra/genericra.rar pkg.csize=152034 pkg.size=152050
+file db6b2b066af95a5bb8100f85e035c90e2182f7f5 chash=87e9511beb0600ee91749916d68091cb32538828 group=sys mode=0644 owner=root path=glassfish/lib/addons/resourceadapters/genericjmsra/genericra.jar pkg.csize=149838 pkg.size=161504

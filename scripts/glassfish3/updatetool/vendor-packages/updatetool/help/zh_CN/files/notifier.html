@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>桌面通知程序 - Update Tool 联机帮助</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="notifier"></a><h4>桌面通知程序</h4>
+<p>后台桌面通知任务（或通知程序）与 Update Tool 结合使用，可以定期检查安装的 Update Tool 所知的所有安装映像有无更新，并通过桌面通知更新。</p>
+
+<p><b>注册通知程序</b></p>
+<p>如果在映像的初始安装期间选择启用自动检查和通知更新，则通知程序将自动注册为桌面环境中的启动程序。</p>
+
+<p>如果初始安装程序没有注册通知程序，则只需运行 Update Tool 至少一分钟，即可自动注册通知程序。只要 Update Tool 首选项指定的更新检查频率不是&ldquo;从不&rdquo;，就会自动注册通知程序。</p>
+
+<p><b>启动通知程序</b></p>
+<p>每次您登录桌面时，通知程序便会启动并作为后台进程运行。只有一个或多个安装映像存在可用更新时，通知程序才会显示在桌面的通知区域中。（在 Mac OS X 上例外，在该系统上通知程序从不显示在桌面平台中）。</p>
+
+<p><b>通知更新</b></p>
+<p>当通知程序检测到存在可用更新时，它会在您的桌面通知区域显示一个图标，同时还会显示一个窗口，从该窗口中您可以启动 Software Update 工具，以便查看和应用可用的更新。</p>
+
+<p>通知程序使用在您的个人 Update Tool 设置中管理的安装映像列表，来确定需要监视哪些映像和系统信息库的更新组件。通知程序检查更新的频率基于在 Update Tool 中设置的首选项。您可以通过 Update Tool 的首选项修改通知程序是否检查更新以及检查有无更新的频率：</p>
+
+<p>编辑 -&gt; 首选项</p>
+
+<p><b>运行通知程序</b></p>
+<p>根据所使用的操作系统和桌面类型的不同，将通知程序注册为桌面登录启动程序所使用的方法也有所不同：</p>
+<ul><li>Windows：&ldquo;开始&rdquo;菜单 -&gt;&ldquo;程序&rdquo;-&gt;&ldquo;启动&rdquo;</li>
+<li>Gnome：&ldquo;系统&rdquo;-&gt;&ldquo;首选项&rdquo;-&gt;&ldquo;会话&rdquo;-&gt;&ldquo;启动程序&rdquo;-&gt;&ldquo;Update Tool 桌面通知程序&rdquo;</li>
+<li>Mac OS X：user name/Library/LaunchAgents/com.sun.ucnotifier.plist</li></ul>
+
+<p>当您登录桌面时，通知程序的启动程序会先查询安装映像的列表（在 Update Tool 的首选项区域中进行维护），以确定要从哪个安装映像启动通知程序任务。当您安装和卸载安装映像时，通知程序的启动程序会尝试始终使用最合适的安装映像，以从中运行通知程序。</p>
+
+<p><b>通知程序界面</b></p>
+<p>有关通知程序提供的菜单选项的更多信息，请参见联机帮助&ldquo;界面的组成部分&rdquo;中的<a href="ui-desktop-notifier.html">桌面通知程序</a>。</p>
+</body>
+</html>
+

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Repositories and Publishers- Update Tool Online Help</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="repositories"></a><h4>Repositories and Publishers</h4>
+<p>An installation image is associated with one or more network 
+repositories of components.  Each repository is represented by a publisher and 
+an associated URL.  The publisher name is unique per installation image and 
+represents both the organization or project that manages the repository and 
+a well defined scope of content. The Update Tool shows the publisher in the 
+"Source" column of the the component listing views.</p>
+
+<p><b>Compatibility of Software from Multiple Repositories</b></p>
+<p>When you create your own installation image or modify the list of 
+repositories associated with an existing installation image, ensure that
+you reference only those repositories that contain components that are compatible
+with your existing software.</p>
+
+<p>Even though you may be able to install add-ons and updates from other
+repositories, the new add-ons or updates may not work properly with your 
+existing software unless the organization or project that manages the 
+repositories has validated those combinations.</p>
+
+<p><b>Contents of Repositories</b></p>
+<p>Each repository includes a catalog listing all of the components contained
+in the repository.  The Update Tool accesses both locally maintained and 
+network-based catalogs in order to list the available updates and add-ons.</p>
+
+<p>Each component includes a manifest of the component's content.  The Update 
+Tool accesses the manifest information to list installed files and other
+component-specific information.</p>
+
+<p><b>Preferred Publisher</b></p>
+<p>One of the publisher's repositories associated with an installation 
+image must be identified as the "preferred" publisher.  This setting helps 
+the Update Tool, Software Update tool, desktop notifier and pkg command 
+line interface (CLI) determine how to function when multiple publisher's 
+repositories are associated with an installation image.</p>
+
+<p>When an add-on component of the same name exists in multiple publisher's 
+repositories and one of those publishers is marked as the preferred publisher, 
+the Update Tool and the pkg CLI will list and install the named package from the 
+preferred publisher's repository.</p>
+
+<p>When you use the "Show Recent Versions" feature of the Update Tool or you specify
+the source repository when installing the add-on via the pkg CLI, the add-on
+will be installed from the source repository you have specified.</p>
+
+<p>When a component was installed from the preferred publisher, Update Tool, 
+Software Update and desktop notifier will look for updates to that component 
+only from the preferred publihser.</p>
+
+<p>When the package was installed from a non-preferred publisher, Update 
+Tool, Software Update and desktop notifier only list the updates that are available from the 
+repository from which the package was originally installed.</p>
+
+<p>By default, Update Tool lists only the most recent version of each package. 
+You can use the View -> Show Recent Versions command to override this behavior and list all available updates from all repositories:</p>
+
+<p><b>Modifying List of Repositories</b></p>
+<p>You can modify the list of repositories associated with an installation
+image by selecting the image of interest and performing one of the following operations:</p>
+
+<ul><li>Right click to display the context menu and select Properties...</li>
+<li>Select the Edit Properties... button on the Image Details tab.</li>
+<li>Select File -> Image Properties from the main menu.</li></ul>
+
+<p><b>Local Storage of Repository Information</b></p>
+<p>The list of repositories associated with an installation image as well as
+local copies of catalogs and component manifests are housed under the 
+directory .org.opensolaris,pkg/ within each installation image.</p> 
+
+</body>
+</html>
+

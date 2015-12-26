@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>回退更新 - Update Tool 联机帮助</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+
+
+
+<a name="tasks-backing-out-updates"></a><h4>回退更新</h4>
+
+<p>&ldquo;回退&rdquo;是指将应用程序恢复到应用其更新之前的状态的过程。该过程包括删除作为更新的一部分安装的软件包版本，然后再安装这些软件包的所选较早版本。<p>
+
+<p>执行回退的最有效方式是使用 pkg(5) 命令行界面 (Command Line Interface, CLI)。但是，执行回退前，应参考有关更新的文档，以确保您所设置的与该组件关联的所有定制内容在删除该组件时都将得以保留，且在重新安装所需的该组件的较早版本时能够被识别。大多数的组件删除和重新安装过程都能够保留用户定制的内容，但在执行回退过程之前最好先阅读相关文档。</p>
+
+<p>还要考虑对整个安装映像目录进行备份。由于安装的组件和关联的许多（有时为全部）定制内容均包含于普通的安装映像目录中，所以复制安装映像目录将为您提供回退过程之前的安装状态副本。</p>
+
+<p>要使用 pkg(5) 命令行界面 (Command Line Interface, CLI) 执行回退，请遵循以下步骤。</p>
+
+<ol><li><p>使用 <font face="monospace"><b>pkg history -l</b></font> 命令显示对应用程序映像执行的更新活动的详细日志。</p></li>
+<li><p>往回浏览历史记录日志以查找对您要回滚的软件包执行了更改的<font face="monospace">映像更新</font>操作。</p></li>
+<li><p>记下<font face="monospace">映像更新</font>操作更新的软件包。对于每个软件包，记下旧软件包版本和新软件包版本。例如，历史记录日志行</p>
+<pre>pkg:/pkg-java@1.111,0-31.2172:20090608T230741Z -&gt; pkg:/pkg-java@1.111,0-32.2220:20090703T010710Z</pre>
+<p>表明 <font face="monospace">pkg-java</font> 软件包已从版本 <font face="monospace">1.111,0-31.2172</font> 更新到版本 <font face="monospace">1.111,0-32.2220</font>。</p></li>
+<li><p>输入单个 <font face="monospace"><b>pkg uninstall</b></font> 命令，同时指定<font face="monospace">映像更新</font>操作更新的所有软件包。例如:</p>
+<pre>$ <b>pkg uninstall pkg-java</b></pre></li>
+<li><p>输入单个 <font face="monospace"><b>pkg install</b></font> 命令，同时指定<font face="monospace">映像更新</font>操作更新的所有软件包，包括其<b>旧</b>版本。例如:</p>
+<pre>$ <b>pkg install pkg-java@1.111,0-31.2172</b></pre></li>
+</ol>
+
+</body>
+</html>
+

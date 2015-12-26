@@ -1,0 +1,248 @@
+set name=fmri value=pkg://stable.glassfish.org/javadb-demo@10.6.2.1,0-1:20101213T190016Z
+set name=authority value=stable.glassfish.org
+set name=pkg.summary value="Java DB Demo"
+set name=pkg.description value="Java DB is Sun's supported distribution of the open source Apache Derby 100% Java technology database. It is fully transactional, secure, easy-to-use, standards-based (SQL, JDBC API, and Java EE) yet small, only 2MB. The Apache Derby project has a strong and growing community that includes developers from large companies such as Sun Microsystems and IBM as well as individual contributors."
+set name=info.classification value="Databases and Tools"
+license 2b8b815229aa8a61e483fb4ba0588b8b6c491890 chash=06741e61703647014fca12c4e203a0f3b6c06bf9 license="Apache License Version 2.0" pkg.csize=3968 pkg.size=11358
+depend fmri=javadb-common@10.6.2.1,0-1 type=require
+dir group=sys mode=0755 owner=nobody path=javadb
+dir group=sys mode=0755 owner=nobody path=javadb/demo
+dir group=sys mode=0755 owner=nobody path=javadb/demo/databases
+dir group=sys mode=0755 owner=nobody path=javadb/demo/databases/toursdb
+dir group=sys mode=0755 owner=nobody path=javadb/demo/databases/toursdb/log
+dir group=sys mode=0755 owner=nobody path=javadb/demo/databases/toursdb/seg0
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/localcal
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/localcal/lib
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/localcal/src
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/localcal/src/images
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/nserverdemo
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client/org
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo/scores
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo/scores/app
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/common
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/common/org
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/common/org/apache
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/common/org/apache/derbyDemo
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/common/org/apache/derbyDemo/scores
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/common/org/apache/derbyDemo/scores/util
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/server
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/server/org
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/server/org/apache
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/server/org/apache/derbyDemo
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/server/org/apache/derbyDemo/scores
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/simple
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/simplemobile
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/toursdb
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/data
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org/apache
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/vtis/sql
+dir group=sys mode=0755 owner=nobody path=javadb/demo/programs/workingwithderby
+dir group=sys mode=0755 owner=nobody path=javadb/demo/templates
+file 177542720494912b266e31039941a98bf09626ff chash=917d18f375e032e053c8842ba31b64e1b0840b89 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/log/log.ctrl pkg.csize=47 pkg.size=48
+file a07aa69bfaf7e197b4c54fe475b4efddfb711a1d chash=f0095758ab8dd5d0f301fb9d0a1cc62b28d642ba group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/log/log1.dat pkg.csize=182187 pkg.size=1048576
+file 177542720494912b266e31039941a98bf09626ff chash=917d18f375e032e053c8842ba31b64e1b0840b89 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/log/logmirror.ctrl pkg.csize=47 pkg.size=48
+file 8f68ec14b9792f922de68ac2d335b3a098859cca chash=1c983066c459b0019327f7bb50eaf814479e3f08 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c10.dat pkg.csize=399 pkg.size=8192
+file 2c1a16d36082709f11eb85492c0205b6c40886be chash=a3a1cf023202ed5ae09c5fdff650e544e466d9a0 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c101.dat pkg.csize=389 pkg.size=8192
+file cab6415af522848904382787bd6eb2c55789c1e9 chash=d757e5283df295b2f43e4066d086c340e1091add group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c111.dat pkg.csize=452 pkg.size=8192
+file bdd5de95844944d480f8a7bc36cbb99a62d7f200 chash=ee573a4812717bcc979783eac9889d424dfa8279 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c121.dat pkg.csize=356 pkg.size=8192
+file b8f977a7a9d5899a7bae7d14e7197c0f14928bbe chash=410e22c7295cc2668599e49490624d37928b2eb7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c130.dat pkg.csize=351 pkg.size=8192
+file f1b8343b636da783b796f2f4c59703a4178fbc48 chash=9c10abfb39188c8557faf2f1b06a83acdec85cde group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c141.dat pkg.csize=330 pkg.size=8192
+file 6efc0f4639b8b617d1e5d04fb8653877654ef33d chash=cbe2888ee9c3cd8852dc7cf3f3ce2d5103ea244d group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c150.dat pkg.csize=392 pkg.size=8192
+file 8c647402976e7e96a6da4effad55baa0f49463cd chash=5698ef498c8d5cd74367d3156dc90a9b398e7654 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c161.dat pkg.csize=361 pkg.size=8192
+file e494d5dc19853419e529a2e9c0cd00424f19b56f chash=925384dc129772cf9330b9e21743be8bdfaa10be group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c171.dat pkg.csize=374 pkg.size=8192
+file 80171446ba6b2473f64eea62b01a2742361743a9 chash=d6aef69323f48cc2e1661d68f0ef2f37edaedda9 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c180.dat pkg.csize=4111 pkg.size=32768
+file 458e8814256dafecc0b6da7384164a9c98fa77b1 chash=0e57e93d866d53dfb1e0e8ea972fbe1fb1866758 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c191.dat pkg.csize=1709 pkg.size=16384
+file 87cc04d9bc9a1131f8a675628467f81e775db1e9 chash=8273a52ac3bb7ff1110e58231f5a9410b24b5a3a group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c1a1.dat pkg.csize=1220 pkg.size=8192
+file bb8073937ec4944b36ccb05803d45c82ea62f7dd chash=ff89f303d47cfcb4b4a56e826ea85e7a93a7124f group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c1b1.dat pkg.csize=1045 pkg.size=16384
+file d721dfbc90c31d448f118c1e51a65fd275313b40 chash=eac99cdde20c6192cf7ef872262a88026ec4e78a group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c1c0.dat pkg.csize=170 pkg.size=8192
+file e9babe8aa04fa74de27e1f4f7776b1d6f5519b3e chash=c0727145c3b18bd1d1940436aaf12b05c6f017c1 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c1d1.dat pkg.csize=191 pkg.size=8192
+file 9f1e9a459115623c87a02cd12dd415a5443af2e4 chash=a9410b6af4e689c19c535e80c44e4dc84aba537d group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c1e0.dat pkg.csize=310 pkg.size=8192
+file a8c3cfeee3a13ed4c8df78ac60d0ae8bd7c88c35 chash=a2b4e0afbd9c77a1cf8104ff305972dfeba45b2f group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c1f1.dat pkg.csize=259 pkg.size=8192
+file a27113e25439ddb8db36cb22e75fe6f85300b623 chash=1daa4e891cf72a18b328c404e73285df67b1e0ef group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c20.dat pkg.csize=3153 pkg.size=32768
+file 3dd9863642e8e569c9fa7b5213fe452fc0d6a4c7 chash=1566ed6ff66d1936fd71a33bb5ba5dc2aeb1bed5 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c200.dat pkg.csize=267 pkg.size=8192
+file 4fdb429b2acc4d0e263c345b0bcaf95d412d8607 chash=a5e01389a79086bd7c08872dc047dd4024a87257 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c211.dat pkg.csize=258 pkg.size=8192
+file 784de340beff3b9050f89f23a4c20b76673a41dc chash=fcd6822c336003149af4727692a8ddbaef52be93 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c221.dat pkg.csize=260 pkg.size=8192
+file f6a16df984fe08396ae5040d74fd0a8f852488ee chash=b3f78312312c46a1118ce3db6151a813d559ee47 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c230.dat pkg.csize=17063 pkg.size=147456
+file 2f503598993005755e86db7fc31642547db66bc8 chash=ae6c9fc1b3ff44081378ec6d43057c875040ea85 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c241.dat pkg.csize=1133 pkg.size=8192
+file 9bd0bde576910da2e2d17dee54713f3c02f1376c chash=25d2d46744f5f46542e4e609930b7d0daa3b0cc7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c251.dat pkg.csize=1631 pkg.size=16384
+file 947d4fdf785f41f90af010cba2ba2186498be5f0 chash=1aa64b46b19539016abe49d86fb0e3b76c2f7593 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c260.dat pkg.csize=170 pkg.size=8192
+file 2ba65eaea847729cee16a7c1db8d59bb30cf9abe chash=07723a8586999f25a71e74ec3eb2cdd2d586fef7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c271.dat pkg.csize=191 pkg.size=8192
+file 64ddc571edaacd2e2fdf49444b7002c069557aef chash=3f6f780f0ead13f8ff074e5746f5bdae3119f49a group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c281.dat pkg.csize=191 pkg.size=8192
+file 227b39ec3eb1881a275437bd8042c392a9e06fe0 chash=69993b5766d52f6f0e6dcf4c6675f91bede9350e group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c290.dat pkg.csize=549 pkg.size=8192
+file fdd993e4ae4d0dee07e193d99540049126ff2341 chash=1c978e32be56716e7f1c49e16187568aeacaa03f group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c2a1.dat pkg.csize=261 pkg.size=8192
+file dab01537b48374690bfee292c39a1c28cc75628e chash=8d4ca79513d062845945467b279f3a322298217a group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c2b1.dat pkg.csize=265 pkg.size=8192
+file a79eeca3a72e114c18f10493c053bb32e10ec502 chash=33bd79ac9d58321a8e2ba062b7326d0af8d8ed9c group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c2c1.dat pkg.csize=279 pkg.size=8192
+file 92de3fb19ddee52932ab42f93607df8f714ddfbc chash=b8dc40184cabe3380289b76de0919bf698c2b1ce group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c2d0.dat pkg.csize=175 pkg.size=8192
+file d51866dfec2fbd9690a4c8d6e564c70bdef609d0 chash=7569fc28df65a43bb846fce08022a566288844c7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c2e1.dat pkg.csize=193 pkg.size=8192
+file 7493930b6b3188ea8d8a714bae51d8bea71d432f chash=0c45f2cf243c2493b5f944910843bda24dcdfdcb group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c2f0.dat pkg.csize=185 pkg.size=8192
+file 12f2b6a5ce4ff18531b574225c381bc0a053219d chash=2c03958c8a211eb56e00611c4641ec35cfbe245c group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c300.dat pkg.csize=171 pkg.size=8192
+file 444ccf38531929f84cfa0c85f0dd9b30082e8e5f chash=fd97f0da987f166eb253802b9f911d2c5ed6796b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c31.dat pkg.csize=1613 pkg.size=16384
+file 88fdcdf0d694f8f38ae03ff83e4a10e35092c2fa chash=25471ead182519255715081f72da2bff17629888 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c311.dat pkg.csize=194 pkg.size=8192
+file 5094f5b9716c16ccadf641f332d863a50d5424e1 chash=dc2a2bb9c599e0c5867347b1fbc7b331571211d7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c321.dat pkg.csize=192 pkg.size=8192
+file 9c054d5a8c4a15cc1b6490f01e2f3bf0a0ff5c69 chash=2617f4af1e3fddd44dd42b1271dc72c09f9fb746 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c331.dat pkg.csize=191 pkg.size=8192
+file 0c693d1c852191bc9cc8b5090b0773e03bb081aa chash=6f568a75f71b67ef6f142f449a94fec445e9140c group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c340.dat pkg.csize=175 pkg.size=8192
+file 58da0f7208b92505394cad608c117a13acd2ae7a chash=06b163c359a658e9a705aaef16d0f4eb4cd39273 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c351.dat pkg.csize=199 pkg.size=8192
+file 9b4d54c41a62c7178c6db916a626ec783e406b09 chash=9f3686eab7947e961ab076753d09085ec46c62e8 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c361.dat pkg.csize=193 pkg.size=8192
+file 75f5d057ce4f5321834080f2aaa5940c55bab014 chash=41856894a77685b625c732d64249aa0743f7d923 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c371.dat pkg.csize=193 pkg.size=8192
+file 6bd897fc8ff1a510a3d2c399b51e9fdba7b7ab4d chash=d909530b170cbacc3ff13ce7883f4b525a3903e9 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c380.dat pkg.csize=360 pkg.size=8192
+file c105b295fcc073d5054b06f8828d6d5f6ab96dce chash=74f555eb5240a1f69755acc58a67db9e440b4c5b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c391.dat pkg.csize=344 pkg.size=8192
+file 77fea254b805297a0e2d81ce5a2eb9618afcbc22 chash=dff7e741a84beef94e00a09de7ab242703d256e8 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c3a1.dat pkg.csize=317 pkg.size=8192
+file 9d173c63151980b2c3cacbaea26b83664056fa4b chash=2b4cf134487eb8c251ccb70be627a4eec31fb310 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c3b1.dat pkg.csize=315 pkg.size=8192
+file 839069ebb8687a8e98ae3d0423707a96efcbcff1 chash=de348a8c6b3d16b0c0e4e240fb316cbf359e98c1 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c3c0.dat pkg.csize=171 pkg.size=8192
+file 5770f1385d1fd3839401ee3d44d5e533cb795e8d chash=c736ea99ebab104180f602b25b2ca8d431b3c9da group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c3d1.dat pkg.csize=196 pkg.size=8192
+file c30c2a9014642441c49e607297653ed0e8d386eb chash=097bb7ff856e2ca826e8536445a5a86e07abbc4a group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c3e1.dat pkg.csize=194 pkg.size=8192
+file ef2343d3a6cf6f9b7fda1264e5fc11c62cb452ab chash=e16371ae98efc4eb593e3e553cb6e7b3b44e014b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c3f1.dat pkg.csize=191 pkg.size=8192
+file b3094bc43134a241749302a49ec4da544aaf680a chash=c4124647714dc01bf8820226cdcc42d41399b422 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c400.dat pkg.csize=174 pkg.size=8192
+file 6d5926497204a1f80083c1aa4cc4ca69ffe0d004 chash=e40008b6993e251ae4b4ad2a98c589086cfc1dec group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c41.dat pkg.csize=1657 pkg.size=16384
+file 3f71ef83729d9f777944acfde168b8b6936fa8ce chash=a76f34f0de3d932638b055abadb156dc63d9364c group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c411.dat pkg.csize=191 pkg.size=8192
+file 523b458b9b75ca7a1f59f3f2e5a62a404935424b chash=1852535741310b0c8b58c30800ec0e748331e359 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c441.dat pkg.csize=192 pkg.size=8192
+file 2279efe107820e6a75c2e905f1f33c5929a9f2d8 chash=f2fdc670b4de4c63bb1e41ce0b2fa9432a8dabc3 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c461.dat pkg.csize=195 pkg.size=8192
+file 402b7108d6678102832534580911635269f2d10b chash=e63ea4b96624bf2cb04ae23ca2d9d02c99b30ff4 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c4a1.dat pkg.csize=1206 pkg.size=8192
+file ed4903367b75a723a21bcdd179dea873ee41f13e chash=295fa1e2e130288d412aac6d51196d1735b54637 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c4b1.dat pkg.csize=1966 pkg.size=8192
+file c2d92b882b42203f50f97c23557f2ffd00d9e38c chash=6e0705b694d4c4a1f49e25cffe6db1b9cc826984 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c4c0.dat pkg.csize=2591 pkg.size=12288
+file e02919bdaa4b678b0f183f558f5c9025aa68c03d chash=f3b583536134766d4497dccdb94011f832375e1b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c4d1.dat pkg.csize=895 pkg.size=8192
+file 5990ad5203eb201f1b829b0bfe5b1d59a64a7595 chash=0e2ec773f2339c4dce2e22ac108a8f714c20c9e7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c4e1.dat pkg.csize=905 pkg.size=8192
+file cd1d180295756a4bd4561b7ccb8eca02dca5b70c chash=24e3831a43f963bf89f1a50e0d810c8aa2e3ee8b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c4f0.dat pkg.csize=9559 pkg.size=69632
+file 0c9829951ce805c911f82201e2366fed425f402f chash=beb2dcb8cafa4a07643998f9ff9a53fa29a7f84b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c501.dat pkg.csize=4370 pkg.size=28672
+file 0af347ddd98070846375add81957b29aee41314f chash=e4aa62b81b1959345b19df692163132fcb9217e4 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c51.dat pkg.csize=1235 pkg.size=16384
+file e4a65ba17a7af7f1509b22b9dd92672c48538da8 chash=65a86e07e2cfd0cdf2b3b5a51e18b96a51024473 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c60.dat pkg.csize=1027 pkg.size=8192
+file 624596ae05bab37b4d98be7593abff692bd683a2 chash=993e886d8e197ed6e8d73b054f3e18dfb48aa9f7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c71.dat pkg.csize=783 pkg.size=8192
+file 7b71765447b115e8445b0a2c9727104443e84271 chash=4b186fbb0a3de4cc07ad18e074dcf2efe94e8b36 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c81.dat pkg.csize=720 pkg.size=8192
+file c7aaf8fc8f18f021c8d23ef3ce242bebf0c6da98 chash=6a2c713752cfebd602f9610118e8c35e5269a60f group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c90.dat pkg.csize=4248 pkg.size=28672
+file dbf80f1e47f043e89ac1b629b85394b41e70f4c8 chash=00454970a531de0288345c42040d4e160dd751fc group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/ca1.dat pkg.csize=3992 pkg.size=32768
+file a4b5f85509b71627c9fd657bd4f337bf93f8147d chash=ba92371904b94f8fbdf7729f6c5ceff73a805e5e group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/cb1.dat pkg.csize=1406 pkg.size=8192
+file 5adcfdc7046b5787236f0a33996da9b9f005cc81 chash=6e4aacdc61a512a547c38e3abb80e95c61541ae5 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/cc0.dat pkg.csize=445 pkg.size=8192
+file 4d4c95a3cff9bc48e99e2fb78465bb7e28c3f359 chash=475d7ef1171d8d4fa8b25987d15e5fa51e3bbc77 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/cd1.dat pkg.csize=356 pkg.size=8192
+file dddb16f7049ca6545885895124bc32ffdc2bdc30 chash=8abd27ef1051fa149b69bf8bad44b1ed05a7fca5 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/ce1.dat pkg.csize=390 pkg.size=8192
+file 79adabdb36a145865f958b8f0a97b6cdbeeab1d9 chash=7e383d42974f2bb33bee1bbe9cddd85d622907d5 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/cf0.dat pkg.csize=612 pkg.size=8192
+file d15fff30bd60b80215b2d540761d852831e9b08f chash=445d58ae83ac8cf9a26bb8626a5bc19124c852ae group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c421.dat pkg.csize=194 pkg.size=8192
+file d93806bdaa4081993538a6c6fcb0424b5fcdfdf0 chash=ec9c16b18fb453eb8779da7ce92b7047e25cab72 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c430.dat pkg.csize=171 pkg.size=8192
+file 78646a43d8488bc3ce74b86e304d4a8e20930aa6 chash=14a9ba90a2872d03625f7759ab1f2a4765b64e1b group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c451.dat pkg.csize=191 pkg.size=8192
+file 5850f66b45512576773e4c4dfef53091af380a05 chash=0fdbfdca5539eb9ae1ddffeb418f50dd7796bda3 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c470.dat pkg.csize=308 pkg.size=8192
+file f8c1cdeff5b12d87150c93a0fc4980b8831a56a4 chash=a88c48290f860aa7968d83401cac6297c99ca6e1 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c481.dat pkg.csize=220 pkg.size=8192
+file 924c26b4d7c4458fb2b4730d02bdc2010af70e76 chash=25b2eec761c068850bf53a69e0baa931c0ead106 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c490.dat pkg.csize=2311 pkg.size=12288
+file ce7ef9db41081b0f055fbf3227cc7679f2dbd7c2 chash=4553f330a067d2b4eec1c63f42bbfb1d9121a94d group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c511.dat pkg.csize=4357 pkg.size=28672
+file 1009cebd74e770b4cd5673d1ad1ff11b1575c9f2 chash=710df44515bbd7589378c43adeb8276461cb405a group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c521.dat pkg.csize=4815 pkg.size=36864
+file 1280f4ecde472286c2d174db87c90ae1a5a35830 chash=4173f6b5b9209315e5f93234c7581547ebb8d742 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c530.dat pkg.csize=3258 pkg.size=36864
+file 31b798a85fb9db96121a2e385a2d970b5ee49f75 chash=5d20de7d1e07707e5a6fc8978cca73f1f0835603 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c541.dat pkg.csize=4943 pkg.size=32768
+file 8ba4c69ca7d59dd7c7115bd1946f6c7d05faefe5 chash=1471b661bd7278cb30ddbf520544d8b83dd530d7 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c551.dat pkg.csize=4129 pkg.size=32768
+file fcccdbce81c086dd9a9b2ba83c5f272cdb77ca3b chash=077808ea125112feab9512071700ba8f6492acb4 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c560.dat pkg.csize=9909 pkg.size=65536
+file aa4767264c633a9b93617bb66a0c68c7c486da74 chash=2f982d42a81b363a89df4e58affce895dcc4850c group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c571.dat pkg.csize=272 pkg.size=8192
+file 2a7d6745d60bf76efba7e4268e7ae1105cb2de43 chash=98a18f57060c87b04c636a43bff0ed4aecce4ddd group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/seg0/c580.dat pkg.csize=178 pkg.size=8192
+file 5123c2ac225b97e9228f328cd23326ed534c3f50 chash=85f0ac36ceceab79773e696bde06e9d3ceeb71d2 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb/service.properties pkg.csize=371 pkg.size=885
+file ef6382f6b58979f4b63c956e2f7f9e0d44232fe0 chash=aa5ec7aea969791c560e15eef82efcb5cb23db26 group=sys mode=0644 owner=nobody path=javadb/demo/databases/toursdb.jar pkg.csize=293415 pkg.size=314638
+file b3923a9ce2a1818a1ddea2d1149ebaf230d18609 chash=9f9665754572922244932ff503708894c796a689 group=sys mode=0644 owner=nobody path=javadb/demo/programs/csfull.css pkg.csize=2971 pkg.size=14504
+file 09ebe1d440bff055c45f8daf988e311489147deb chash=45145eb10819d11b50b3517ce7d2014d8490d466 group=sys mode=0644 owner=nobody path=javadb/demo/programs/demo.html pkg.csize=2040 pkg.size=4732
+file 992db2c60c1cdda7a3e2a2b13016ab31736ef648 chash=4edc79c7ed19aea1338a5feedc774ad4a37ba899 group=sys mode=0644 owner=nobody path=javadb/demo/programs/derbylogo128_bluebg.png pkg.csize=3996 pkg.size=3990
+file 82539017d55fe5144c438a21d74af9c672eb77af chash=7db325e11f5a8c54eadef7bff1a36a26b0fface5 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/README pkg.csize=3615 pkg.size=8431
+file de9732196458a639a5b357d33e373c0216540303 chash=6ef7dd156271a1a1eb44f1bb6a0dc139db900a76 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/AddEventRequest.java pkg.csize=936 pkg.size=2247
+file 9c948cf38d7c7a044f0f9bbb59d0edd6bf3cabf9 chash=240d88f8713e0818ce3c4722725362c531e5a877 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/CalendarController.java pkg.csize=3514 pkg.size=13948
+file e3abbf1fc7435b89874c6f47d3b1c9d3ef484c95 chash=2e771e3fbcf1bb996af9d25116e1a9346782a6cb group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/CalEvent.java pkg.csize=1248 pkg.size=3596
+file d089c40d8a0409f52722cb8f0b02500204f4a8d9 chash=c40d3fe6b0a4f3d624732396a2b235ac7cd11168 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/DatabaseManager.java pkg.csize=2226 pkg.size=7634
+file 578ade0c020fbae0cf7b5c732a42aff1a1f275af chash=0083d21ecbd0d44aa47e7d3a044651c150b07c28 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/DeleteEventRequest.java pkg.csize=805 pkg.size=1859
+file b7f7fe4cefc8bf091aef0c88804b6d7ba062a108 chash=613c2d93d8aef04e05cd9a8a74cf6ae1579975e3 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/EventManager.java pkg.csize=1811 pkg.size=7631
+file 70e49350c399585ce1bab6d478c67df02b6bcdd2 chash=c5f013cacd169b5891c7303bd3e776c22c4d1dad group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/GCalendar.java pkg.csize=4405 pkg.size=16624
+file 55185b7c01fb075cc67ec7e2d7a67d9cad0eb405 chash=7806d98f1ca823a966a2c01c30a98a0988a22f75 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/GCalendarRequest.java pkg.csize=800 pkg.size=1597
+file 66c72a681e292e4753c711edd303b7392ec5338e chash=afd76bb8c8e1dd445f0c516105eae42103e58375 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/images/delete.gif pkg.csize=821 pkg.size=977
+file 7345e4beca2e9ad4af013603d034aeb11199eff5 chash=aa59895943165c204d2faa2f97b919004a279037 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/index.html pkg.csize=1789 pkg.size=6719
+file d4f4b5b80a0ce1165959bd3f0c18527942835f7e chash=baf2ce6aee16b1c266edcea32459601b7bbc253c group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/localcal.js pkg.csize=4055 pkg.size=12584
+file 48fecee985bd9d6eed5f7ca08a54f0c32f2f5420 chash=7474cf4bcc388b740acea4dea2a5b7c4c12322f9 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/NetworkDownException.java pkg.csize=633 pkg.size=1206
+file 2596410dc69affce417ae5a043d43f00a21a16f5 chash=f977feae9f7f8508a73a1b2b8486870832614490 group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/RequestManager.java pkg.csize=2822 pkg.size=11776
+file dd6f1ea6d357492b0f570fe9b827fae76eb6c902 chash=131745dba1e85ccf49e263f912037d9cfdc6e67f group=sys mode=0644 owner=nobody path=javadb/demo/programs/localcal/src/UpdateEventRequest.java pkg.csize=913 pkg.size=2145
+file b5280528081fbf16fcc22ec793ed169867ec0bfd chash=f58c2936c71b86d789ef994c3191d05342b9de70 group=sys mode=0644 owner=nobody path=javadb/demo/programs/navbar.html pkg.csize=1056 pkg.size=2376
+file af3af468d4ad70ec61afe7ff1ccbddf4324787b4 chash=779d2ffade8541097a92700a16cc5b510bc9bc66 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NetworkServerUtil.class pkg.csize=638 pkg.size=1072
+file cb6ea14eef8e26797fc05343c31edbb95af60905 chash=b7bd3f62c803b75f35b18fcf98e9aa9d2cdab7c6 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NetworkServerUtil.java pkg.csize=1106 pkg.size=2813
+file 9df2a0fcc484c968683f7d8e1d8617ef4a0378c1 chash=9e478713ad26aaaefcf83eba683358e777f42579 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/nserverdemo.html pkg.csize=2854 pkg.size=9020
+file 5dc0bd66f97b22c16e78fa569cad6e4f79b42634 chash=06306f8f702e55737739f2b24e1b5d401712b804 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NsSample.class pkg.csize=1975 pkg.size=3645
+file dca557a06246a8335e92459608e3d6dbfe823c3a chash=5189c6c019243bc0e2cb29af688197b32a411ce2 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NsSample.java pkg.csize=3173 pkg.size=8669
+file f4f97f96e4c359664ad0cf8e92d0628a0e5bf6ef chash=99740d2711de1aa5ee4b987cffedc3e689411070 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NsSampleClientThread.class pkg.csize=582 pkg.size=1035
+file c576ce604e8891ce1b540646ad1a838984b6e939 chash=43428407f50166d3d3bfdc8c64692cbf90b3d76d group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NsSampleClientThread.java pkg.csize=4006 pkg.size=14179
+file 52df358c644fb32562f376eb4bac28d58686471f chash=078f2b90197b9d4f2c6e5e76186de1a9ac7448b0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/NsSampleWork.class pkg.csize=3638 pkg.size=7557
+file 0e5f8a45298ab135fc4058c126a5b914e450bc88 chash=63a48fe27b2eac72202cbdc709b930d36f3753c0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/readme.html pkg.csize=1293 pkg.size=2884
+file d2fb9ad08eadb011e3b85ebb53c7291ee2c309eb chash=9b1d8add068e7decd78ebdf65b5a4b1de1c3cf35 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/SimpleNetworkClientSample.class pkg.csize=2494 pkg.size=5067
+file aaa72e6db3eee66beec96e94b5b9bb3feaef30a9 chash=2b77e3cac75e1bf5e50fedd92d9159faf98057ee group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/SimpleNetworkClientSample.java pkg.csize=2927 pkg.size=8918
+file 28207cac214a7a219b8489a3019003a1d5e369ba chash=9cbe2272012292aa11e073ab92942210ad6fb1ad group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/SimpleNetworkServerSample.class pkg.csize=2082 pkg.size=3930
+file 2942306530092e5b866193ded2715638cc8253f3 chash=4370b5fd33c93a30b34e8a32677d7596d48e0f58 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/SimpleNetworkServerSample.java pkg.csize=3555 pkg.size=10148
+file bdbb431ef1a29d86c4e034504e9b33f3fe4000f1 chash=814576bc1fdfef89aa579b925ea580ffedafaf65 group=sys mode=0644 owner=nobody path=javadb/demo/programs/nserverdemo/simpleserversample.html pkg.csize=2642 pkg.size=8197
+file 9dd752f8b97731681c8e49b0a21ccd9bc474511f chash=71bd1efe4c50e7ff2d11ac097f569264d2380625 group=sys mode=0644 owner=nobody path=javadb/demo/programs/readme.html pkg.csize=699 pkg.size=1221
+file bac9888808e61cc5d5795ca4eaafd84053b9f4d9 chash=809e9fbf0a131ed633b21eec26b83047cefc2769 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/customizeMe.properties pkg.csize=592 pkg.size=1081
+file c9d6753c22b1c29454581b131f30ac7b71a81c86 chash=d78fdecd95471fc304af18a609178e93c35b8f61 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo/scores/app/Scores.java pkg.csize=1593 pkg.size=5024
+file 24222ac42647cf96074956030603259a4d14c746 chash=8863724064bdcba3b5195abca5b120c79a433e46 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data/Data.java pkg.csize=5209 pkg.size=30148
+file 31bb282bfb13ef4d071a21b88f5bae9e57a70061 chash=3e508de3ac21e9b96d0d978909f256e31b932bb2 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data/Database.java pkg.csize=3425 pkg.size=17214
+file f9586823f69934f9fd36779c53d1ba2ece1b57f5 chash=2aae3fd2f777b273defef9318012207ccc62eed1 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/common/org/apache/derbyDemo/scores/util/Logger.java pkg.csize=1140 pkg.size=3721
+file 4c1a22536bce03b5e8b5f2d799fa5db699dde461 chash=f0025031ab094a1a8ea9f34b96355fc6c86d66fb group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/common/org/apache/derbyDemo/scores/util/Utils.java pkg.csize=1713 pkg.size=6604
+file 98dc55beafebe3de1ba81cef4b195a0ecf430024 chash=5aba88a31e802e269753246b34e7cacaeee121c4 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc/Functions.java pkg.csize=2028 pkg.size=6356
+file 2b291e7fd4f872e75a44ae4b461c48a2a0ff6988 chash=a3b6d015da36e9dbc1f9a438a2211c174259595b group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc/Procedures.java pkg.csize=1368 pkg.size=4088
+file 9fa47360daf69dfabb4e887d533876805f149486 chash=92ca535fb9cb1e177306e10a1a549eebcfaa5612 group=sys mode=0644 owner=nobody path=javadb/demo/programs/scores/README pkg.csize=937 pkg.size=1805
+file 07acbda32905bb5f10c83e11705ec6bf18c01cc5 chash=2d0e9e48232ee9f34f5d6f40d93379d5b102060c group=sys mode=0644 owner=nobody path=javadb/demo/programs/simple/derby.properties pkg.csize=515 pkg.size=883
+file 644b850e9c105974da653ffe2b05ed85f7037554 chash=421e7b582a5628261cd3b792074e4f60dafec3f0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/simple/example.html pkg.csize=6116 pkg.size=24525
+file de27ddafe988d183201a20264bf5e134fa50cf86 chash=332842366bad2de8c1a2c1e3bb07ae3bf5d9b150 group=sys mode=0644 owner=nobody path=javadb/demo/programs/simple/SimpleApp.class pkg.csize=2772 pkg.size=5178
+file 1cb72d14e6ffefcedb031c12223ab0f6ca88077e chash=2727fb5ee1720ef977b6ed095af1368b3ce7a366 group=sys mode=0644 owner=nobody path=javadb/demo/programs/simple/SimpleApp.java pkg.csize=5932 pkg.size=20134
+file 07327c1d34848799a3dfe63d76116fd254d3a90a chash=210d16d14c3012f0d8c719faa664b686ac8b5aa4 group=sys mode=0644 owner=nobody path=javadb/demo/programs/simplemobile/readme.html pkg.csize=4581 pkg.size=16019
+file c1596e0991cd70bd240ce2dd6f7b8c4365f17482 chash=c4ae57dfe93410ae0e45aef58a91555e93b7939c group=sys mode=0644 owner=nobody path=javadb/demo/programs/simplemobile/SimpleMobileApp.class pkg.csize=2305 pkg.size=4172
+file 211c24cbd30075b792dbe33541f947383ec35650 chash=4febe24bb86f793bc90f9c49815b4b3e0ccce2ab group=sys mode=0644 owner=nobody path=javadb/demo/programs/simplemobile/SimpleMobileApp.java pkg.csize=4873 pkg.size=15881
+file c5db816bc641584ec1618d497e6abd86a432fe8a chash=c72b047671eddbbd30da98b8003f7acc0052d8a7 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/build.xml pkg.csize=1012 pkg.size=3229
+file 56ea5618fb345409624be7cf5fc002a925cdb04a chash=4d0759ed94f386346f869eb59a44aa28e7eeea35 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/cupisle.gif pkg.csize=2611 pkg.size=2870
+file c2605e58e83cae505b3360f72014ac6f5abec465 chash=00d5b50044f503073bc3c1cca6ae6c4e695f8740 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/disconnect.sql pkg.csize=515 pkg.size=887
+file e25286869cd859b309c3eafcac1f47dbc2415de9 chash=803386bf259b6574f3dd3f28b60688cf37d5a035 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/insertMaps.java pkg.csize=1376 pkg.size=3882
+file afa15196a3e8f6ffca282af7d042ce6f2ce35bfc chash=66a50b8c5b87311af100c5362c57d073ba74c807 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadAIRLINES.sql pkg.csize=577 pkg.size=984
+file 240d5a0f26fd11b2d94c95d473c7d06b51a1565a chash=f986b2ec2170e46dde19d3f4f2729c7e4ccc3089 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadCITIES.sql pkg.csize=2172 pkg.size=7561
+file 95ac0940175c74c0f3b889e85523c1b7c2dd6cf5 chash=8b9ae5c3ae265d60c8257295c0f1ffb641f64c69 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadCOUNTRIES.sql pkg.csize=1713 pkg.size=7777
+file 40889d9e7552a8bc78a34619e5556bffd2dbb62f chash=f7a4497369b0a599ee7829163cbac826be1025f0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadFLIGHTAVAILABILITY1.sql pkg.csize=1560 pkg.size=22318
+file 2f397ffa6a9070985cc38c748d1aee7ddede5b59 chash=698bab4e1ece41c1a064e82238069c4f3957bb49 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadFLIGHTAVAILABILITY2.sql pkg.csize=1399 pkg.size=17193
+file a215d5c426d6a46975ab9243b083d1122ff29263 chash=bdae5f4e27fe3058c3ae610741614c20b2e98db4 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadFLIGHTS1.sql pkg.csize=4251 pkg.size=26191
+file f40606c77c71b7452d669ed518a17c85f826c5cd chash=61dc47232122c2327f20470c03efa8da1b5448d8 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadFLIGHTS2.sql pkg.csize=4549 pkg.size=28772
+file 82940a60184ef104179e429c579b13fb35769e2e chash=5691eed0d4406c1c93e32f5b48e943a195f724ed group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/loadTables.sql pkg.csize=539 pkg.size=1019
+file c6638c89be545bb49ae777bdeb87ee2f2e47d8de chash=68d5d9374e615a391be3a9a9e6b806f221f52a91 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/smallisle.gif pkg.csize=1186 pkg.size=1483
+file c6e8273b62d97b6b7c1a5b06c0d829e42726e2b3 chash=e993ef407d4b96661a33e81180fe4931946e070f group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/toursdb_readme.html pkg.csize=3195 pkg.size=22997
+file 2b74afb168966637cfb90843655d6f617b8646de chash=be92263daab4431e938730c9b015699ef5f20207 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/ToursDB_schema.sql pkg.csize=1465 pkg.size=5182
+file 21b935bcb3e69edb85559bea81ea4d85fbc83423 chash=2b5ab650c012e3ac5f6671a1214f7dede2409506 group=sys mode=0644 owner=nobody path=javadb/demo/programs/toursdb/witchisle.gif pkg.csize=6772 pkg.size=7001
+file 8988cf2d1efee261f99fef77cfeabc64bdcb90d1 chash=5451efb0891234e6a9fd5c1d831919c88c4e1354 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/data/ApacheServerLog.xml pkg.csize=597 pkg.size=2138
+file e892736cc560e817329c71d1cc4538c39c8d81b3 chash=335a53a09a55c3a409eade82a0e1481df4318004 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/data/DerbyJiraReport.xml pkg.csize=15354 pkg.size=104325
+file 2b0c3c177312708cc21622331d4c10823d7308d7 chash=9b19e3aa782a16895a07d55e8b3994c5a7569348 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/data/svn_log.txt pkg.csize=188162 pkg.size=698761
+file beae23599423c1de6d545e1b7d435873acd2fc76 chash=9491edaf64de774da43338b72ba52e31891d58ae group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/FlatFileVTI.java pkg.csize=1728 pkg.size=6444
+file 05b8b225f2d18d57f8dd1328492928bbdb46a4b2 chash=b28d55a7681ce40879b6da0d8923091ab2c187a0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/QueryRow.java pkg.csize=795 pkg.size=1771
+file 59ba3217a65f80d9a0c15f34365ef3fc82b13c49 chash=0403217b1b5fc3d8cf55f847e04faf4175c98201 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/QueryVTIHelper.java pkg.csize=3219 pkg.size=13988
+file 3460e85c7642cdf06b65fa745ba9fa4b83596bcc chash=8443613e769665f0c8323e0251ef5919e50f61c4 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/StringColumnVTI.java pkg.csize=2966 pkg.size=17048
+file b69b8176d51c460a00588529eae2087d64e55b42 chash=b8399028e447c0c8769655a7531e78aa76645e42 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/VTIHelper.java pkg.csize=2079 pkg.size=7986
+file 2f87aebd909026cae40c6e53909d0fda33c16527 chash=cac81ab57d2e509d324b2449ec494b0d759ed0cc group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/VTITemplate.java pkg.csize=2811 pkg.size=33223
+file 1eef1727bcc4171380b0930b74aa6eb849782397 chash=d9e7748381b769738f55400d1bf0f2d11a73877b group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/XMLRow.java pkg.csize=868 pkg.size=1969
+file df43e5c78d14a7c75af0844d839dea97953762d3 chash=c2caaceb1671444e9a4781d3f50140bbcb21f52c group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/XmlVTI.java pkg.csize=3200 pkg.size=12305
+file 877ddb1f5d974dbd16cd98d57e59e4ce1086f800 chash=dbba8a9473e8d835ec0b36b13627276201e75cad group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/ApacheServerLogVTI.java pkg.csize=1271 pkg.size=4089
+file cde7665561e57cd4e03f24ffb2573557e02b796d chash=6c40009dd44e429e391b1628a153fb281207edd6 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/DerbyJiraReportVTI.java pkg.csize=1081 pkg.size=3088
+file 423282f30c3e183c5d31d2414caa5a1e39b62cac chash=83da67690b55b51058c32c7904b9cc00ef000f66 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/LineListVTI.java pkg.csize=1234 pkg.size=4008
+file dd1cd45cbee59c1ad9fc6cf882e10385acf96fd7 chash=026dc46c789e5c687cdd21faecbcb4d654cc24b3 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/PropertyFileVTI.java pkg.csize=1645 pkg.size=5703
+file 0d60b7e6eb266cc3186148e011a84e40e0360dbc chash=d3e8aa66377d18a990424fa77d439385d4173df0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/SubversionLogVTI.java pkg.csize=2425 pkg.size=8653
+file 38d88018c62584e39f0248ffd5544cafb859ce90 chash=42988adacdff86cde53c388a6a5111d5383b1021 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/VTIs.java pkg.csize=1456 pkg.size=5501
+file e7edc2d00e27d4c084357dc11fccdccc001c334d chash=c8ce987306d75ba244dd856fdb44710b5697402a group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/WorldDBSnapshot.java pkg.csize=910 pkg.size=2324
+file 09077b9fe494e7fb0338e6da4aec81725c46359b chash=24b1e161529fc15c1580f1d524f0334508a7b87f group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/SnapshotQuery.java pkg.csize=873 pkg.size=1974
+file 5b72c4b976a4069094df81d5f8d1ea13ca11162b chash=ed1921ba85fc3d3fc95c5ef4f886f718442a4625 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/Subscription.java pkg.csize=4220 pkg.size=22325
+file 7f1538147162e1a93796ce8f0c87e22fc981641f chash=fedd74a2d38eb8eeffdbdc5f998e1128a36119a0 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/SubscriptionSignature.java pkg.csize=844 pkg.size=1927
+file 0fbde371cf7660607e5e04ebcd356860d5ecaf92 chash=5361fba2d80f43d9adbd6f6d7a128acb058791ab group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/README pkg.csize=1125 pkg.size=2297
+file ee39771c728b66411ba20626de6966125bf13f06 chash=e5b92e205614a991caeb776a6ffb9e5a998baedf group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/sql/demoFileVtis.sql pkg.csize=1869 pkg.size=6504
+file 967d590a6b41d24fe0e62dd8b4f1e4c33cb5ac31 chash=42293b2c19e6b926e47fddc79b656fc90fcc0208 group=sys mode=0644 owner=nobody path=javadb/demo/programs/vtis/sql/demoForeignDbmsVtis.sql pkg.csize=1500 pkg.size=5745
+file 684ab3af19c8fc1051b3568df15cd68d3514662c chash=2924b9a1d70c948fcf60945357b63b30f457466f group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/readme.html pkg.csize=1488 pkg.size=3159
+file 443652f5846d7a316817259c7ecc7b9c67206a6a chash=3fb2f809219876905fd64696e6e51019efc407f2 group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/WwdClientExample.class pkg.csize=1981 pkg.size=3597
+file f584a5208c8a9e154e49a5e13f39669ccf229172 chash=0cd934fbae5a0a40ab12f2a6af2f4e7960d86345 group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/WwdClientExample.java pkg.csize=2716 pkg.size=7619
+file fad5047daadffde7a5ecf14a9e4e25a0849cb2ec chash=50de8c67073b819c647a33fd089929e197aeee1c group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/WwdEmbedded.class pkg.csize=1947 pkg.size=3535
+file 240568744e7d582e2ae010f2f53c4c7ba7936c9e chash=2ffdc40193ac39ac51d31ae9bc9e37b24f1f41dd group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/WwdEmbedded.java pkg.csize=2700 pkg.size=7615
+file 187dfe65bff4676a07ece34c201b0ad7a1f6bc5d chash=8a973d8deade9fba7cb86b886dcfcd684f8170a4 group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/WwdUtils.class pkg.csize=1051 pkg.size=1737
+file e420d7f9192b902351c0dfdfe17863dc1a57f3b9 chash=b4d3c4166e605a5ef8a09795221f12731b4ba7aa group=sys mode=0644 owner=nobody path=javadb/demo/programs/workingwithderby/WwdUtils.java pkg.csize=1475 pkg.size=3436
+file 9f15aebd16809bff9463813cd8651c870adabeb2 chash=562b2ddc15316c581060b5eaef349b822c938fc3 group=sys mode=0644 owner=nobody path=javadb/demo/README.txt pkg.csize=958 pkg.size=1931
+file b8473ee770502b9fac70bc6ed784c896314e6655 chash=f5e773c13d35ea45039f40e0fa334b0c0c5b2a44 group=sys mode=0644 owner=nobody path=javadb/demo/templates/server.policy pkg.csize=2086 pkg.size=5931

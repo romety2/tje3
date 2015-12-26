@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:component-data xmlns:ns1="http://openinstaller.org/config/V1" xmlns:ns2="http://openoffice.org/2001/registry" ns2:readonly="true" ns2:finalized="true" ns2:package="com.sun.install.L10nSelection">
+    <node ns2:name="Option">
+        <prop ns2:type="xs:string" ns2:name="BASIC_USER">
+            <value>BASIC_USER</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="ADVANCED_USER">
+            <value>ADVANCED_USER</value>
+        </prop>
+        <prop ns2:type="xs:string" ns2:name="USER_TYPE">
+            <value>BASIC_USER</value>
+        </prop>
+    </node>
+</ns2:component-data>

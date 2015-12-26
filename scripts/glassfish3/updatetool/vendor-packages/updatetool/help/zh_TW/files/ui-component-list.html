@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>元件清單 - Update Tool 線上說明</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="ui-component-list"></a><h4>元件清單</h4>
+<p>元件清單顯示在 [Update Tool] 視窗的右側，工具列的正下方。它會顯示不同的資訊，這取決於檢視的是安裝影像的可用附加元件、可用更新還是已安裝元件。</p>
+
+<ul><li><p><a href="#addons">[可用的附加元件] 檢視</a></p></li>
+<li><p><a href="#updates">[可用的更新] 檢視</a></p></li>
+<li><p><a href="#installed">[已安裝的元件] 檢視</a></p></li></ul>
+
+<p>此外，如果您在元件清單上按一下滑鼠右鍵 (在 Macintosh 上則是於按住 Control 的同時再按一下)，系統將顯示一個右鍵功能表，提供可對整個元件清單及您已在元件清單上選取的項目執行的指令。</p>
+
+<a name="addons"></a><p><b>[可用的附加元件] 檢視</b></p>
+<p><table border="1"><col width="20*"><col width="80*">
+<tr><th align="left" valign="top" scope="column"><p><b>欄</b></p></th>
+        <th align="left" valign="top" scope="column"><p><b>描述</b></p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>元件</p></td>
+<td align="left" valign="top" scope="row"><p>附加元件的名稱。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>種類</p></td>
+<td align="left" valign="top" scope="row"><p>附加元件的種類。將提供類似功能的軟體元件分類到同一組。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>已發行</p></td>
+<td align="left" valign="top" scope="row"><p>發行附加元件的日期。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>版本</p></td>
+<td align="left" valign="top" scope="row"><p>附加元件的版本。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>安裝大小</p></td>
+<td align="left" valign="top" scope="row"><p>附加元件的近似安裝大小。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>來源</p></td>
+<td align="left" valign="top" scope="row"><p>要從中取得附加元件的儲存庫的名稱。</p></td>
+</tr>
+</table></p>
+
+<a name="updates"></a><p><b>[可用的更新] 檢視</b></p>
+<p><table border="1"><col width="20*"><col width="80*">
+<tr><th align="left" valign="top" scope="column"><p><b>欄</b></p></th>
+        <th align="left" valign="top" scope="column"><p><b>描述</b></p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>元件</p></td>
+<td align="left" valign="top" scope="row"><p>有可用更新的元件的名稱。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>!</p></td>
+<td align="left" valign="top" scope="row"><p>警示欄，如果更新包含已安裝元件的安全性修正，將顯示星號 (*)。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>已發行</p></td>
+<td align="left" valign="top" scope="row"><p>發行更新的日期。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>新版本</p></td>
+<td align="left" valign="top" scope="row"><p>更新元件的版本。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>已安裝的版本</p></td>
+<td align="left" valign="top" scope="row"><p>目前已安裝的元件的版本。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>下載</p></td>
+<td align="left" valign="top" scope="row"><p>更新的近似安裝大小。注意，因為更新中只提供已修改的檔案，所以更新的大小通常小於整個元件的安裝大小。</p>
+<p>如果沒有修改檔案，而是修改了檔案權限、元件描述和其他中介資料等其他屬性，則變更值會為零。</p>
+<p>如果更新造成檔案被移除，或是減少了一或多個檔案的大小，則變更值會為負。</p>
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>來源</p></td>
+<td align="left" valign="top" scope="row"><p>要從中取得更新的儲存庫的名稱。</p></td>
+</tr>
+</table></p>
+
+<a name="installed"></a><p><b>[已安裝的元件] 檢視</b></p>
+<p><table border="1"><col width="20*"><col width="80*">
+<tr><th align="left" valign="top" scope="column"><p><b>欄</b></p></th>
+        <th align="left" valign="top" scope="column"><p><b>描述</b></p></th>
+</tr><tr><td align="left" valign="top" scope="row"><p>元件</p></td>
+<td align="left" valign="top" scope="row"><p>元件的名稱。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>種類</p></td>
+<td align="left" valign="top" scope="row"><p>元件的種類。將提供類似功能的軟體元件分類到同一組。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>版本</p></td>
+<td align="left" valign="top" scope="row"><p>元件的版本。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>安裝的大小</p></td>
+<td align="left" valign="top" scope="row"><p>元件的近似安裝大小。</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>來源</p></td>
+<td align="left" valign="top" scope="row"><p>已從中取得元件的儲存庫的名稱。</p></td>
+</tr>
+</table></p>
+
+</body>
+</html>
+

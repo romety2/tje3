@@ -1,0 +1,617 @@
+#!/bin/sh
+#
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+#
+# Copyright (c) 2009-2010 Oracle and/or its affiliates. All rights reserved.
+#
+# The contents of this file are subject to the terms of either the GNU
+# General Public License Version 2 only ("GPL") or the Common Development
+# and Distribution License("CDDL") (collectively, the "License").  You
+# may not use this file except in compliance with the License.  You can
+# obtain a copy of the License at
+# https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+# or packager/legal/LICENSE.txt.  See the License for the specific
+# language governing permissions and limitations under the License.
+#
+# When distributing the software, include this License Header Notice in each
+# file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+#
+# GPL Classpath Exception:
+# Oracle designates this particular file as subject to the "Classpath"
+# exception as provided by Oracle in the GPL Version 2 section of the License
+# file that accompanied this code.
+#
+# Modifications:
+# If applicable, add the following below the License Header, with the fields
+# enclosed by brackets [] replaced by your own identifying information:
+# "Portions Copyright [year] [name of copyright owner]"
+#
+# Contributor(s):
+# If you wish your version of this file to be governed by only the CDDL or
+# only the GPL Version 2, indicate your decision by adding "[Contributor]
+# elects to include this software in this distribution under the [CDDL or GPL
+# Version 2] license."  If you don't indicate a single choice of license, a
+# recipient has the option to distribute your version of this file under
+# either the CDDL, the GPL Version 2 or to extend the choice of license to
+# its licensees as provided above.  However, if you add GPL Version 2 code
+# and therefore, elected the GPL Version 2 license, then the option applies
+# only if the new code is made subject to such option by the copyright
+# holder.
+#
+
+#
+# Startup wrapper for updatetool configurator install script
+#
+
+GNOME_OLD_PATH=$HOME/.gnome2/session-manual
+GNOME_NEW_PATH=$HOME/.config/autostart
+GNOME_NEW_FILE=com.sun.ucnotifier.desktop
+DARWIN_PATH=$HOME/Library/LaunchAgents
+DARWIN_FILE=com.sun.ucnotifier.plist
+KDE_PATH=$HOME/.kde/Autostart
+KDE_FILE=com.sun.ucnotifier
+NOTIFER_NAME="Update Tool Desktop Notifier"
+UNIX_PREFS_DIR=.updatetool
+DARWIN_PREFS_DIR="Library/Application Support/updatetool"
+
+# Resolve a symbolic link to the true file location
+resolve_symlink () {
+    file="$1"
+    while [ -h "$file" ]; do
+        ls=`ls -ld "$file"`
+        link=`expr "$ls" : '^.*-> \(.*\)$' 2>/dev/null`
+        if expr "$link" : '^/' 2> /dev/null >/dev/null; then
+            file="$link"
+        else
+            file=`dirname "$1"`"/$link"
+        fi
+    done
+    echo "$file"
+}
+
+# Take a relative path and make it absolute. Pwd -P will
+# resolve any symlinks in the path
+make_absolute () {
+    save_pwd=`pwd`
+    cd "$1";
+    full_path=`pwd -P`
+    cd "$save_pwd"
+    echo "$full_path"
+}
+
+# Find out where we are installed
+cmd=`resolve_symlink "$0"`
+my_home_relative=`/usr/bin/dirname "$cmd"`
+my_home=`make_absolute "$my_home_relative"`
+
+my_python=$my_home/../../pkg/python2.4-minimal
+
+os_name=`uname -s`
+if [ $os_name = "Darwin" ]; then
+    # Set DYLD_LIBRARY_PATH so we can find libraries that python
+    # modules depend on such as libcurl.
+    PYTHONHOME=$my_python
+    export PYTHONHOME
+    DYLD_LIBRARY_PATH=$PYTHONHOME/lib
+    export DYLD_LIBRARY_PATH
+    PREFS_DIR=$DARWIN_PREFS_DIR
+else
+    # Hack to find bundled openssl libraries on Solaris
+    unset LD_LIBRARY_PATH_32
+    unset LD_LIBRARY_PATH_64
+    LD_LIBRARY_PATH=$my_python/lib
+    export LD_LIBRARY_PATH
+    PREFS_DIR=$UNIX_PREFS_DIR
+fi
+
+
+# Usage
+usage () {
+    echo
+    echo "updatetoolconfig --help|--register|--unregister|--list [--force] [--type <type>]"
+    echo
+    echo Update Tool notification tasktray integration utility
+    echo
+    echo "    --help        Display usage info"
+    echo "    --register    Register the notifier startup task"
+    echo "    --unregister  Unregister the notifier startup task"
+    echo "    --list        List current registered task"
+    echo "    --force       Overwrite an existing startup-task if it exists"
+    echo "    --type <type> Specify session type where type is: "
+    echo "                     gnome-old  (e.g. Gnome 2.12 or earlier)"
+    echo "                     gnome-new  (e.g. Gnome 2.13 or later)"
+    echo "                     darwin (Mac OS)"
+    exit $status
+}
+
+process_type () {
+    if [ $# = 0 ]; then
+        usage
+    fi
+
+    case "$1" in
+        gnome-old ) ;;
+        gnome-new ) ;;
+        darwin    ) ;;
+        *         ) usage ;;
+    esac
+}
+
+get_gnome_type () {
+    gnome_panel="/usr/bin/gnome-panel"
+
+    if [ ! -f "/usr/bin/gnome-panel" ]; then
+        if [ ! -f "/opt/gnome/bin/gnome-panel" ]; then
+            echo "Cannot find gnome-panel."
+            status=3
+            return
+        else
+            gnome_panel="/opt/gnome/bin/gnome-panel"
+        fi
+    fi
+
+    version=`$gnome_panel --version | /usr/bin/awk '{ print $3}'`
+    if [ x$version = x ]; then
+        # In newer versions of Gnome gnome-panel will return
+        # two values.
+        version=`$gnome_panel --version | /usr/bin/awk '{ print $2}'`
+        if [ x$version = x ]; then
+            echo "Unable to parse the Gnome version."
+            `$gnome_panel --version`
+            status=3
+            return
+        fi
+    fi
+
+    major=`echo $version | /usr/bin/awk -F. '{ print $1 }'`
+    minor=`echo $version | /usr/bin/awk -F. '{ print $2 }'`
+
+    # Need to be at least Gnome 2.x
+    if [ ! $major -gt 1 ]; then
+        echo "Gnome version is not supported: $version"
+        # XXX: Return 0 for now so that pkg/updateool won't complain.
+        status=0
+        return
+    fi
+
+    # New autostart impl was introduced in 2.14 but SUSE has
+    # introduced this feature in their gnome 2.12 which got
+    # released along with SUSE SLES 10. So SUSE's gnome 2.12
+    # will be identified as gnome-new.
+    flavour="dummy"
+    if [ $os_name = "Linux" ]; then
+        flavour=`cat /etc/*release* 2>/dev/null | grep -i linux | head -1 2>/dev/null | cut -f 1 -d L 2>/dev/null`
+    fi
+    if [ $minor -gt 12 ]; then
+        echo "gnome-new"
+    elif [ $minor = 12 ] && [ $flavour = "SUSE" ]; then
+        echo "gnome-new"
+    else
+        echo "gnome-old"
+    fi
+}
+
+# If the preferences directory does not exist, create it.
+create_prefs_directory () {
+    if [ ! -d "$HOME/$PREFS_DIR" ]; then
+        mkdir -p "$HOME/$PREFS_DIR"
+        status=$?
+    fi
+}
+
+
+copy_notifier () {
+    create_prefs_directory
+    if [ $status != 0 ]; then
+        echo "updatetoolconfig: Unable to create preferences directory: $HOME/$PREFS_DIR"
+        status=3
+        return
+    fi
+
+    /bin/cp "$my_home/../lib/notifier" "$HOME/$PREFS_DIR"
+    status=$?
+    if [ $status != 0 ]; then
+        echo "updatetoolconfig: Unable to copy notifier to: $HOME/$PREFS_DIR"
+        status=3
+        return
+    fi
+}
+
+# This assume updatetoolconfig lives in $IMAGE/updatetool/bin
+normalize_image_dir () {
+    CWD=`pwd`
+    cd "$my_home/../.."
+    current_image_dir=`pwd`
+    cd "$CWD"
+}
+
+update_notifier_image () {
+    normalize_image_dir
+    echo $current_image_dir > "$HOME/$PREFS_DIR/notifier.cfg"
+}
+
+# Determine the image version from which an existing registered notifier
+# is launched from.
+get_target_version () {
+
+    target_version=0
+
+    if [ -f "$HOME/$PREFS_DIR/notifier.cfg" ]; then
+        image_path=`cat "$HOME/$PREFS_DIR/notifier.cfg"`
+    else
+        if [ $debug = 1 ]; then
+            echo "No notifier.cfg file: $HOME/$PREFS_DIR/notifier.cfg"
+        fi
+        return
+    fi
+ 
+    # Check for the version file.
+    if [ ! -f "$image_path/updatetool/lib/version" ]; then
+        if [ $debug = 1 ]; then
+            echo "No version file: $image_path/updatetool/lib/version"
+        fi
+        return
+    fi
+
+    target_version=`cat "$image_path/updatetool/lib/version"`
+
+    if [ $debug = 1 ]; then
+        echo "Registered version is: $target_version"
+    fi
+}
+
+# Determine the image version where this script is being run from
+get_source_version () {
+
+    source_verson=0
+
+    if [ -f "$my_home/../lib/version" ]; then
+        source_version=`cat "$my_home/../lib/version"`
+    else
+        source_version=0
+    fi
+
+    if [ $debug = 1 ]; then
+        echo "Source version is: $source_version"
+    fi
+}
+
+do_reg () {
+
+    kde_regis=0
+
+    get_target_version
+    get_source_version
+
+    if [ $force = 0 -a $source_version -gt $target_version ]; then
+        force=1
+        if [ $debug = 1 ]; then
+            echo "Source version is newer (using force option): $source_version"
+        fi
+    fi
+
+    if [ $kde_version_major -gt 2 ]; then
+        if [ $force = 0 -a -f "$KDE_PATH/$KDE_FILE" ]; then
+            echo "updatetoolconfig: $NOTIFER_NAME is already registered for KDE desktop."
+            echo "Use --force to overwrite: $KDE_PATH/$KDE_FILE"
+            status=1
+            return
+        fi
+        # Check to see if the directory exists.  Create it if it does not.
+        if [ ! -d "$KDE_PATH" ]; then
+            mkdir -p "$KDE_PATH"
+            status=$?
+            if [ $status != 0 ]; then
+                echo "updatetoolconfig: unable to registry startup task for KDE desktop."
+                echo "Can not create directory: $KDE_PATH."
+                status=3
+                return
+            fi
+        fi
+        if [ $status != 1 ]; then
+            cat << EOF > "$KDE_PATH/$KDE_FILE"
+#!/bin/bash
+$HOME/$PREFS_DIR/notifier
+EOF
+
+            chmod +x $KDE_PATH/$KDE_FILE
+            kde_regis=1
+        fi
+    fi
+
+    if [ "$type_value" = "gnome-new" ]; then
+        if [ $force = 0 -a -f "$GNOME_NEW_PATH/$GNOME_NEW_FILE" ]; then
+            echo "updatetoolconfig: $NOTIFER_NAME is already registered for GNOME desktop."
+            echo "Use --force to overwrite: $GNOME_NEW_PATH/$GNOME_NEW_FILE"
+            status=1
+            return
+        fi
+
+        # Check to see if the directory exists.  Create it if it does not.
+        if [ ! -d "$GNOME_NEW_PATH" ]; then
+            mkdir -p "$GNOME_NEW_PATH"
+            status=$?
+            if [ $status != 0 ]; then
+                echo "updatetoolconfig: unable to registry startup task for GNOME desktop."
+                echo "Can not create directory: $GNOME_NEW_PATH."
+                status=3
+                return
+            fi
+        fi
+
+        cat << EOF > "$GNOME_NEW_PATH/$GNOME_NEW_FILE"
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Update Tool Desktop Notifier
+Exec="$HOME/$PREFS_DIR/notifier"
+X-GNOME-Autostart-enabled=true
+EOF
+        status=$?
+    elif [ "$type_value" = "gnome-old" ]; then
+        echo "Registration on Gnome prior to version 2.13 is currently not supported."
+        status=3
+        return
+    elif [ "$type_value" = "darwin" ]; then
+        if [ $force = 0 -a -f "$DARWIN_PATH/$DARWIN_FILE" ]; then
+            echo "updatetoolconfig: $NOTIFER_NAME is already registered."
+            echo "Use --force to overwrite: $DARWIN_PATH/$DARWIN_FILE"
+            status=1
+            return
+        fi
+
+        # Check to see if the directory exists.  Create it if it does not.
+        if [ ! -d "$DARWIN_PATH" ]; then
+            mkdir -p "$DARWIN_PATH"
+            status=$?
+            if [ $status != 0 ]; then
+                echo "updatetoolconfig: unable to registry startup task."
+                echo "Can not create directory: $DARWIN_PATH."
+                status=3
+                return
+            fi
+        fi
+
+        cat << EOF > "$DARWIN_PATH/$DARWIN_FILE"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN
+http://www.apple.com/DTDs/PropertyList-1.0.dtd >
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.sun.ucnotifier</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>$HOME/$PREFS_DIR/notifier</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+EOF
+        status=$?
+    else
+        if [ $kde_regis -eq 0 ]; then
+            echo "Registration is currently not supported on this platform."
+            if [ $force = 1 ]; then
+                status=0
+            else
+                status=3
+            fi
+            return
+        fi
+    fi
+
+    # If we registered the notifier as a startup task then we copy the
+    # notifier script to the prefs dir
+    if [ $status = 0 ]; then
+        copy_notifier
+        if [ $status = 0 ]; then
+            update_notifier_image
+        fi
+    fi
+}
+
+do_unreg () {
+
+    # First we have to determine if we can unregister.
+    if [ $force = 0 ]; then
+        normalize_image_dir
+        if [ -f "$HOME/$PREFS_DIR/imagelist.cfg" ]; then
+            image_count=0
+            image_in_list=0
+            OLDIFD=$IFS
+            IFS="
+"
+            for image_path in `cat "$HOME/$PREFS_DIR/imagelist.cfg"` ;
+            do
+                if [ x"$image_path" = x"$current_image_dir" ]; then
+                    image_in_list=1
+                fi
+
+                if [ -d "$image_path" ]; then
+                    image_count=`expr $image_count + 1`
+                fi
+            done
+            IFS=$OLDIFS
+
+            if [ $image_count = 1 ]; then
+                if [ $image_in_list = 0 ]; then
+                    # We don't unregister because there are other images known
+                    # to the GUI.
+                    status=1
+                    return
+                fi
+            elif [ $image_count -gt 1 ]; then
+                # We don't unregister because there are other images known
+                # to the GUI.
+                status=1
+                return
+            fi
+        fi
+    fi
+
+    if [ -f "$HOME/$PREFS_DIR/notifier.cfg" ]; then
+        /bin/rm "$HOME/$PREFS_DIR/notifier.cfg"
+    fi
+
+    if [ -f "$HOME/$PREFS_DIR/notifier" ]; then
+        /bin/rm "$HOME/$PREFS_DIR/notifier"
+    fi
+
+    if [ $kde_version_major -gt 2 ]; then
+        if [ -f "$KDE_PATH/$KDE_FILE" ]; then
+            /bin/rm "$KDE_PATH/$KDE_FILE"
+            status=$?
+        elif [ $force = 1 ]; then
+            status=0
+        else
+            # Exit with 1 when the notifier is not registered.
+            echo "updatetoolconfig: $NOTIFER_NAME not registered."
+            status=1
+        fi
+    fi
+
+    if [ "$type_value" = "gnome-new" ]; then
+        if [ -f "$GNOME_NEW_PATH/$GNOME_NEW_FILE" ]; then
+            /bin/rm "$GNOME_NEW_PATH/$GNOME_NEW_FILE"
+            status=$?
+        elif [ $force = 1 ]; then
+            status=0
+        else
+            # Exit with 1 when the notifier is not registered.
+            echo "updatetoolconfig: $NOTIFER_NAME not registered."
+            status=1
+        fi
+    elif [ "$type_value" = "darwin" ]; then
+        if [ -f "$DARWIN_PATH/$DARWIN_FILE" ]; then
+            /bin/rm "$DARWIN_PATH/$DARWIN_FILE"
+            status=$?
+        elif [ $force = 1 ]; then
+            status=0
+        else
+            # Exit with 1 when the notifier is not registered.
+            echo "updatetoolconfig: $NOTIFER_NAME not registered."
+            status=1
+        fi
+    fi
+}
+
+do_list () {
+    if [ $kde_version_major -gt 2 ]; then
+        if [ -f "$KDE_PATH/$KDE_FILE" ]; then
+           echo "KDE Autostart"
+           echo "-------------"
+           echo
+           /bin/cat "$KDE_PATH/$KDE_FILE"
+           status=$?
+        else
+            # Exit with 1 when the notifier is not registered.
+            status=1
+        fi
+    fi
+    if [ "$type_value" = "gnome-new" ]; then
+        if [ -f "$GNOME_NEW_PATH/$GNOME_NEW_FILE" ]; then
+           echo
+           echo "GNOME Autostart"
+           echo "---------------"
+           echo
+            /bin/cat "$GNOME_NEW_PATH/$GNOME_NEW_FILE"
+            status=$?
+        else
+            # Exit with 1 when the notifier is not registered.
+            status=1
+        fi
+    elif [ "$type_value" = "gnome-old" ]; then
+#       if [ -f "$GNOME_OLD_PATH" ]; then
+            status=3
+#       fi
+    elif [ "$type_value" = "darwin" ]; then
+        if [ -f "$DARWIN_PATH/$DARWIN_FILE" ]; then
+            /bin/cat "$DARWIN_PATH/$DARWIN_FILE"
+            status=$?
+        else
+            # Exit with 1 when the notifier is not registered.
+            status=1
+        fi
+    else
+        if [ $kde_version_major -eq 0 ]; then
+            echo "updatetoolconfig: List operation not supported."
+            status=3
+        fi
+    fi
+}
+
+#set -x
+
+force=0
+type=0
+reg=0
+unreg=0
+list=0
+status=0
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+      --help       ) usage ;;
+      --register   ) reg=1; shift ;;
+      --unregister ) unreg=1; shift ;;
+      --list       ) list=1; shift ;;
+      --force      ) force=1; shift ;;
+      --type       ) type=1; shift; process_type $1; type_value=$1; shift ;;
+      *            ) status=2; usage ;;
+    esac
+done
+
+case "$os_name" in
+    Darwin ) ;;
+    SunOS  ) ;;
+    Linux  ) ;;
+    *      ) echo "$os_name is not supported by this script."; exit 0 ;;
+esac
+
+#The kde-config -version will return the following lines,
+#Qt: 3.3.5
+#KDE: 3.5.1 Level "a"
+#kde-config: 1.0
+
+kde_version_major=0
+if [ -f /opt/kde*/bin/kde-config ]; then
+    kde_version_major=`/opt/kde*/bin/kde-config -version | grep -i KDE: | head -1 | cut -d ' ' -f 2 | /usr/bin/awk -F. '{ print $1 }'`
+fi
+
+if [ -f /usr/bin/kde4-config ]; then
+    kde_version_major=`/usr/bin/kde4-config -version | grep -i KDE: | head -1 | cut -d ' ' -f 2 | /usr/bin/awk -F. '{ print $1 }'`
+    KDE_PATH=$HOME/.kde4/Autostart
+fi
+
+if [ $type = 0 ]; then
+    if [ $os_name = "SunOS" -o $os_name = "Linux" ] ; then
+        type_value=`get_gnome_type`
+
+        if [ "$type_value" != "gnome-new" -a \
+            "$type_value" != "gnome-old" ]; then
+            if [ $kde_version_major -eq 0 ]; then
+                # Print error message...
+                echo "updatetoolconfig: Invalid type: $type_value"
+                exit 3
+            fi
+        fi
+    elif [ $os_name = "Darwin" ]; then
+        type_value="darwin"
+    fi
+fi
+
+debug=0
+
+if [ $list = 1 ]; then
+    do_list
+elif [ $unreg = 1 ]; then
+    do_unreg
+elif [ $reg = 1 ]; then
+    do_reg
+else
+    usage
+fi
+
+exit $status

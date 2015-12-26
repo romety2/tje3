@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>リポジトリの設定を変更する - アップデートツールオンラインヘルプ</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+
+<a name="tasks-modifying-repositories"></a><h4>リポジトリの設定を変更する</h4>
+<p><b>リポジトリの編集</b></p>
+<p>インストールイメージに関連付けられたリポジトリのリストを変更し、既存のリポジトリの設定の編集を行うには、変更するイメージを選択して、次のいずれかの操作を実行します。</p>
+
+<ul><li>右クリックしてコンテキストメニューを表示し、「プロパティー」を選択します。</li>
+<li>「イメージの詳細」タブの「プロパティーを編集...」ボタンを選択します。</li>
+<li>メインメニューの「ファイル」 -&gt; 「イメージのプロパティー」を選択します。</li></ul>
+
+<p><b>使用可能なリポジトリと使用不可なリポジトリ</b></p>
+<p>「イメージのプロパティ」の「使用可能」列のチェックボックスにマークを付けることで、発行元のリポジトリのエントリを、リポジトリのリストから削除せずに使用不可にすることができます。優先発行元を使用不可にすることはできません。</p>
+
+<p><b>優先発行元</b></p>
+<p>イメージに関連付けられた発行元のリポジトリのいずれかを、優先発行元として指定する必要があります。優先発行元からのアドオンは、インストールイメージに関連付けられたその他の発行元経由で入手可能な同じ名前のアドオンよりも優先されます。</p>
+
+<p>優先発行元に関する情報、およびコンポーネントのインストールとアップデートに対する優先発行元の影響については、「<a href="repositories.html">リポジトリと発行元</a>」のセクションを参照してください。</p>
+
+<p><b>リポジトリへの証明書ベースのアクセス</b></p>
+<p>SSL ベースの通信を要求するリポジトリにアクセスする必要がある場合は、クライアント証明書および関連するクライアントの鍵ファイルを、リポジトリのエントリに追加できます。https:// 形式のリポジトリ URL を使用するには、クライアント証明書のファイルと鍵ファイルの指定が必要です。証明書と鍵ファイルは .pem 形式で、リポジトリを管理する機関によって提供されなければなりません。</p>
+
+</body>
+</html>
+

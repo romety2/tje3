@@ -1,0 +1,250 @@
+#
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICE OR THIS HEADER.
+#
+# Copyright 2006, 2007 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+# The contents of this file are subject to the terms of the Common Development
+# and Distribution License("CDDL") (the "License"). You may not use this file
+# except in compliance with the License.
+#
+# You can obtain a copy of the License at https://openinstaller.dev.java.net/license.html
+# or http://openinstaller.dev.java.net/license.txt . See the License for the
+# specific language governing permissions and limitations under the License.
+#
+# When distributing the Covered Code, include this CDDL Header Notice in each
+# file and include the License file at http://openinstaller.dev.java.net/license.txt .
+# If applicable, add the following below this CDDL Header, with the fields
+# enclosed by brackets [] replaced by your own identifying information:
+# "Portions Copyrighted [year] [name of copyright owner]"
+#
+# ident "@(#)%Name% %Revision% %Date% SMI"
+#
+
+# Properties file for all the view pages
+# Fragments line ${varname} are replaced by FreeMarker templating mechanism from other properties
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ COMMON STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRODUCT_NAME=openInstaller Test Product
+
+app_title=openInstaller Test Product
+
+# Text for Buttons
+btnCancel_text=Cancel
+btnExit_text=Exit
+btnHelp_text=Help
+btnBack_text=Back
+btnNext_text=Next
+
+# stuff that's used by templates regardless of viewmode
+mainpanel_bgcolor=WHITE
+navigpanel_image=/templates/openInstaller_sidebar_Orange_180x480.gif
+logopanel_image=/templates/openInstaller_logo_banner_540x81.gif
+
+# L10n - Replace the right side with -*-*-*-*-*-*-*-*-*-*-*-*-*-*
+leftpanel_font=Arial Narrow-BOLD-11
+
+# Dynamic panel
+# L10n - Replace the right side with -*-*-*-*-*-*-*-*-*-*-*-*-*-*
+dynamic_content_font=Arial-PLAIN-13
+dynamic_component_background=WHITE
+dynamic_component_foreground=666666
+dynamic_component_border_color=BLACK
+
+# Font for titles
+# L10n - Replace the right side with -*-*-*-*-*-*-*-*-*-*-*-*-*-*
+title1_font=Arial Narrow-BOLD-14
+# L10n - Replace the right side with -*-*-*-*-*-*-*-*-*-*-*-*-*-*
+title2_font=Arial Narrow-BOLD-20
+
+# Text color for titles
+title1_color=3E647E
+title2_color=BLACK
+
+# Text for titles
+title1_text=Welcome to
+title2_text=openInstaller
+
+# Colors for content panel
+contentpanel_bordercolor=587993
+contentpanel_bgcolor=FFFFFF
+
+btnpanel_bgcolor=WHITE
+
+# Font for Buttons
+# L10n - Replace the right side with -*-*-*-*-*-*-*-*-*-*-*-*-*-*
+button_font=Arial Narrow-PLAIN-11
+
+# L10n - Do not translate the next two properties
+BODY_START=&lt;HTML&gt;&lt;BODY&gt;&lt;FONT face=&quot;Sans-Serif&quot; size=&quot;3&quot;&gt;
+BODY_END=&lt;/FONT&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~W E L C O M E   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome_WELCOME_TEXT=${BODY_START}\
+            Welcome to the ${PRODUCT_NAME} installation.&lt;BR&gt;&lt;BR&gt;\
+            Before you begin, please refer to the &lt;BR&gt;&lt;i&gt;${PRODUCT_NAME} \
+            Release Notes and Installation Guide&lt;/i&gt;.&lt;BR&gt;&lt;BR&gt;\
+            Select &quot;Next&quot; to install the entire ${PRODUCT_NAME} &lt;BR&gt;&lt;BR&gt;\
+            ${Copyright_HTML_FRAGMENT}\
+            ${BODY_END}
+
+Copyright_HTML_FRAGMENT=Copyright 2006 Sun Microsystems, Inc. All rights reserved.&lt;BR&gt;\
+            Use is subject to license terms.
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~L I C E N S E   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+License_LICENSE_TEXT1=${BODY_START}\
+              Before you install this product, you must read and accept \
+              the agreement under which this product is licensed for use.\
+              ${BODY_END}
+
+License_LICENSE_TEXT2=SOFTWARE LICENSE AGREEMENT \n\n\
+READ THE TERMS OF THIS AGREEMENT (&quot;AGREEMENT&quot;) CAREFULLY BEFORE OPENING SOFTWARE MEDIA PACKAGE. BY OPENING SOFTWARE MEDIA PACKAGE, YOU AGREE TO THE TERMS OF THIS AGREEMENT. IF YOU ARE ACCESSING SOFTWARE ELECTRONICALLY, INDICATE YOUR ACCEPTANCE OF THESE TERMS BY SELECTING THE &quot;ACCEPT&quot; BUTTON AT THE END OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL OF THE TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO YOUR PLACE OF PURCHASE FOR A REFUND OR, IF SOFTWARE IS ACCESSED ELECTRONICALLY, SELECT THE &quot;DECLINE&quot; (OR &quot;EXIT&quot;) BUTTON AT THE END OF THIS AGREEMENT. IF YOU HAVE SEPARATELY AGREED TO LICENSE TERMS (&quot;MASTER TERMS&quot;) FOR YOUR LICENSE TO THIS SOFTWARE, THEN SECTIONS 1-5 OF THIS AGREEMENT (&quot;SUPPLEMENTAL LICENSE TERMS&quot;) SHALL SUPPLEMENT AND SUPERSEDE THE MASTER TERMS IN RELATION TO THIS SOFTWARE.\n\n\
+1. Definitions.\n\n\
+(a) &quot;Entitlement&quot; means the collective set of applicable documents authorized by Sun evidencing your obligation to pay associated fees (if any) for the license, associated Services, and the authorized scope of use of Software under this Agreement.\n\n\
+(b) &quot;Licensed Unit&quot; means the unit of measure by which your use of Software and/or Service is licensed, as described in your Entitlement.\n\n\
+(c) &quot;Permitted Use&quot; means the licensed Software use(s) authorized in this Agreement as specified in your Entitlement. The Permitted Use for any bundled Sun software not specified in your Entitlement will be evaluation use as provided in Section 3.\n\n\
+(d) &quot;Service&quot; means the service(s) that Sun or its delegate will provide, if any, as selected in your Entitlement and as further described in the applicable service listings at www.sun.com/service/servicelist.\n\n\
+(e) &quot;Software&quot; means the Sun software described in your Entitlement. Also, certain software may be included for evaluation use under Section 3.\n\n\
+(f) &quot;You&quot; and &quot;Your&quot; means the individual or legal entity specified in the Entitlement, or for evaluation purposes, the entity performing the evaluation.\n\n\
+2. License Grant and Entitlement.\n\n\
+Subject to the terms of your Entitlement, Sun grants you a nonexclusive, nontransferable limited license to use Software for its Permitted Use for the license term. Your Entitlement will specify (a) Software licensed, (b) the Permitted Use, (c) the license term, and (d) the Licensed Units.\n\n\
+Additionally, if your Entitlement includes Services, then it will also specify the (e) Service and (f) service term.\n\n\
+If your rights to Software or Services are limited in duration and the date such rights begin is other than the purchase date, your Entitlement will provide that beginning date(s).\n\n\
+The Entitlement may be delivered to you in various ways depending on the manner in which you obtain Software and Services, for example, the Entitlement may be provided in your receipt, invoice or your contract with Sun or authorized Sun reseller. It may also be in electronic format if you download Software.\n\n\
+3. Permitted Use.\n\n\
+As selected in your Entitlement, one or more of the following Permitted Uses will apply to your use of Software. Unless you have an Entitlement that expressly permits it, you may not use Software for any of the other Permitted Uses. If you don&apos;t have an Entitlement, or if your Entitlement doesn&apos;t cover additional software delivered to you, then such software is for your Evaluation Use.\n\n\
+(a) Evaluation Use. You may evaluate Software internally for a period of 90 days from your first use.\n\n\
+(b) Research and Instructional Use. You may use Software internally to design, develop and test, and also to provide instruction on such uses.\n\n\
+(c) Individual Use. You may use Software internally for personal, individual use.\n\n\
+(d) Commercial Use. You may use Software internally for your own commercial purposes.\n\n\
+(e) Service Provider Use. You may make Software functionality accessible (but not by providing Software itself or through outsourcing services) to your end users in an extranet deployment, but not to your affiliated companies or to government agencies.\n\n\
+4. Licensed Units.\n\n\
+Your Permitted Use is limited to the number of Licensed Units stated in your Entitlement. If you require additional Licensed Units, you will need additional Entitlement(s).\n\n\
+5. Restrictions.\n\n\
+(a) The copies of Software provided to you under this Agreement is licensed, not sold, to you by Sun. Sun reserves all rights not expressly granted. (b) You may make a single archival copy of Software, but otherwise may not copy, modify, or distribute Software. However if the Sun documentation accompanying Software lists specific portions of Software, such as header files, class libraries, reference source code, and/or redistributable files, that may be handled differently, you may do so only as provided in the Sun documentation. (c) You may not rent, lease, lend or encumber Software. (d) Unless enforcement is prohibited by applicable law, you may not decompile, or reverse engineer Software. (e) The terms and conditions of this Agreement will apply to any Software updates, provided to you at Sun&apos;s discretion, that replace and/or supplement the original Software, unless such update contains a separate license. (f) You may not publish or provide the results of any benchmark or\
+comparison tests run on Software to any third party without the prior written consent of Sun. (g) Software is confidential and copyrighted. (h) Unless otherwise specified, if Software is delivered with embedded or bundled software that enables functionality of Software, you may not use such software on a stand-alone basis or use any portion of such software to interoperate with any program(s) other than Software. (i) Software may contain programs that perform automated collection of system data and/or automated software updating services. System data collected through such programs may be used by Sun, its subcontractors, and its service delivery partners for the purpose of providing you with remote system services and/or improving Sun&apos;s software and systems. (j) Software is not designed, licensed or intended for use in the design, construction, operation or maintenance of any nuclear facility and Sun and its licensors disclaim any express or implied warranty of fitness for s\
+uch uses. (k) No right, title or interest in or to any trademark, service mark, logo or trade name of Sun or its licensors is granted under this Agreement.\n\n\
+6. Term and Termination.\n\n\
+The license and service term are set forth in your Entitlement(s). Your rights under this Agreement will terminate immediately without notice from Sun if you materially breach it or take any action in derogation of Sun&apos;s and/or its licensors&apos; rights to Software. Sun may terminate this Agreement should any Software become, or in Sun&apos;s reasonable opinion likely to become, the subject of a claim of intellectual property infringement or trade secret misappropriation. Upon termination, you will cease use of, and destroy, Software and confirm compliance in writing to Sun. Sections 1, 5, 6, 7, and 9-15 will survive termination of the Agreement.\n\n\
+7. Java Compatibility and Open Source.\n\n\
+Software may contain Java technology. You may not create additional classes to, or modifications of, the Java technology, except under compatibility requirements available under a separate agreement available at www.java.net.\n\n\
+Sun supports and benefits from the global community of open source developers, and thanks the community for its important contributions and open standards-based technology, which Sun has adopted into many of its products.\n\n\
+Please note that portions of Software may be provided with notices and open source licenses from such communities and third parties that govern the use of those portions, and any licenses granted hereunder do not alter any rights and obligations you may have under such open source licenses, however, the disclaimer of warranty and limitation of liability provisions in this Agreement will apply to all Software in this distribution.\n\n\
+8. Limited Warranty.\n\n\
+Sun warrants to you that for a period of 90 days from the date of purchase, as evidenced by a copy of the receipt, the media on which Software is furnished (if any) will be free of defects in materials and workmanship under normal use. Except for the foregoing, Software is provided &quot;AS IS&quot;. Your exclusive remedy and Sun&apos;s entire liability under this limited warranty will be at Sun&apos;s option to replace Software media or refund the fee paid for Software. Some states do not allow limitations on certain implied warranties, so the above may not apply to you. This limited warranty gives you specific legal rights. You may have others, which vary from state to state.\n\n\
+9. Disclaimer of Warranty.\n\n\
+UNLESS SPECIFIED IN THIS AGREEMENT, ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT ARE DISCLAIMED, EXCEPT TO THE EXTENT THAT THESE DISCLAIMERS ARE HELD TO BE LEGALLY INVALID.\n\n\
+10. Limitation of Liability.\n\n\
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. In no event will Sun&apos;s liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for Software under this Agreement. The foregoing limitations will apply even if the above stated warranty fails of its essential purpose. Some states do not allow the exclusion of incidental or consequential damages, so some of the terms above may not be applicable to you.\n\n\
+11. Export Regulations.\n\n\
+All Software, documents, technical data, and any other materials delivered under this Agreement are subject to U.S. export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with these laws and regulations and acknowledge that you have the responsibility to obtain any licenses to export, re-export, or import as may be required after delivery to you.\n\n\
+12. U.S. Government Restricted Rights.\n\n\
+If Software is being acquired by or on behalf of the U.S. Government or by a U.S. Government prime contractor or subcontractor (at any tier), then the Government&apos;s rights in Software and accompanying documentation will be only as set forth in this Agreement; this is in accordance with 48 CFR 227.7201 through 227.7202-4 (for Department of Defense (DOD) acquisitions) and with 48 CFR 2.101 and 12.212 (for non-DOD acquisitions).\n\n\
+13. Governing Law.\n\n\
+Any action related to this Agreement will be governed by California law and controlling U.S. federal law. No choice of law rules of any jurisdiction will apply.\n\n\
+14. Severability.\n\n\
+If any provision of this Agreement is held to be unenforceable, this Agreement will remain in effect with the provision omitted, unless omission would frustrate the intent of the parties, in which case this Agreement will immediately terminate.\n\n\
+15. Integration.\n\n\
+This Agreement, including any terms contained in your Entitlement, is the entire agreement between you and Sun relating to its subject matter. It supersedes all prior or contemporaneous oral or written communications, proposals, representations and warranties and prevails over any conflicting or additional terms of any quote, order, acknowledgment, or other communication between the parties relating to its subject matter during the term of this Agreement. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.\n\n\
+Please contact Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054 if you have questions.
+
+License_LICENSE_TEXT3=${BODY_START}\
+             Have you read, and do you accept, all of the terms of the preceding&lt;BR&gt;\
+             Software License Agreement? If you click &lt;B&gt;Cancel&lt;/B&gt; the installer&lt;BR&gt;\
+             will exit without installing any product.&lt;BR&gt;${BODY_END}
+
+LICENSE_CHECKBOX_TOOLTIP=Click to accept or reject the license
+
+LICENSE_CHECKBOX_TEXT=I Accept
+
+LICENSE_ACCEPT_TOOLTIP=Click this if you accept the agreement
+
+LICENSE_ACCEPT_TEXT=I accept the terms in the license agreement
+
+LICENSE_DECLINE_TOOLTIP=Click this if you do not accept the agreement
+
+LICENSE_DECLINE_TEXT=I do not accept the terms in the license agreement
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~I N S T A L L    H O M E   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DEFAULT_INSTALL_HOME=/opt/SunMicro
+INSTALL_HOME_LABEL=Install Home
+INSTALL_TOP_TEXT=${BODY_START}\
+ Specify the home directory that will serve as the default install location \
+ on the target system for the ${PRODUCT_NAME} product.&lt;BR&gt;\
+ ${BODY_END}
+SPECIFY_HOME_MSG=Specify a home directory for installation.
+INSTALL_BOTTOM_TEXT=${BODY_START}\
+ If you already have a ${PRODUCT_NAME} home \
+ directory on your system, you can select that directory or create a new \
+ ${PRODUCT_NAME} home directory.&lt;BR&gt;&lt;BR&gt;\
+ If you specify a non-existent installation directory, this installation \
+ program will automatically create it for you.\
+ ${BODY_END}
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~C O N F I G   M O D E   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  L10N SELECTION PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+L10N_HOME_TEXT=${BODY_START}\
+ Choose an option from the following.\
+ ${BODY_END}
+L10N_CHOICE_TEXT=Install languages for the selected products.
+INSTALL_L10N_TOOLTIP=Select this to install languages for the selected products.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~J D K  S E L E C T I O N  P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JDK_HOME_TEXT=${BODY_START}\
+Choose an option from the following.\
+${BODY_END}
+
+
+JDK_HOME=JDK Home
+SELECTED_JDK_TEXT=${BODY_START}\
+The selected JDK is \
+${BODY_END}
+
+JDK_FROM_MEDIA_CHOICE_TEXT=Install and use the default version of the Java(TM) SDK.
+JDK_FROM_LIST_CHOICE_TEXT=Choose a Java(TM) SDK from the list below.
+JDK_TYPED_IN_CHOICE_TEXT=Type in a Java(TM) SDK location below.
+
+JDK_LIST_TOOLTIP=Choose a Java(TM) SDK from the drop-down list.
+JDK_TYPE_IN_TOOLTIP=You can type a Java(TM) SDK location here.
+
+AVAILABLE_JDK=Available Java(TM) SDKs
+ALTERNATE_JDK=Alternate Java(TM) SDK location
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PRODUCT SELECTION PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ADD_BUTTON_LABEL=Add >
+ADD_ALL_BUTTON_LABEL=Add all >>
+REMOVE_BUTTON_LABEL=< Remove
+REMOVE_ALL_BUTTON_LABEL=<< Remove All
+PSP_INTRO_TEXT=Please select the products to install
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PAGE FLOW~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CONFIGURE_SELECT_MSG=Configures the selected software components with default/custom values.
+EXPRESS=Express
+CUSTOM=Custom
+SELECT_DESIRED_MODE_TEXT=${BODY_START}\
+            Select the desired mode of configuration.\
+            ${BODY_END}
+CUSTOM_CDATA_TXT=${BODY_START}&lt;B&gt;Custom&lt;/B&gt; mode installs \
+ the  software  and configures it with the values \
+ that you specify in the configuration pages that follow.&lt;BR&gt;\
+          ${BODY_END}
+EXPRESS_CDATA_TXT=${BODY_START}&lt;B&gt;Express&lt;/B&gt; mode installs \
+  the  software and configures it with the defaults.
+CONFIGURE_SELECTED_COMPONENTS_MSG=Configures the selected software components with default/custom values.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~A D M I N   P A S S W O R D   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~R E A D Y   T O   I N S T A L L   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~UPGRADE PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UPGRADE_SOFTWARE=${BODY_START}&lt;h3&gt;${PRODUCT_NAME} : Upgrade Software&lt;/h3&gt;${BODY_END}
+UPGRADE_ALLOW_TEXT=Upgrade
+UPGRADE_DECLINE_TEXT=Do not upgrade
+UPGRADE_ALLOW_TOOLTIP=Click this to upgrade software
+UPGRADE_DECLINE_TOOLTIP=Click this to not upgrade software
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~P R O G R E S S   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# L10n: only translate the "Please wait" string.  leave the rest unchanged.
+PROGRESS_WAIT=${BODY_START}\
+               Please wait\
+               ${BODY_END}
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~S U M M A R Y   P A G E~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>修改儲存庫設定 - Update Tool 線上說明</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+
+<a name="tasks-modifying-repositories"></a><h4>修改儲存庫設定</h4>
+<p><b>編輯儲存庫</b></p>
+<p>您可以修改與安裝影像相關聯的儲存庫清單以及編輯現有儲存庫的設定，方法是選取所需的影像，然後執行以下作業之一：</p>
+
+<ul><li>按一下滑鼠右鍵以顯示右鍵功能表，並選取 [特性...]</li>
+<li>在 [影像詳細資訊] 標籤上選取 [編輯特性...] 按鈕。</li>
+<li>從主功能表中選取 [檔案] -&gt; [影像特性]。</li></ul>
+
+<p><b>啟用和停用儲存庫</b></p>
+<p>您不必從儲存庫清單中移除某個發佈者儲存庫項目便可停用該儲存庫項目，方法是勾選 [影像特性] 的 [已啟用] 欄中的核取方塊。您無法停用喜好的發佈者。</p>
+
+<p><b>喜好的發佈者</b></p>
+<p>其中一個與影像相關聯的發佈者儲存庫必須標記為喜好的發佈者。與安裝影像相關聯的其他發佈者所提供的同名附加元件相比，喜好的發佈者提供的附加元件具有更高的優先順序。</p>
+
+<p>請參閱「<a href="repositories.html">儲存庫和發佈者</a>」小節，以取得有關喜好的發佈者及其對元件安裝和更新之影響的更多資訊。</p>
+
+<p><b>基於憑證的儲存庫存取</b></p>
+<p>需要存取要求基於 SSL 進行通訊的儲存庫時，您可以將用戶端憑證和關聯的用戶端金鑰檔案增加至儲存庫項目。使用 https:// 儲存庫 URL 會要求您提供用戶端憑證檔案和金鑰檔案。憑證檔案和金鑰檔案為 .pem 格式，應由管理儲存庫的授權單位提供。</p>
+
+</body>
+</html>
+

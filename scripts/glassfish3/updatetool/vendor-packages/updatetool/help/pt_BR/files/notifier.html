@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>Notificador da &aacute;rea de trabalho - Ajuda on-line da Update Tool</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="notifier"></a><h4>Notificador da &aacute;rea de trabalho</h4>
+<p>Uma tarefa de notifica&ccedil;&atilde;o (ou notificador) da &aacute;rea de trabalho opera, em segundo plano, com a Update Tool para verificar periodicamente a exist&ecirc;ncia de atualiza&ccedil;&otilde;es e usa a &aacute;rea de trabalho para avisar sobre atualiza&ccedil;&otilde;es de todas as imagens de instala&ccedil;&atilde;o conhecidas pela instala&ccedil;&atilde;o da Update Tool.</p>
+
+<p><b>Registro do notificador</b></p>
+<p>Se voc&ecirc; permitir a verifica&ccedil;&atilde;o e notifica&ccedil;&atilde;o autom&aacute;ticas de atualiza&ccedil;&otilde;es durante a instala&ccedil;&atilde;o inicial da imagem, o notificador ser&aacute; registrado automaticamente como um programa de inicializa&ccedil;&atilde;o no ambiente da sua &aacute;rea de trabalho.</p>
+
+<p>Se o programa da instala&ccedil;&atilde;o inicial n&atilde;o registrar o notificador, voc&ecirc; poder&aacute; registr&aacute;-lo de maneira autom&aacute;tica, simplesmente executando a Update Tool por pelo menos um minuto. Como as prefer&ecirc;ncias da Update Tool especificam uma freq&uuml;&ecirc;ncia de verifica&ccedil;&atilde;o de atualiza&ccedil;&otilde;es diferente de &quot;Nunca&quot;, o notificador &eacute; registrado automaticamente.</p>
+
+<p><b>Inicializa&ccedil;&atilde;o do notificador</b></p>
+<p>Cada vez que voc&ecirc; conecta &agrave; &aacute;rea de trabalho, o notificador &eacute; iniciado e executado como um processo em segundo plano. O notificador &eacute; exibido na se&ccedil;&atilde;o de notifica&ccedil;&atilde;o da &aacute;rea de trabalho somente quando existem atualiza&ccedil;&otilde;es dispon&iacute;veis de uma ou mais imagens de instala&ccedil;&atilde;o. (A exce&ccedil;&atilde;o &eacute; o Mac SO X, em que o notificador nunca &eacute; representado na &aacute;rea de trabalho.)</p>
+
+<p><b>Notifica&ccedil;&atilde;o de atualiza&ccedil;&otilde;es</b></p>
+<p>Quando detecta atualiza&ccedil;&otilde;es dispon&iacute;veis, o notificador exibe um &iacute;cone na se&ccedil;&atilde;o de notifica&ccedil;&atilde;o da &aacute;rea de trabalho e uma janela em que voc&ecirc; pode iniciar a ferramenta Software Update para examinar e aplicar as atualiza&ccedil;&otilde;es dispon&iacute;veis.</p>
+
+<p>O notificador usa a lista de imagens de instala&ccedil;&atilde;o gerenciadas nas suas configura&ccedil;&otilde;es pessoais da Update Tool para determinar quais imagens e reposit&oacute;rios ser&atilde;o monitorados em rela&ccedil;&atilde;o a componentes atualizados. A freq&uuml;&ecirc;ncia com que o notificador verifica atualiza&ccedil;&otilde;es se baseia nas prefer&ecirc;ncias definidas na Update Tool. Usando as prefer&ecirc;ncias da Update Tool, voc&ecirc; pode modificar se o notificador verificar&aacute; atualiza&ccedil;&otilde;es e a freq&uuml;&ecirc;ncia com que as verificar&aacute;:</p>
+
+<p>Editar -&gt; Prefer&ecirc;ncias</p>
+
+<p><b>Opera&ccedil;&atilde;o do notificador</b></p>
+<p>Dependendo do sistema operacional e do tipo de &aacute;rea de trabalho utilizada, diferentes m&eacute;todos permitem registrar o notificador como programa de inicializa&ccedil;&atilde;o do logon na &aacute;rea de trabalho:</p>
+<ul><li>Windows: menu Iniciar -&gt; Programas -&gt; Inicializar</li>
+<li>Gnome: Sistema -&gt; Prefer&ecirc;ncias -&gt; Sess&otilde;es -&gt; Programas de inicializa&ccedil;&atilde;o -&gt; Notificador da &aacute;rea de trabalho da Update Tool</li>
+<li>Mac OS X: nome de usu&aacute;rio/Biblioteca/Iniciar agentes/com.sun.ucnotifier.plist</li></ul>
+
+<p>Quando voc&ecirc; conecta &agrave; &aacute;rea de trabalho, um programa de inicializa&ccedil;&atilde;o do notificador primeiro consulta a lista de imagens de instala&ccedil;&atilde;o, mantida na se&ccedil;&atilde;o de prefer&ecirc;ncias da Update Tool, para determinar a partir de qual imagem de instala&ccedil;&atilde;o a tarefa do notificador ser&aacute; iniciada. &Agrave; medida que voc&ecirc; instala e desinstala imagens de instala&ccedil;&atilde;o, o programa de inicializa&ccedil;&atilde;o do notificador tenta usar sempre a imagem de instala&ccedil;&atilde;o mais adequada para executar o programa do notificador.</p>
+
+<p><b>A interface do notificador</b></p>
+<p>Para obter mais informa&ccedil;&otilde;es sobre as op&ccedil;&otilde;es de menu que o notificador oferece, consulte <a href="ui-desktop-notifier.html">O notificador da &aacute;rea de trabalho</a> na se&ccedil;&atilde;o &quot;Componentes da interface&quot; da ajuda on-line.</p>
+</body>
+</html>
+

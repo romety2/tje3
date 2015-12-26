@@ -1,0 +1,28 @@
+set name=fmri value=pkg://stable.glassfish.org/nss-utils@3.13.1,0-1.0:20111201T005407Z
+set name=authority value=stable.glassfish.org
+set name=pkg.summary value="NSS Utility Tools"
+set name=pkg.description value="Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications. Applications built with NSS can support SSL v2 and v3, TLS, PKCS #5, PKCS #7, PKCS #11, PKCS #12, S/MIME, X.509 v3 certificates, and other security standards. This package contains NSS 3.13.1."
+set name=info.classification value="Security Services and Tools"
+license 8843659fd99631ab1d9cde7550e6b647a61b3eef chash=36a1fe083b3fdc3980a3c2de9afabe1aaa1e499d license=LGPL2.1 pkg.csize=9515 pkg.size=26894
+depend fmri=nss-libs@3.13.1,0-1.0 type=require
+dir group=sys mode=0755 owner=nobody path=nss
+dir group=sys mode=0755 owner=nobody path=nss/bin
+dir group=sys mode=0755 owner=nobody path=nss/bin/64
+file 0cb0c74aac367b930f706d20433370fcee214c9f chash=f9cd20af479d1338063e1292c0099345840e9409 elfarch=i386 elfbits=32 elfhash=a87d8e432bdd6f8f06b8f2a882a3c2d0a457d450 group=sys mode=0755 owner=nobody path=nss/bin/addbuiltin pkg.csize=34199 pkg.size=78894
+file 7ba50fcd31fe530ed15cf06390fa4bc88e786ca4 chash=5a4d9b5f043b0a1c02d335461ad6b70da6c62ec7 elfarch=i386 elfbits=32 elfhash=34d2acf7c7a7041350b87a2be116ec56af68ce99 group=sys mode=0755 owner=nobody path=nss/bin/certutil pkg.csize=64529 pkg.size=155536
+file e635c7cf1a1f3046deadc0eb4b0eff4cbd598e07 chash=f095f661c58a5a809b7efb0b2337f26804695cf7 elfarch=i386 elfbits=32 elfhash=cb5fa250e653aff9327b9d1333456844f68b8a26 group=sys mode=0755 owner=nobody path=nss/bin/cmsutil pkg.csize=41947 pkg.size=98837
+file 8d423b3a71bb1e26d33e0f9d37f5379b22b4b1ac chash=b8d073c917e2fd10ca216258d673b4b51b49161e elfarch=i386 elfbits=32 elfhash=8025eb3db7df6c581159236dbdfb0501eb52f992 group=sys mode=0755 owner=nobody path=nss/bin/crlutil pkg.csize=49074 pkg.size=112037
+file 9a562dc64bb7150bf70945b00d1c1baba8ad8741 chash=f8ce8f97fda818ea48807fbb7505b37bc977778c elfarch=i386 elfbits=32 elfhash=9aacc3d4bad49c6f1f885db807889ed1eea9d28c group=sys mode=0755 owner=nobody path=nss/bin/modutil pkg.csize=67159 pkg.size=154697
+file bff1999abd9a999c28ee17f1688c173be2b031a1 chash=36dffcd94429e2fda7039a13698ac3fa74ba243b elfarch=i386 elfbits=32 elfhash=c780bc9220436cd136521ec9e5de804f0e8118ec group=sys mode=0755 owner=nobody path=nss/bin/pk12util pkg.csize=37982 pkg.size=86405
+file 2bf0f45f354c8a13b534ae513ca540f8f3f7111c chash=bed98a7de605c6d7b29c45bbc39c346388b9e797 elfarch=i386 elfbits=32 elfhash=d365bdaefd1353a0f2d5ef03514e27a6f6fcc356 group=sys mode=0755 owner=nobody path=nss/bin/signtool pkg.csize=73769 pkg.size=169371
+file 220b0de035ab4b65b3fcf37d7d52cd37a4aa760d chash=c2ee13dc03bd9871aec822ca3b32bdb9575f162e elfarch=i386 elfbits=32 elfhash=e13b4dd4cbcc0331013f4e93c9c0ff614ccc6514 group=sys mode=0755 owner=nobody path=nss/bin/signver pkg.csize=37308 pkg.size=86342
+file 81773a05936516cf6db15e5553d4a81708c7e94e chash=ce6b9454bd965d594e13d71b2740fa42015f1ec5 elfarch=i386 elfbits=32 elfhash=8ae18ba3fe6eda9c07b99ae2dd90fad69742c1c8 group=sys mode=0755 owner=nobody path=nss/bin/ssltap pkg.csize=17619 pkg.size=39285
+file 604ce33f136c827defd140678b7c240dae480fd7 chash=09dedd89ad1cd595d3f2805a9023a9455f0e1ab0 elfarch=i386 elfbits=64 elfhash=c8879546f071a19d03521ea43f9a4287ffc5c5a1 group=sys mode=0755 owner=nobody path=nss/bin/64/addbuiltin pkg.csize=36448 pkg.size=87635
+file 82510d203a4e8d442f5ed43cdc614db1810d56b2 chash=1b8b97151e93b7c44c10b62c77c8e934a785ad23 elfarch=i386 elfbits=64 elfhash=f6b949b6105f9045202fa6e8a8fa99ee24f81f80 group=sys mode=0755 owner=nobody path=nss/bin/64/certutil pkg.csize=67550 pkg.size=167406
+file 7022f7b40cee90ec29f4ac9e2778a63ecd36af29 chash=04d19e9896a4b3f561915dd3f55a7230449c9b07 elfarch=i386 elfbits=64 elfhash=41524102633fc4db9abc42d559a0d4d50d964ee7 group=sys mode=0755 owner=nobody path=nss/bin/64/cmsutil pkg.csize=44755 pkg.size=110895
+file 9b17711deb5ae3948e70268855d5333e3d9c3068 chash=0263c5e62a21b8d206dadf824822d60f93aa4147 elfarch=i386 elfbits=64 elfhash=5f83937b91909ef57e1960a702b7bb87f60b2d8e group=sys mode=0755 owner=nobody path=nss/bin/64/crlutil pkg.csize=52529 pkg.size=127239
+file d9d56b18e6a23ec2f0dd60556db9b23d3f77b4eb chash=e4d562194cbbb3f14678fcdf91d8e9b29ec5856a elfarch=i386 elfbits=64 elfhash=826b4aa6d411356ea049c594ac960d12c2ac5487 group=sys mode=0755 owner=nobody path=nss/bin/64/modutil pkg.csize=71782 pkg.size=172254
+file 7dc676b3e7b05a30fa4a3b12abeba81577322eda chash=d1bf555256fcb41f1587d489abdf06fc5b7c407b elfarch=i386 elfbits=64 elfhash=12dcc4fb12b0e26f3683b93b1060cc9653f0bfa7 group=sys mode=0755 owner=nobody path=nss/bin/64/pk12util pkg.csize=40767 pkg.size=98121
+file 613fe2eabec383dbfcb419eafefbd3170fde27a8 chash=a5a2e955084041b834f31e655392cb24de885bcd elfarch=i386 elfbits=64 elfhash=0bf75c4e3092ef86dfabc156b622e3bd1d6602d0 group=sys mode=0755 owner=nobody path=nss/bin/64/signtool pkg.csize=77858 pkg.size=180986
+file 7ab111bd912b2953c2887a9633b2827917d0358b chash=814d65bc5bd504cd70b269cc1a6e124e3e4ed4f3 elfarch=i386 elfbits=64 elfhash=0adc1cf62f5b958c2247874f6acb0bda49f5519e group=sys mode=0755 owner=nobody path=nss/bin/64/signver pkg.csize=40129 pkg.size=98620
+file bcb142e0d947cbb1eee8ab8a51f42cdfdc385235 chash=45e91e81bbd671f1b866e86831a1b474c30b86bf elfarch=i386 elfbits=64 elfhash=e1f6be08b976858f349043194d04238b54177108 group=sys mode=0755 owner=nobody path=nss/bin/64/ssltap pkg.csize=17940 pkg.size=42608

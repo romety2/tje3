@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>Para reverter atualiza&ccedil;&otilde;es - Ajuda on-line da Update Tool</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+
+
+
+<a name="tasks-backing-out-updates"></a><h4>Para reverter atualiza&ccedil;&otilde;es</h4>
+
+<p>&quot;Revers&atilde;o&quot; &eacute; o processo de restaurar o estado em que um aplicativo se encontrava antes da aplica&ccedil;&atilde;o de uma atualiza&ccedil;&atilde;o. Esse processo consiste em remover as vers&otilde;es de um pacote instaladas como parte da atualiza&ccedil;&atilde;o e, em seguida, instalar vers&otilde;es anteriores selecionadas desse pacote.<p>
+
+<p>A forma mais eficaz de se executar a revers&atilde;o &eacute; a utiliza&ccedil;&atilde;o da interface de linha de comando (CLI) pkg(5). Por&eacute;m, antes de executar a revers&atilde;o, consulte a documenta&ccedil;&atilde;o da atualiza&ccedil;&atilde;o para assegurar que todas as personaliza&ccedil;&otilde;es associadas ao componente sejam preservadas ap&oacute;s a remo&ccedil;&atilde;o do componente e sejam reconhecidas durante a reinstala&ccedil;&atilde;o da vers&atilde;o anterior desejada do componente. Muitos processos de remo&ccedil;&atilde;o e reinstala&ccedil;&atilde;o de componentes preservam as personaliza&ccedil;&otilde;es do usu&aacute;rio, mas &eacute; recomend&aacute;vel ler a documenta&ccedil;&atilde;o antes de executar o processo de revers&atilde;o.</p>
+
+<p>Considere tamb&eacute;m fazer backup de todo o diret&oacute;rio da imagem de instala&ccedil;&atilde;o. Como os componentes instalados e muitas, sen&atilde;o todas, personaliza&ccedil;&otilde;es associadas se encontram no diret&oacute;rio comum da imagem de instala&ccedil;&atilde;o, criar uma c&oacute;pia do diret&oacute;rio da imagem de instala&ccedil;&atilde;o proporciona uma c&oacute;pia do estado da instala&ccedil;&atilde;o anterior ao processo de revers&atilde;o.</p>
+
+<p>Para executar a revers&atilde;o, usando a interface de linha de comando (CLI) pkg(5), siga estas etapas.</p>
+
+<ol><li><p>Use o comando <font face="monospace"><b>pkg history -l</b></font> para exibir um log detalhado das atividades de atualiza&ccedil;&atilde;o realizadas na imagem do aplicativo.</p></li>
+<li><p>Examine o hist&oacute;rico do log at&eacute; encontrar a opera&ccedil;&atilde;o <font face="monospace">image-update</font> que alterou os pacotes a serem revertidos.</p></li>
+<li><p>Tome nota dos pacotes que a opera&ccedil;&atilde;o <font face="monospace">image-update</font> atualizou. Para cada pacote, anote a vers&atilde;o anterior e a nova vers&atilde;o do pacote. Por exemplo, a linha de hist&oacute;rico do log</p>
+<pre>pkg:/pkg-java@1.111,0-31.2172:20090608T230741Z -&gt; pkg:/pkg-java@1.111,0-32.2220:20090703T010710Z</pre>
+<p>indica que o pacote <font face="monospace">pkg-java</font> foi atualizado da vers&atilde;o <font face="monospace"> 1.111,0-31.2172</font> para a vers&atilde;o <font face="monospace">1.111,0-32.2220</font>.</p></li>
+<li><p>Digite um &uacute;nico comando <font face="monospace"><b>pkg uninstall</b></font>, especificando todos os pacotes que foram atualizados pela opera&ccedil;&atilde;o <font face="monospace">image-update</font>. Por exemplo:</p>
+<pre>$ <b>pkg uninstall pkg-java</b></pre></li>
+<li><p>Digite um &uacute;nico comando <font face="monospace"><b>pkg install</b></font>, especificando todos os pacotes, inclusive suas vers&otilde;es <b>anteriores</b>, que foram atualizados pela opera&ccedil;&atilde;o <font face="monospace">image-update</font>. Por exemplo:</p>
+<pre>$ <b>pkg install pkg-java@1.111,0-31.2172</b></pre></li>
+</ol>
+
+</body>
+</html>
+

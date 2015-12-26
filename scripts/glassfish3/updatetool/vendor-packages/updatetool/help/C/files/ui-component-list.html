@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The Component List - Update Tool Online Help</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="ui-component-list"></a><h4>The Component List</h4>
+<p>The component list appears on the right side of the Update Tool
+window just below the toolbar. It shows different information, depending on whether you are
+viewing the available add-ons, available updates, or installed components of an installation image.</p>
+
+<ul><li><p><a href="#addons">Available Add-ons View</a></p></li>
+<li><p><a href="#updates">Available Updates View</a></p></li>
+<li><p><a href="#installed">Installed Components View</a></p></li></ul>
+
+<p>Additionally, if you right-click the component list (Control+click on 
+the Macintosh), a context menu appears, offering commands that operate on 
+the whole component list and items you have selected on the component list.</p>
+
+<a name="addons"></a><p><b>Available Add-ons View</b></p>
+<p><table border="1"><col width="20*"><col width="80*">
+<tr><th align="left" valign="top" scope="column"><p><b>Column</b></p></th>
+        <th align="left" valign="top" scope="column"><p><b>Description</b></p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Component</p></td>
+<td align="left" valign="top" scope="row"><p>The name of the add-on.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Category</p></td>
+<td align="left" valign="top" scope="row"><p>The category of the add-on. Categories group software components that provide similar functionality.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Published</p></td>
+<td align="left" valign="top" scope="row"><p>The date when the add&mdash;on was published.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Version</p></td>
+<td align="left" valign="top" scope="row"><p>The version of the add-on.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Install Size</p></td>
+<td align="left" valign="top" scope="row"><p>The approximate installation size of the add-on.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Source</p></td>
+<td align="left" valign="top" scope="row"><p>The name of the repository from where the add-on will be obtained.</p></td>
+</tr>
+</table></p>
+
+<a name="updates"></a><p><b>Available Updates View</b></p>
+<p><table border="1"><col width="20*"><col width="80*">
+<tr><th align="left" valign="top" scope="column"><p><b>Column</b></p></th>
+        <th align="left" valign="top" scope="column"><p><b>Description</b></p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Component</p></td>
+<td align="left" valign="top" scope="row"><p>The name of the component for which there is an update available.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>!</p></td>
+<td align="left" valign="top" scope="row"><p>The alert column, which shows an asterisk (*) for updates that include security fixes to the installed component.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Published</p></td>
+<td align="left" valign="top" scope="row"><p>The date when the update was published.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>New Version</p></td>
+<td align="left" valign="top" scope="row"><p>The version of the updated component.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Installed Version</p></td>
+<td align="left" valign="top" scope="row"><p>The version of the currently installed component.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Download</p></td>
+<td align="left" valign="top" scope="row"><p>The approximate installation size of the update. Note that 
+since only modified files are delivered within an update, the size of an update is 
+typically less than the installation size of the entire component.</p>
+<p>The Change value will be zero when no files will be modified, but other attributes such as file permissions,
+component descriptions and other metadata will be modified.</p>
+<p>The Change value will be negative when the update will result in either removal of
+files or reductions in the size of one or more files.</p>
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Source</p></td>
+<td align="left" valign="top" scope="row"><p>The name of the repository from where the update will be obtained.</p></td>
+</tr>
+</table></p>
+
+<a name="installed"></a><p><b>Installed Components View</b></p>
+<p><table border="1"><col width="20*"><col width="80*">
+<tr><th align="left" valign="top" scope="column"><p><b>Column</b></p></th>
+        <th align="left" valign="top" scope="column"><p><b>Description</b></p></th>
+</tr><tr><td align="left" valign="top" scope="row"><p>Component</p></td>
+<td align="left" valign="top" scope="row"><p>The name of the component.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Category</p></td>
+<td align="left" valign="top" scope="row"><p>The category of the component. Categories group software components that provide similar functionality.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Version</p></td>
+<td align="left" valign="top" scope="row"><p>The version of the component.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Installed Size</p></td>
+<td align="left" valign="top" scope="row"><p>The approximate installed size of the component.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Source</p></td>
+<td align="left" valign="top" scope="row"><p>The name of the repository from where the component was obtained.</p></td>
+</tr>
+</table></p>
+
+</body>
+</html>
+

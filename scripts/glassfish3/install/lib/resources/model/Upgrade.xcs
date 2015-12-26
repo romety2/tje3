@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   DO NOT ALTER OR REMOVE COPYRIGHT NOTICE OR THIS HEADER.
+
+   Copyright 2006, 2007 Sun Microsystems, Inc. All rights reserved.
+   Use is subject to license terms.
+
+   The contents of this file are subject to the terms of the Common Development
+   and Distribution License("CDDL") (the "License"). You may not use this file
+   except in compliance with the License.
+
+   You can obtain a copy of the License at https://openinstaller.dev.java.net/license.html
+   or http://openinstaller.dev.java.net/license.txt . See the License for the
+   specific language governing permissions and limitations under the License.
+
+   When distributing the Covered Code, include this CDDL Header Notice in each
+   file and include the License file at http://openinstaller.dev.java.net/license.txt .
+   If applicable, add the following below this CDDL Header, with the fields
+   enclosed by brackets [] replaced by your own identifying information:
+   "Portions Copyrighted [year] [name of copyright owner]"
+
+   ident "@(#)%Name% %Revision% %Date% SMI"
+
+-->
+<oor:component-schema oor:version="1.1" oor:name="Upgrade" oor:package="org.openinstaller.upgrade"
+ xsi:schemaLocation="http://openoffice.org/2001/registry"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:oor="http://openoffice.org/2001/registry"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ >
+ <component>
+     <group oor:name="upgrade">
+       <prop oor:name="ONLOAD" oor:type="xs:string" oor:nillable="false">
+         <value>1</value>
+         <actions>
+           <onSet><![CDATA[
+            import java.util.ArrayList;
+            import java.util.List;
+            import java.util.logging.Level;
+            import java.util.logging.Logger;
+
+            import org.openinstaller.bus.BusRequest;
+            import org.openinstaller.bus.BusResponse;
+            import org.openinstaller.bus.ControlBus;
+            import org.openinstaller.contracts.product.ProductNodeInterface;
+            import org.openinstaller.core.EngineConfigCommand;
+            import org.openinstaller.core.EngineConfigItem;
+            import org.openinstaller.core.PROCESSING_MODE;
+            import org.openinstaller.provider.dependency.ComponentDescriptor;
+            import org.openinstaller.provider.dependency.DependencyControl;
+            import org.openinstaller.provider.dependency.DependencyManager;
+            import org.openinstaller.provider.dependency.MediaProduct;
+            import org.openinstaller.provider.operation.Operation.OPTYPE;
+            import org.openinstaller.provider.operation.Operation;
+            import org.openinstaller.provider.operation.OperationImpossibleException;
+            import org.openinstaller.provider.operation.OpsControl;
+            import org.openinstaller.provider.operation.ProductMap;
+            import org.openinstaller.provider.conf.ConfigHelper;
+            import org.openinstaller.sims.Backend;
+            import org.openinstaller.sims.SystemProduct;
+            import org.openinstaller.util.EnhancedException;
+            import org.openinstaller.util.Platform;
+            import org.openinstaller.util.Version;
+            import org.openinstaller.util.install.Common;
+
+            public static OPTYPE gOpType = null;
+            public static Set gLegacySysProducts = null;
+            public static MediaProduct gMediaProduct = null;
+            public static boolean gNoUpgrade = false;
+            public static List gMediaProductList = null;
+            public static List gProductsToUpgrade = null;
+            public static List gProductsToNotUpgrade = null;
+
+            /* get a nice-looking description */
+            getMediaDescription(ProductNodeInterface aProduct) {
+              java.util.List theMediaProductList = (java.util.List )Scripting.getInterpreter().get("gMediaProductList");
+              /*
+               * Find the media product that matches the discovered/installed product
+               */
+              for (MediaProduct theMediaProd : theMediaProductList) {
+                if (aProduct.getName().equalsIgnoreCase(theMediaProd.getName())) {
+                  return theMediaProd.getName();
+                }
+              }
+              return null;
+            }
+
+            /*
+             * Retrives the Media version and release of the product
+             */
+            getMediaVersion(ProductNodeInterface aProduct) {
+              java.util.List theMediaProductList = (java.util.List )Scripting.getInterpreter().get("gMediaProductList");
+
+              /*
+               * Find the media product that matches the discovered/installed product
+               */
+              for (MediaProduct theMediaProd : theMediaProductList) {
+                if (aProduct.getName().equalsIgnoreCase(theMediaProd.getName())) {
+                  return new String[] {theMediaProd.getVersion().toString(), theMediaProd.getRelease(Platform.getCurrentPlatform())};
+                }
+              }
+              return null;
+            }
+
+            /**
+             * Method returns a list of products to upgrade from the list of detected products
+             */
+            getProductsToUpgrade (Set aDetectedProducts) {
+
+              java.util.List theProductsToUpgrade = new ArrayList ();
+              java.util.List theSameVersionProducts = new ArrayList ();
+
+              /* Iterate through the detected products to find which ones need upgrade */
+              for (SystemProduct theFoundProduct : aDetectedProducts) {
+                /* If the detected product is in NOT_INSTALLED state ignore it */
+                if (theFoundProduct.getState() == Backend.EntityState.NOT_INSTALLED) {
+                  continue;
+                }
+                String[] theMediaVersionInfo = getMediaVersion(theFoundProduct);
+                String theMediaVersionStr = " ";
+                String theSystemVersionStr = null;
+                if (null == theMediaVersionInfo) {
+                  /* If media version is not found that means the product might have been de-selected */
+                  continue;
+                }
+                /* Lets display the revision */
+                if (theMediaVersionInfo[1] != null) {
+                  theMediaVersionStr = theMediaVersionInfo[1];
+                } else {
+                  theMediaVersionStr = theMediaVersionInfo[0];
+                }
+
+                /* If the release is not specified for system then use the version */
+                if (theFoundProduct.getRelease() != null) {
+                  theSystemVersionStr = theFoundProduct.getRelease().toString();
+                } else {
+                  theSystemVersionStr = theFoundProduct.getVersion().toString();
+                }
+
+                /* Make sure the versions are not null */
+                if (null != theSystemVersionStr && null != theMediaVersionStr) {
+                  Version theSystemVer = new Version(theSystemVersionStr);
+                  Version theMediaVer = new Version(theMediaVersionStr);
+
+                  /*
+                   * If the installed version is lower than that of the media/installer version
+                   * then add to the list of products for upgrade.
+                   */
+                  String theUpgradeProd = null;
+                  if (theSystemVer.compareTo(theMediaVer) < 0) {
+                    theUpgradeProd = getMediaDescription(theFoundProduct) + " " +
+                      theSystemVersionStr + " [" + theMediaVersionStr + "]";
+                    theProductsToUpgrade.add(theUpgradeProd);
+                  } else if (theSystemVer.compareTo(theMediaVer) >= 0) {
+                    theUpgradeProd = getMediaDescription(theFoundProduct) + " " + theSystemVersionStr;
+                    theSameVersionProducts.add(theUpgradeProd);
+                  }
+                }
+              } // for
+
+              return new Object [] {theProductsToUpgrade, theSameVersionProducts};
+            }
+
+            getHybrid (ComponentDescriptor aComp) {
+              if (aComp == null) {
+                throw new EnhancedException("CANNOT_GET_HYBRID_ADAPTER", new String[] {});
+              }
+              DependencyControl theDC = new DependencyControl(DependencyControl.COMMAND.GET_PRODUCT_NODE,
+                aComp.getIdentityIdentifier());
+              BusRequest theBR = new BusRequest("GenComp", theDC);
+              BusResponse theResp =
+                ControlBus.getInstance().publishRequest(theBR, "svc://general/Dependency");
+              if (theResp.getException() != null) {
+                throw new EnhancedException("CANNOT_GET_HYBRID_ADAPTER", new String[]{"component=" + aComp.getIdentityName()});
+              }
+              return ((MediaProduct)theResp.getResult());
+            }
+
+            /*
+             * Method to retrieve a list of products on the media.
+             */
+            getProductList (Operation.OPTYPE aOp) {
+              DependencyControl.COMMAND theCmd = DependencyControl.COMMAND.GET_SEQUENCED_COMPONENT;
+              if (aOp == Operation.OPTYPE.REMOVE) {
+                theCmd = DependencyControl.COMMAND.GET_REVERSE_SEQUENCED_COMPONENT;
+              }
+              DependencyControl theDC = new DependencyControl(theCmd, null);
+              BusRequest theBR = new BusRequest("ComponentList", theDC);
+              BusResponse theResp =
+                ControlBus.getInstance().publishRequest(theBR, "svc://general/Dependency");
+              java.util.List theResult = new ArrayList ();
+              if (theResp == null) {
+                throw new EnhancedException("CANNOT_CREATE_HYBRID_COMP", new String[]{"operation=" + aOp.toString()});
+              }
+              java.util.List theComps = (java.util.List) theResp.getResult();
+              if (null != theComps) {
+                for (ComponentDescriptor theComp : theComps) {
+                  try {
+                    theResult.add(getHybrid(theComp));
+                  } catch (Exception theEx) {
+                    throw new EnhancedException("CANNOT_CREATE_HYBRID_COMP", theEx, new String[] {"component=" + theComp});
+                  }
+                }
+              }
+              return theResult;
+            }
+
+            run() {
+              /* Get Install Home */
+              String INSTALLHOME_DATAPATH = "InstallHome.directory.INSTALL_HOME";
+              String theInstallHome = (String) ConfigHelper.getValue(INSTALLHOME_DATAPATH);
+
+              /* Retrieve the Product Map */
+              OpsControl theOpsCmd = new OpsControl(OpsControl.OpsCommand.GET_PRODUCT_MAP, theInstallHome);
+              BusResponse theProdMapResp = bus.publishRequest(
+                  new BusRequest("ProductMapRequest", theOpsCmd), "svc://general/operation");
+
+              if (theProdMapResp == null) {
+                throw new EnhancedException("CANNOT_CREATE_PRODUCT_MAP", new String [] {});
+              } else if (theProdMapResp.getException() != null) {
+                throw new EnhancedException("CANNOT_CREATE_PRODUCT_MAP", theProdMapResp.getException(), new String[]{});
+              }
+
+              ProductMap theProdMap = (ProductMap) theProdMapResp.getResult();
+              if (theProdMap == null) {
+                throw new EnhancedException("CANNOT_CREATE_PRODUCT_MAP", new String [] {});
+              }
+              /* Find out what kind of an operation it is */
+              gOpType = theProdMap.getOperation();
+
+              /* Retrieve both the system model and the media model */
+              gLegacySysProducts = theProdMap.getSystemModel();
+              gMediaProduct = theProdMap.getMediaModel();
+
+              if (gOpType == Operation.OPTYPE.UPGRADE) {
+                /* Retrieve the NoUpgrade flag */
+                BusRequest theUpgradeFlagReq = new BusRequest("NoUpgradeFlagRequest",
+                  new EngineConfigCommand(EngineConfigCommand.COMMAND.GET_CONFIG, EngineConfigItem.NO_UPGRADE));
+                BusResponse theUpgradeResp = ControlBus.getInstance().publishRequest(theUpgradeFlagReq, "svc://general/EngineConfig");
+                if (theUpgradeResp != null && theUpgradeResp.getException() == null) {
+                  final String theUpResult = (String) theUpgradeResp.getResult();
+                  if ("true".equalsIgnoreCase(theUpResult)) {
+                    gNoUpgrade = true;
+                  }
+                }
+
+                /*
+                 * We need the list of media products for display
+                 */
+                gMediaProductList = getProductList(Operation.OPTYPE.INSTALL);
+
+                /* Get the list of products to upgrade */
+                Object[] theUpgradeObjs = getProductsToUpgrade(gLegacySysProducts);
+                gProductsToUpgrade = theUpgradeObjs[0];
+                gProductsToNotUpgrade = theUpgradeObjs[1];
+              }
+            }
+
+            return (Runnable)this;
+             ]]></onSet>
+         </actions>
+      </prop>
+      <prop oor:name="ALLOW_UPGRADE" oor:type="xs:string" oor:nillable="false" oor:transient="true">
+      <value>1</value>
+       <info>
+         <desc xml:lang="en-US">Do you want to upgrade software?</desc>
+       </info>
+       <actions>
+          <onSet><![CDATA[
+            /*
+             * Upgrade option (0 or 1)  is relevant only if there are products to ugprade
+             * If there are products at the same level then ignore the upgrade option
+             */
+             String theUpgradeOption = thisProperty.getUnconfirmedValue();
+             /* bsh makes a distinction between void and null */
+             if (gProductsToUpgrade != void && gProductsToUpgrade != null && !gProductsToUpgrade.isEmpty()) {
+              if ("1".equalsIgnoreCase(theUpgradeOption)) {
+                throw new EnhancedException("CANNOT_UPGRADE_BY_DEFAULT", new String[] {
+                  "products=" + Arrays.toString(gProductsToUpgrade)});
+              }
+             }
+         ]]></onSet>
+       </actions>
+       </prop>
+    </group>
+ </component>
+</oor:component-schema>
+

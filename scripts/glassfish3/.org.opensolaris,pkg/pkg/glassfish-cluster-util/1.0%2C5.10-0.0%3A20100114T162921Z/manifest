@@ -1,0 +1,13 @@
+set name=fmri value=pkg://contrib.glassfish.org/glassfish-cluster-util@1.0,5.10-0.0:20100114T162921Z
+set name=authority value=contrib.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="The GlassFish v3 Cluster Administration Utility enables users to run a single command to perform the same administrative task on multiple Enterprise Server instances, for example, instances in a cluster where Apache mod_jk is used as load balancer. The Cluster Administration Utility can be used to administer multiple instances in the same way that the asadmin utility can be used to administer a single instance. For information about how to use the Cluster Administration Utility to administer multiple Enterprise Server instances in Amazon Elastic Compute Cloud (EC2), see Sun GlassFish Enterprise Server v3 EC2 Images Guide at http://docs.sun.com/doc/821-1300."
+set name=pkg.summary value="GlassFish v3 Cluster Administration Utility"
+depend fmri=pkg:/glassfish-nucleus type=require
+license e0273c357c9684d857326451ceeda7917deff925 chash=05a415a9900bab29da1138c275aa69ffc85731f3 license="CDDL and GPL v2 with classpath exception" pkg.csize=11555 pkg.size=36115
+dir group=sys mode=0755 owner=nobody path=bin
+file ea891dc231f3c0f4d15ef381bc3dd434a89feeba chash=fa4c3afa6eb04a75b73115827676bad42e9b3f61 group=sys mode=0755 owner=nobody path=bin/cladmin.bat pkg.csize=1032 pkg.size=2846
+file 4618a68ce3f9865bd4e278826e63cc86018131e6 chash=ea25d85b4bafd0807dd798698fc5e1b4476cb394 group=sys mode=0755 owner=nobody path=bin/cladmin pkg.csize=822 pkg.size=2388
+dir group=sys mode=0755 owner=nobody path=glassfish
+dir group=sys mode=0755 owner=nobody path=glassfish/lib
+file d7c82a9f002769f78ee2904ecacf8873c2f7669d chash=2ad2aa6d4542189a5da3ec9caa33a13629bc161e group=sys mode=0644 owner=nobody path=glassfish/lib/cladmin.jar pkg.csize=6982 pkg.size=8827

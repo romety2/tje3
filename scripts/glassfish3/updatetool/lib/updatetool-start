@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+#
+# Copyright (c) 2010 Oracle and/or its affiliates. All rights reserved.
+#
+# Use is subject to License Terms
+#
+
+cd "/home/student/glassfish3/updatetool/bin"
+./updatetool

@@ -1,0 +1,35 @@
+/* AUTOMATICALLY GENERATED ON Sat Dec 26 13:15:59 CET 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.WebResourcePermission "/theme/META-INF/*";
+  permission javax.security.jacc.WebResourcePermission "/theme/org/*";
+  permission javax.security.jacc.WebResourcePermission "/resource/*";
+  permission javax.security.jacc.WebResourcePermission "/theme/com/*";
+  permission javax.security.jacc.WebUserDataPermission "/theme/com/*";
+  permission javax.security.jacc.WebUserDataPermission "/theme/META-INF/*";
+  permission javax.security.jacc.WebUserDataPermission "/theme/org/*";
+  permission javax.security.jacc.WebUserDataPermission "/*:/resource/*:/theme/com/*:/theme/META-INF/*:/theme/org/*";
+  permission javax.security.jacc.WebUserDataPermission "/resource/*";
+};
+
+grant      principal org.glassfish.security.common.PrincipalImpl "admin" {
+  permission javax.security.jacc.WebResourcePermission "/*:/resource/*:/theme/com/*:/theme/META-INF/*:/theme/org/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "ThemeServlet", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "DownloadServlet", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "", "admin";
+};
+
+grant      principal org.glassfish.security.common.Group "asadmin" {
+  permission javax.security.jacc.WebResourcePermission "/*:/resource/*:/theme/com/*:/theme/META-INF/*:/theme/org/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "ThemeServlet", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "DownloadServlet", "admin";
+  permission javax.security.jacc.WebRoleRefPermission "", "admin";
+};
+

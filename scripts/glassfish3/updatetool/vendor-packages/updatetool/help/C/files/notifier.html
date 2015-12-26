@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+
+    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+    Copyright (c) 2008-2010 Oracle and/or its affiliates. All rights reserved.
+
+    The contents of this file are subject to the terms of either the GNU
+    General Public License Version 2 only ("GPL") or the Common Development
+    and Distribution License("CDDL") (collectively, the "License").  You
+    may not use this file except in compliance with the License.  You can
+    obtain a copy of the License at
+    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    or packager/legal/LICENSE.txt.  See the License for the specific
+    language governing permissions and limitations under the License.
+
+    When distributing the software, include this License Header Notice in each
+    file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+
+    GPL Classpath Exception:
+    Oracle designates this particular file as subject to the "Classpath"
+    exception as provided by Oracle in the GPL Version 2 section of the License
+    file that accompanied this code.
+
+    Modifications:
+    If applicable, add the following below the License Header, with the fields
+    enclosed by brackets [] replaced by your own identifying information:
+    "Portions Copyright [year] [name of copyright owner]"
+
+    Contributor(s):
+    If you wish your version of this file to be governed by only the CDDL or
+    only the GPL Version 2, indicate your decision by adding "[Contributor]
+    elects to include this software in this distribution under the [CDDL or GPL
+    Version 2] license."  If you don't indicate a single choice of license, a
+    recipient has the option to distribute your version of this file under
+    either the CDDL, the GPL Version 2 or to extend the choice of license to
+    its licensees as provided above.  However, if you add GPL Version 2 code
+    and therefore, elected the GPL Version 2 license, then the option applies
+    only if the new code is made subject to such option by the copyright
+    holder.
+
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Desktop Notifier - Update Tool Online Help</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="">
+</head>
+
+<body>
+<a name="notifier"></a><h4>Desktop Notifier</h4>
+<p>A background desktop notification task (or notifier) works in conjunction 
+with the Update Tool to periodically check for updates and to notify you of 
+updates via your desktop for all of the installation images that are known
+to your installation of the Update Tool.</p>
+
+<p><b>Registration of the Notifier</b></p>
+<p>If you opt to enable automatic checking and notification of updates during
+the initial installation of your image, then the notifier will be automatically
+registered as a startup program in your desktop environment.</p>
+
+<p>If an initial installation program does not register the notifier, then you can
+cause the notifier to be automatically registered simply by running the 
+Update Tool for at least one minute.  As long your Update Tool preferences
+specify an update checking frequency other than "Never", the notifier will
+be automatically registered.</p>
+
+<p><b>Startup of the Notifier</b></p>
+<p>Each time you log into your desktop, the notifier starts and runs as a 
+background process. The notifier will only display in your desktop's notification
+area when there are updates available for one or more of your installation images.
+(The exception being on Mac OS X where the notifier is never represented in the
+dock of your desktop).</p>
+
+<p><b>Notification of Updates</b></p>
+<p>When the notifier detects that updates are available, it displays an icon 
+in your desktop's notification area and a window from which you can launch the 
+Software Update tool to review and apply the available updates.</p>
+
+<p>The notifier uses the list of installation images managed in your personal 
+Update Tool settings to determine which images and repositories to monitor for 
+updated components.  The frequency by which the notifier checks for updates is 
+based on preferences set within the Update Tool. You can modify whether the
+notifier check for updates at all and the frequecy at which it checks for 
+updates via the Update Tool's preferences:</p>
+
+<p>Edit -> Preferences</p>
+
+<p><b>Operation of the Notifier</b></p>
+<p>Depending on the operating system and desktop type in use, different methods
+are used to register the notifier as a desktop login startup program:</p>
+<ul><li>Windows: Start menu -> Programs -> Startup</li>
+<li>Gnome: System -> Preferences -> Sessions -> Startup Programs -> Update Tool Desktop Notifier</li>
+<li>Mac OS X: user name/Library/LaunchAgents/com.sun.ucnotifier.plist</li></ul>
+
+<p>When you log into your desktop, a notifier startup program first consults 
+the list of installation images maintained in your Update Tool 
+preferences area to determine which installation image from which to launch the
+notifier task.  As you install and uninstall installation images, the 
+notifier startup program attempts to always use the most appropriate installation
+image from which to run the notifier program.</p>
+
+<p><b>The Notifier Interface</b></p>
+<p>For more information about the menu options that notifier offers, see <a href="ui-desktop-notifier.html">The Desktop Notifier</a> in the "Parts of the Interface" section of online help.</p>
+</body>
+</html>
+
