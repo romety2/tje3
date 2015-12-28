@@ -1,1 +1,1 @@
-<h> Hello world</h>
+<% response.sendRedirect("home.jsf"); %>

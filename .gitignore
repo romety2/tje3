@@ -22,6 +22,7 @@ target
 tmp*
 dist
 test-output
+bin
 
 # other scm
 .svn
