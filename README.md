@@ -14,8 +14,8 @@
 	`cp ./scripts/hsqldb-2.2.4.jar scripts/glassfish3/glassfish/domains/domain1/lib/ext/.`
 * zmieniamy konfigurcje pliku domain.xml w GlassFish'u
 	`vi scripts/glassfish3/glassfish/domains/domain1/config/domain.xml`
-szukamy <resources>. kopiuj/wklej poniższy <jdbc-connection-pool> w miejsce <resources>:
-<jdbc-connection-pool driver-classname="" datasource-classname="org.hsqldb.jdbc.JDBCDataSource"
+szukamy `<resources>`. kopiuj/wklej poniższy `<jdbc-connection-pool>` w miejsce `<resources>`:
+	`<jdbc-connection-pool driver-classname="" datasource-	classname="org.hsqldb.jdbc.JDBCDataSource"
 res-type="javax.sql.DataSource" description="" name="HSQLPool" ping="true">
 <property name="DatabaseName" value="jdbc:hsqldb:hsql://localhost/workdb"></property>
 <property name="User" value="SA"></property>
@@ -23,7 +23,7 @@ res-type="javax.sql.DataSource" description="" name="HSQLPool" ping="true">
 <property name="connectionAttributes" value=";ifexists=true"></property>
 </jdbc-connection-pool>
 <jdbc-resource pool-name="HSQLPool" description="DataSource for demo apps with HSQLDB"
-jndi-name="jdbc/demoapps"></jdbc-resource>
+jndi-name="jdbc/demoapps"></jdbc-resource>`
 * uruchom GlassFish
 	`./scripts/uruchomGlassFish.sh`
 * przejdź do panelu `http://localhost:4848` 
