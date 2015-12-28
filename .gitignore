@@ -28,6 +28,9 @@ test-output
 .CVS
 .hg*
 
+# glassfish
+.glassfish3
+
 # switch to regexp syntax.
 #  syntax: regexp
 #  ^\.pc/
