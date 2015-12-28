@@ -1,8 +1,0 @@
-set name=fmri value=pkg://stable.glassfish.org/glassfish-scripting@3.1,0-41:20110208T202810Z
-set name=authority value=stable.glassfish.org
-set name=info.classification value="Application Servers"
-set name=pkg.description value="GlassFish Scripting package has been obsoleted in GlassFish 3.1."
-set name=pkg.summary value="GlassFish Scripting"
-depend fmri=pkg:/glassfish-nucleus@3.1 type=require
-license e0273c357c9684d857326451ceeda7917deff925 chash=05a415a9900bab29da1138c275aa69ffc85731f3 license="CDDL and GPL v2 with classpath exception" pkg.csize=11555 pkg.size=36115
-dir group=sys mode=0755 owner=root path=glassfish

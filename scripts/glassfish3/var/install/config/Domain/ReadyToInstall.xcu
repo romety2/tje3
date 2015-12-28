@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:component-data xmlns:ns1="http://openinstaller.org/config/V1" xmlns:ns2="http://openoffice.org/2001/registry" ns2:readonly="true" ns2:finalized="true" ns2:package="org.openinstaller.readytoinstall">
-    <node ns2:name="readytoinstall">
-        <prop ns2:type="xs:string" ns2:name="ONLOAD">
-            <value>foovalueforinstall</value>
-        </prop>
-    </node>
-</ns2:component-data>

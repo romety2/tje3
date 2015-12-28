@@ -29,7 +29,7 @@ test-output
 .hg*
 
 # glassfish
-.glassfish3
+glassfish3
 
 # switch to regexp syntax.
 #  syntax: regexp

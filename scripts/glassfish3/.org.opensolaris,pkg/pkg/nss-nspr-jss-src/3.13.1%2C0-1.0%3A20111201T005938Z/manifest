@@ -1,9 +1,0 @@
-set name=fmri value=pkg://stable.glassfish.org/nss-nspr-jss-src@3.13.1,0-1.0:20111201T005938Z
-set name=authority value=stable.glassfish.org
-set name=pkg.summary value="NSPR/NSS/JSS Source Code"
-set name=pkg.description value="This package contains the source code for NSS 3.13.1, NSPR 4.8.9 and JSS 4.3.2."
-set name=info.classification value="Security Services and Tools"
-license 8843659fd99631ab1d9cde7550e6b647a61b3eef chash=36a1fe083b3fdc3980a3c2de9afabe1aaa1e499d license=LGPL2.1 pkg.csize=9515 pkg.size=26894
-dir group=sys mode=0755 owner=nobody path=nss
-dir group=sys mode=0755 owner=nobody path=nss/src
-file ee0b9cba90d4aa3ec31f58a50e3ee1ebe5d4a339 chash=7a1d448b87bceae1dce97e925154536714d81cf5 group=sys mode=0644 owner=nobody path=nss/src/nss_nspr_jss_src.zip pkg.csize=10178743 pkg.size=10813954
