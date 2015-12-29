@@ -5,13 +5,9 @@
 	xmlns:h="http://java.sun.com/jsf/html">
   <div>
 	<h:form>
-	  <ul>
-		<li>
-		  <h:commandLink action="home">
-			<h:outputText value="home" />
-		  </h:commandLink>
-		</li>
-	</ul>
+		<h:commandLink action="home">
+			<h:outputText value="#{wd.stronaGlowna}" />
+		</h:commandLink>
    </h:form>
   </div>
 </ui:composition>
