@@ -7,11 +7,11 @@
 
 	<application>
 		<resource-bundle>
-			<base-name>com.example.jsf.wiadomosci</base-name>
+			<base-name>com.jsf.wiadomosci</base-name>
 			<var>wd</var>
 		</resource-bundle>
 
-		<message-bundle>com.example.jsf.bledy</message-bundle>
+		<message-bundle>com.jsf.bledy</message-bundle>
 
 		<locale-config>
 			<default-locale>pl</default-locale>
