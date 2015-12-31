@@ -1,7 +1,7 @@
 * przechodzimy do folderu z projektem 
 * nadajemy sobie uprawnienia do uruchamiania skryptów:  
 	`chmod 755 ./scripts/*.sh` 
-* zainstaluj GlassFish (początkowo w folderze scripts utwórz folder o nazwie "glassfish3" następnie uruchom skrypt wypakowujący wszystkie pliki GlassFish-a nie zapomnij wskazać odpowiedniej scieżki do folderu):  
+* zainstaluj GlassFish (początkowo w folderze scripts utwórz folder o nazwie "glassfish3" następnie uruchom skrypt wypakowujący wszystkie pliki GlassFish-a do folderu "glassfish3"):  
 	 `mkdir scripts/glassfish3`  
 	`./scripts/glassfish-3.1.2.2-unix.sh`
 * uruchamiamy serwer:  
