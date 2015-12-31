@@ -5,30 +5,5 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/templates/default.xhtml">
 
-	<ui:define name="content">
-		<h:form>
-			<h:dataTable value="#{personBean.allPersons}" var="item">
-				<f:facet name="header">#{msg.personAllLabel}</f:facet>
-				<h:column>
-					<f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
-					<h:outputText value="#{item.firstName}" />
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">#{msg.personPinLabel}</f:facet>
-					<h:outputText value="#{item.pin}" />
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">#{msg.action}</f:facet>
-					<h:commandLink value="#{msg.actionDelete}"
-						action="#{personBean.deletePerson}" />
-					<h:commandLink value=" Details " action="#{personBean.showDetails}"/>
-				</h:column>
-
-			</h:dataTable>
-		</h:form>
-
-	</ui:define>
 
 </ui:composition>
