@@ -5,9 +5,23 @@
 	xmlns:h="http://java.sun.com/jsf/html">
   <div>
 	<h:form>
-		<h:commandLink action="home">
-			<h:outputText value="#{wd.stronaGlowna}" />
-		</h:commandLink>
+		<ul id="menu">
+			<li>
+				<h:commandLink action="trumny">
+					<h:outputText value="#{wd.trumny}" />
+				</h:commandLink>
+			</li>
+			<li>
+				<h:commandLink action="pogrzeby">
+					<h:outputText value="#{wd.pogrzeby}" />
+				</h:commandLink>
+			</li>
+			<li>
+				<h:commandLink action="home">
+					<h:outputText value="#{wd.stronaGlowna}" />
+				</h:commandLink>
+			</li>
+		</ul>
    </h:form>
   </div>
 </ui:composition>

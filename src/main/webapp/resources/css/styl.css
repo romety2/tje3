@@ -8,10 +8,35 @@ body {
 
 a{
   font-size: 20px;
+  text-decoration: none; 
+  color: #800000;
 }
 
-ul{
+a#email{
+  font-size: 20px;
+  text-decoration: underline; 
+  color: #00BFFF;
+}
+
+ul#usluga{
+  list-style-type: circle;
   line-height: 30px;
+}
+
+ul#menu{
+  height:auto; 
+  margin:0;
+  padding:0;
+  list-style: none;
+  float: left;
+  width: 338px;
+}
+
+ul#menu li { 
+  float: right;
+  margin-left:10px;
+  margin-right:10px;
+  padding:0;
 }
 
 .s1 {
@@ -56,38 +81,36 @@ ul{
   color: #483D8B;
 }
 
-.menuITresc{
-  width: 100%;
-  height: 100%;
-}
-
 .menu {
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  border: thin solid blue;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-color: #4B0082;
+  border-style: double;
+  border-width: 10px;
+  border-radius: 20px; 
   position: absolute;
   text-align: center;
-  left: 20px;
-  height: 20px;
-  width: 10%;
-  background: #EE82EE;
-  top: 90px;
+  left: 35%;
+  top: 2%;
+  height: auto;
+  width: auto;
+  background: #EE82EE; 	
 }
 
 .tresc {
   padding-right: 20px;
   padding-left: 20px;
+  padding-top: 20px;
   padding-bottom: 20px;
   border-color: #483D8B;
-  border-style: double;
+  border-style: groove;
   border-width: 15px;
   border-radius: 30px;
   background: #FFB6C1;	
   position:absolute;
-  left: 17%; 
+  left: 5%; 
   top: 90px;
-  width: 75%;
+  width: 85%;
   height: auto;
   opacity: 0.8;
   box-shadow: 8px 8px 4px 4px #000000;

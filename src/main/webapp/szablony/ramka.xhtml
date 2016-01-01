@@ -5,17 +5,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><ui:insert name="windowTitle">#{wd.stronaGlowna}</ui:insert>
+	<title><ui:insert name="windowTitle"><h:outputText value="#{wd.zakladPogrzebowy}"/></ui:insert>
 	</title>
 </h:head>
 <h:body>
   <h:outputStylesheet library="css" name="styl.css" target="body" />
-	<div class="naglowek">
-	  <ui:insert name="naglowek">
-       #{wd.stronaGlownaDuze}
-     </ui:insert>
-    </div>
-	<div class="menuITresc">
 	 <div class="menu">
 	   <ui:insert name="menu">
          <ui:include src="/widoki/menu.xhtml" />
@@ -24,6 +18,10 @@
 	  <div class="tresc">
 	     <ui:insert name="tresc" />
        </div>
-	</div>
+	<!--<div class="naglowek">
+	  <ui:insert name="naglowek">
+       #{wd.stronaGlownaDuze}
+     </ui:insert>
+    </div>-->
 </h:body>
 </html>
