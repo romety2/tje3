@@ -1,7 +1,6 @@
 package com.zakladPogrzebowy.domena;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -51,7 +50,7 @@ public class Trumna {
 	}
 
 
-	@OneToMany(mappedBy = "pogrzeb", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "trumna", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	public List<Pogrzeb> getPogrzeby() {
 	return pogrzeby;
 	}
