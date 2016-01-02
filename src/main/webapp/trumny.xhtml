@@ -3,7 +3,34 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/szablony/ramka.xhtml">
-
-
+	template="/szablony/brak.xhtml">
+	<ui:define name="pusto">
+		<h:form>
+			<div align="center">
+				<div id="naglowek">
+					<h:outputText value="#{wd.trumnyDuze}"/>
+				</div>
+				<h:dataTable value="#{trumnaBean.wszystkieTrumny}" var="pozycja">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{wd.rodzaj}"/>
+						</f:facet>
+						<h:outputText value="#{pozycja.rodzaj}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{wd.cena}"/>
+						</f:facet>
+						<h:outputText value="#{pozycja.cena}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{wd.ilosc}"/>
+						</f:facet>
+						<h:outputText value="#{pozycja.ilosc}" />
+					</h:column>
+				</h:dataTable>
+			</div>
+		</h:form>
+	</ui:define>
 </ui:composition>

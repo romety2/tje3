@@ -26,11 +26,12 @@ public class TrumnaBean implements Serializable {
 	public Trumna getTrumna() {
 		return trumna;
 	}
+	
 	public void setTrumna(Trumna trumna) {
 		this.trumna = trumna;
 	}
 	
-	public ListDataModel<Trumna> getTrumny() {
+	public ListDataModel<Trumna> getWszystkieTrumny() {
 		trumny.setWrappedData(tm.dajWszystkie());
 		return trumny;
 	}

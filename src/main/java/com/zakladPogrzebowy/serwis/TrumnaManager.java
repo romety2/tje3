@@ -1,13 +1,11 @@
 package com.zakladPogrzebowy.serwis;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.zakladPogrzebowy.domena.Pogrzeb;
 import com.zakladPogrzebowy.domena.Trumna;
 
 @Stateless

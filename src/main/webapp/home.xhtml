@@ -5,9 +5,17 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/szablony/ramka.xhtml">
 	<ui:define name="tresc">
-		<div class="s1"><h:outputText value="#{wd.zakladPogrzebowy}"/></div>
-		<div class="s2"><h:outputText value="#{wd.wlasciciel}"/></div>
-		<div class="s3"><a id="email" href="mailto:lmielewczyk@inf.ug.edu.pl"><h:outputText value="#{wd.email}"/></a></div>
+		<div id="s1">
+			<h:outputText value="#{wd.zakladPogrzebowy}"/>
+		</div>
+		<div id="s2">
+			<h:outputText value="#{wd.wlasciciel}"/>
+		</div>
+		<div id="s3">
+			<a id="email" href="#{wd.emailOdnosnik}">
+				<h:outputText value="#{wd.email}"/>
+			</a>
+		</div>
 		<h:outputText value="#{wd.opisZakladuPogrzebowego}"/>
 		<ul id="usluga">
 			<li><h:outputText value="#{wd.usluga1}"/></li>

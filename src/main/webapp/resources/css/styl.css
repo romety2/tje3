@@ -12,6 +12,28 @@ a{
   color: #800000;
 }
 
+table{
+  border-style: double;
+  border-color: #000000;
+  border-width: 5px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th{
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  padding: 2px;
+}
+
+td{
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  padding: 2px;
+}
+
 a#email{
   font-size: 20px;
   text-decoration: underline; 
@@ -39,7 +61,7 @@ ul#menu li {
   padding:0;
 }
 
-.s1 {
+div#s1 {
   color: #330033;
   font-size: 50px;
   font-style: italic;
@@ -50,7 +72,7 @@ ul#menu li {
   padding-bottom: 20px;
 }
 
-.s2 {
+div#s2 {
   text-align: center;
   color: #000033;
   font-size: 30px;
@@ -61,7 +83,7 @@ ul#menu li {
   padding-bottom: 20px;
 }
 
-.s3 {
+div#s3 {
   text-align: center;
   font-size: 15px;
   font-style: italic;
@@ -71,7 +93,7 @@ ul#menu li {
   padding-bottom: 20px;
 }
 
-.naglowek {
+div#naglowek {
   padding: 15px;
   font-size: 50px;
   font-style: italic;
@@ -114,4 +136,12 @@ ul#menu li {
   height: auto;
   opacity: 0.8;
   box-shadow: 8px 8px 4px 4px #000000;
+}
+
+.pusto {
+  border-style: none;
+  position:absolute;
+  top: 80px;
+  width: 100%;
+  height: auto;
 }

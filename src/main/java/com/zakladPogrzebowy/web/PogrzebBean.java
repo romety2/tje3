@@ -1,7 +1,6 @@
 package com.zakladPogrzebowy.web;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.ListDataModel;
@@ -9,9 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.zakladPogrzebowy.domena.Pogrzeb;
-import com.zakladPogrzebowy.domena.Trumna;
 import com.zakladPogrzebowy.serwis.PogrzebManager;
-import com.zakladPogrzebowy.serwis.TrumnaManager;
 
 @SessionScoped
 @Named("pogrzebBean")
@@ -32,7 +29,7 @@ public class PogrzebBean implements Serializable {
 		this.pogrzeb = pogrzeb;
 	}
 	
-	public ListDataModel<Pogrzeb> getPogrzeby() {
+	public ListDataModel<Pogrzeb> getWszystkiePogrzeby() {
 		pogrzeby.setWrappedData(pm.dajWszystkie());
 		return pogrzeby;
 	}
