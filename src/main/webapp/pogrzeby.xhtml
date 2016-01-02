@@ -7,7 +7,7 @@
 	<ui:define name="pusto">
 		<h:form>
 			<div align="center">
-				<div id="naglowek">
+				<div class="naglowek">
 					<h:outputText value="#{wd.pogrzebyDuze}"/>
 				</div>
 				<h:dataTable value="#{pogrzebBean.wszystkiePogrzeby}" var="pozycja">
@@ -36,7 +36,9 @@
 						<h:outputText value="#{pozycja.opis}" />
 					</h:column>
 				</h:dataTable>
-				<h:button value="Dodaj" outcome="home" />
+				<div class="przycisk">
+					<h:commandButton styleClass="dodaj" value="Dodaj" action="home" />
+				</div>
 			</div>
 		</h:form>
 	</ui:define>
