@@ -24,6 +24,7 @@ th{
   border-style: solid;
   border-color: #000000;
   border-width: 2px;
+  background-color: #FFDAB9;
   padding: 2px;
 }
 
@@ -31,6 +32,7 @@ td{
   border-style: solid;
   border-color: #000000;
   border-width: 2px;
+  background-color: #E6E6FA;
   padding: 2px;
 }
 
