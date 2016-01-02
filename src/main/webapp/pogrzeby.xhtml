@@ -35,9 +35,19 @@
 						</f:facet>
 						<h:outputText value="#{pozycja.opis}" />
 					</h:column>
+					<h:column>
+						<f:facet name="header">
+						</f:facet>
+						<div class="link">
+							<h:commandLink styleClass="akcja"
+							value="#{wd.edytuj} " action="home" />
+							<h:commandLink styleClass="akcja"
+							value="#{wd.usun}" action="home"/>
+						</div>
+					</h:column>
 				</h:dataTable>
 				<div class="przycisk">
-					<h:commandButton styleClass="dodaj" value="Dodaj" action="home" />
+					<h:commandButton styleClass="dodaj" value="#{wd.dodaj}" action="home" />
 				</div>
 			</div>
 		</h:form>

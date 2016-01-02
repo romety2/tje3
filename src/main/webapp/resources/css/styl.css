@@ -6,12 +6,6 @@ body {
   font-size: 20px;
 }
 
-a{
-  font-size: 20px;
-  text-decoration: none; 
-  color: #800000;
-}
-
 table{
   border-style: double;
   border-color: #000000;
@@ -34,33 +28,6 @@ td{
   border-width: 2px;
   background-color: #E6E6FA;
   padding: 2px;
-}
-
-a#email{
-  font-size: 20px;
-  text-decoration: underline; 
-  color: #00BFFF;
-}
-
-ul#usluga{
-  list-style-type: circle;
-  line-height: 30px;
-}
-
-ul#menu{
-  height:auto; 
-  margin:0;
-  padding:0;
-  list-style: none;
-  float: left;
-  width: 338px;
-}
-
-ul#menu li { 
-  float: right;
-  margin-left:10px;
-  margin-right:10px;
-  padding:0;
 }
 
 .s1 {
@@ -87,12 +54,32 @@ ul#menu li {
 
 .s3 {
   text-align: center;
-  font-size: 15px;
   font-style: italic;
   font-weight: bold;
   text-align: center;
   font-family: Calibri, sans-serif;
   padding-bottom: 20px;
+}
+
+.link{
+}
+
+.link .email{
+  font-size: 20px;
+  text-decoration: underline; 
+  color: #00BFFF;
+}
+
+.link .pozMenu{
+  font-size: 20px;
+  text-decoration: none; 
+  color: #800000;
+}
+
+.link .akcja{
+  font-size: 15px;
+  text-decoration: none; 
+  color: #006400;
 }
 
 .przycisk{
@@ -104,9 +91,30 @@ ul#menu li {
 	font-size: 20px;
 }
 
+.uslugi{
+  list-style-type: circle;
+  line-height: 30px;
+}
+
+.menuLista{
+  height:auto; 
+  margin:0;
+  padding:0;
+  list-style: none;
+  float: left;
+  width: 338px;
+}
+
+.menuLista .poz { 
+  float: right;
+  margin-left:10px;
+  margin-right:10px;
+  padding:0;
+}
+
 .naglowek {
   padding: 15px;
-  font-size: 50px;
+  font-size: 40px;
   font-style: italic;
   font-family: Verdana;
   text-decoration: underline;

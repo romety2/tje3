@@ -5,21 +5,21 @@
 	xmlns:h="http://java.sun.com/jsf/html">
   <div>
 	<h:form>
-		<ul id="menu">
-			<li>
-				<h:commandLink action="trumny">
-					<h:outputText value="#{wd.trumny}" />
-				</h:commandLink>
+		<ul class="menuLista">
+			<li class="poz">
+				<div class="link">
+					<h:commandLink styleClass="pozMenu" value="#{wd.trumny}" action="trumny"/>
+				</div>
 			</li>
-			<li>
-				<h:commandLink action="pogrzeby">
-					<h:outputText value="#{wd.pogrzeby}" />
-				</h:commandLink>
+			<li class="poz">
+				<div class="link">
+					<h:commandLink styleClass="pozMenu" value="#{wd.pogrzeby}" action="pogrzeby"/>
+				</div>
 			</li>
-			<li>
-				<h:commandLink action="home">
-					<h:outputText value="#{wd.stronaGlowna}" />
-				</h:commandLink>
+			<li class="poz">
+				<div class="link">
+					<h:commandLink styleClass="pozMenu" value="#{wd.stronaGlowna}" action="home"/>
+				</div>
 			</li>
 		</ul>
    </h:form>
