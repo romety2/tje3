@@ -29,7 +29,7 @@ public class PogrzebBean implements Serializable {
 		this.pogrzeb = pogrzeb;
 	}
 	
-	public ListDataModel<Pogrzeb> getWszystkiePogrzeby() {
+	public ListDataModel<Pogrzeb> getWszystkie() {
 		pogrzeby.setWrappedData(pm.dajWszystkie());
 		return pogrzeby;
 	}
@@ -41,7 +41,7 @@ public class PogrzebBean implements Serializable {
 		//return null;
 	}
 
-	public String edytuj() {
+	/*public String edytuj() {
 		Pogrzeb p = pogrzeby.getRowData();
 		pm.edytuj(p, pogrzeb.getTrumna(), pogrzeb.getData(),
 				pogrzeb.getCena(), pogrzeb.getOpis());
@@ -52,6 +52,6 @@ public class PogrzebBean implements Serializable {
 		Pogrzeb p = pogrzeby.getRowData();
 		pm.usun(p);
 		return null;
-	}
+	}*/
 }
 

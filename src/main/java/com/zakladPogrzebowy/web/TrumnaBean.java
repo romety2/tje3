@@ -31,7 +31,7 @@ public class TrumnaBean implements Serializable {
 		this.trumna = trumna;
 	}
 	
-	public ListDataModel<Trumna> getWszystkieTrumny() {
+	public ListDataModel<Trumna> getWszystkie() {
 		trumny.setWrappedData(tm.dajWszystkie());
 		return trumny;
 	}
@@ -42,7 +42,7 @@ public class TrumnaBean implements Serializable {
 		//return null;
 	}
 
-	public String edytuj() {
+	/*public String edytuj() {
 		Trumna t = trumny.getRowData();
 		tm.edytuj(t, trumna.getRodzaj(),
 				trumna.getCena(), trumna.getIlosc());
@@ -53,6 +53,6 @@ public class TrumnaBean implements Serializable {
 		Trumna t = trumny.getRowData();
 		tm.usun(t);
 		return null;
-	}
+	}*/
 }
 

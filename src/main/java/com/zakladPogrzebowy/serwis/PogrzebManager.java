@@ -23,7 +23,7 @@ public class PogrzebManager {
 		pogrzeby.add(pg);
 	}
 
-	public List<Pogrzeb> get() {
+	public List<Pogrzeb> dajWszystkie() {
 		return pogrzeby;
 	}
 

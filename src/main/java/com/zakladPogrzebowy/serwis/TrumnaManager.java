@@ -23,7 +23,7 @@ public class TrumnaManager {
 		trumny.add(trumna);
 	}
 
-	public List<Trumna> getAllPersons() {
+	public List<Trumna> dajWszystkie() {
 		return trumny;
 	}
 
