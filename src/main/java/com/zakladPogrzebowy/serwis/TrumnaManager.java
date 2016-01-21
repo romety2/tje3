@@ -1,40 +1,31 @@
 package com.zakladPogrzebowy.serwis;
 
+import java.util.Date;
 import java.util.List;
+import java.util.ArrayList;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.enterprise.context.ApplicationScoped;
 
 import com.zakladPogrzebowy.domena.Trumna;
 
-@Stateless
+@ApplicationScoped
 public class TrumnaManager {
 
-	@PersistenceContext
-	EntityManager em;
+	private List<Trumna> trumny = new ArrayList<Trumna>();
 
 	public void dodaj(Trumna trumna) {
-	trumna.setId(null);
-	em.persist(trumna);
+		Trumna tr = new Trumna();
+
+		tr.setRodzaj(trumna.getRodzaj());
+		tr.setCena(trumna.getCena());
+		tr.setIlosc(trumna.getIlosc());
+
+		trumny.add(trumna);
 	}
 
-	public void edytuj(Trumna trumna, String rodzaj, Double cena, Integer ilosc) {
-	trumna = em.find(Trumna.class, trumna.getId());
-	trumna.setRodzaj(rodzaj);
-	trumna.setCena(cena);
-	trumna.setIlosc(ilosc);
-	em.merge(trumna);
+	public List<Trumna> getAllPersons() {
+		return trumny;
 	}
 
-	public void usun(Trumna trumna) {
-	trumna = em.find(Trumna.class, trumna.getId());
-	em.remove(trumna);
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<Trumna> dajWszystkie() {
-	return em.createNamedQuery("trumna.wszystkie").getResultList();
-	}
 }
 

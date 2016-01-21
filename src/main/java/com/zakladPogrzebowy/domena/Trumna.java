@@ -1,35 +1,11 @@
 package com.zakladPogrzebowy.domena;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
-
-
-@Entity
-@NamedQueries({ 
-	@NamedQuery(name = "trumna.wszystkie", query = "Select t from Trumna t"),
-	@NamedQuery(name = "trumna.dostepne", query = "Select t from Trumna t where t.ilosc <> 0")
-})
 public class Trumna {
 	
 	private Long id;
 	private String rodzaj = "";
 	private Double cena = 0.0;
 	private Integer ilosc = 0;
-
-	private List<Pogrzeb> pogrzeby = new ArrayList<Pogrzeb>();
-
 
 	public Trumna() {
 	}
@@ -40,8 +16,6 @@ public class Trumna {
 	this.ilosc = ilosc;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -49,17 +23,6 @@ public class Trumna {
 		this.id = id;
 	}
 
-
-	@OneToMany(mappedBy = "trumna", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	public List<Pogrzeb> getPogrzeby() {
-	return pogrzeby;
-	}
-	public void setPogrzeby(List<Pogrzeb> pogrzeby) {
-	this.pogrzeby = pogrzeby;
-	}
-
-
-	@Size(min = 2)
 	public String getRodzaj() {
 		return rodzaj;
 	}
@@ -67,7 +30,6 @@ public class Trumna {
 		this.rodzaj = rodzaj;
 	}
 
-	@Min(0)
 	public Double getCena() {
 		return cena;
 	}
@@ -75,7 +37,6 @@ public class Trumna {
 		this.cena = cena;
 	}
 
-	@Min(0)
 	public Integer getIlosc() {
 		return ilosc;
 	}

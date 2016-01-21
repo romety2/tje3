@@ -91,6 +91,11 @@ td{
 	font-size: 20px;
 }
 
+.przycisk .zapisz
+{
+	font-size: 20px;
+}
+
 .uslugi{
   list-style-type: circle;
   line-height: 30px;
@@ -102,7 +107,7 @@ td{
   padding:0;
   list-style: none;
   float: left;
-  width: 338px;
+  width: 345px;
 }
 
 .menuLista .poz { 
@@ -150,8 +155,9 @@ td{
   background: #FFB6C1;	
   position:absolute;
   left: 5%; 
+  right: 5%; 
   top: 90px;
-  width: 85%;
+  width: auto;
   height: auto;
   opacity: 0.8;
   box-shadow: 8px 8px 4px 4px #000000;
