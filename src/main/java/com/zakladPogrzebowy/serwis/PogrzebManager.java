@@ -23,6 +23,11 @@ public class PogrzebManager {
 		pogrzeby.add(pg);
 	}
 
+	public void usun(Pogrzeb pogrzeb) {
+
+		pogrzeby.remove(pogrzeb);
+	}
+
 	public List<Pogrzeb> dajWszystkie() {
 		return pogrzeby;
 	}

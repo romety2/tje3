@@ -23,6 +23,11 @@ public class TrumnaManager {
 		trumny.add(tr);
 	}
 
+	public void usun(Trumna trumna) {
+
+		trumny.remove(trumna);
+	}
+
 	public List<Trumna> dajWszystkie() {
 		return trumny;
 	}

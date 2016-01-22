@@ -40,17 +40,16 @@ public class PogrzebBean implements Serializable {
 		return "pogrzeby";
 	}
 
+	public void usun(Pogrzeb pogrzeb) {
+		pm.usun(pogrzeb);
+	}
+
 	/*public String edytuj() {
 		Pogrzeb p = pogrzeby.getRowData();
 		pm.edytuj(p, pogrzeb.getTrumna(), pogrzeb.getData(),
 				pogrzeb.getCena(), pogrzeb.getOpis());
 		return null;
 	}
-
-	public String usun() {
-		Pogrzeb p = pogrzeby.getRowData();
-		pm.usun(p);
-		return null;
 	}*/
 }
 

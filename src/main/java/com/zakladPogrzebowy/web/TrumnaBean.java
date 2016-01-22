@@ -46,12 +46,10 @@ public class TrumnaBean implements Serializable {
 		tm.edytuj(t, trumna.getRodzaj(),
 				trumna.getCena(), trumna.getIlosc());
 		return null;
-	}
-
-	public String usun() {
-		Trumna t = trumny.getRowData();
-		tm.usun(t);
-		return null;
 	}*/
+
+	public void usun(Trumna trumna) {
+		tm.usun(trumna);
+	}
 }
 
