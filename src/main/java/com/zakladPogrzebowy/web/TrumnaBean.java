@@ -17,6 +17,7 @@ public class TrumnaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Trumna trumna  = new Trumna();
+	private Trumna trumnaEd  = new Trumna();
 	private ListDataModel<Trumna> trumny = new ListDataModel<Trumna>();
 
 
@@ -28,7 +29,15 @@ public class TrumnaBean implements Serializable {
 	}
 	
 	public void setTrumna(Trumna trumna) {
-		this.trumna = trumna;
+		this.trumnaEd = trumna;
+	}
+
+	public Trumna getTrumnaEd() {
+		return trumnaEd;
+	}
+	
+	public void setTrumnaEd(Trumna trumna) {
+		this.trumnaEd = trumna;
 	}
 	
 	public ListDataModel<Trumna> getWszystkie() {
@@ -41,12 +50,14 @@ public class TrumnaBean implements Serializable {
 		return "trumny";
 	}
 
-	/*public String edytuj() {
-		Trumna t = trumny.getRowData();
-		tm.edytuj(t, trumna.getRodzaj(),
-				trumna.getCena(), trumna.getIlosc());
-		return null;
-	}*/
+	public String podglad(Trumna trumna) {
+		this.setTrumnaEd(trumna);
+		return "edytujT";
+	}
+
+	public String edytuj() {
+		return "trumny";
+	}
 
 	public void usun(Trumna trumna) {
 		tm.usun(trumna);

@@ -17,6 +17,7 @@ public class PogrzebBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Pogrzeb pogrzeb = new Pogrzeb();
+	private Pogrzeb pogrzebEd = new Pogrzeb();
 	private ListDataModel<Pogrzeb> pogrzeby = new ListDataModel<Pogrzeb>();
 
 	@Inject
@@ -27,6 +28,14 @@ public class PogrzebBean implements Serializable {
 	}
 	public void setPogrzeb(Pogrzeb pogrzeb) {
 		this.pogrzeb = pogrzeb;
+	}
+
+	public Pogrzeb getPogrzebEd() {
+		return pogrzebEd;
+	}
+	
+	public void setPogrzebEd(Pogrzeb pogrzeb){
+		this.pogrzebEd = pogrzeb;
 	}
 	
 	public ListDataModel<Pogrzeb> getWszystkie() {
@@ -40,16 +49,18 @@ public class PogrzebBean implements Serializable {
 		return "pogrzeby";
 	}
 
+	public String podglad(Pogrzeb pogrzeb) {
+		this.setPogrzebEd(pogrzeb);
+		return "edytujP";
+	}
+
+	public String edytuj() {
+		return "pogrzeby";
+	}
+
+
 	public void usun(Pogrzeb pogrzeb) {
 		pm.usun(pogrzeb);
 	}
-
-	/*public String edytuj() {
-		Pogrzeb p = pogrzeby.getRowData();
-		pm.edytuj(p, pogrzeb.getTrumna(), pogrzeb.getData(),
-				pogrzeb.getCena(), pogrzeb.getOpis());
-		return null;
-	}
-	}*/
 }
 
