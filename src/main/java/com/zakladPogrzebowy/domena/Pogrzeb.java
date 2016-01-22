@@ -1,9 +1,11 @@
 package com.zakladPogrzebowy.domena;
 
+import java.util.Date;
+
 public class Pogrzeb {
 
 	private Long id;
-	private String data = "rrrr-mm-dd";
+	private String data;
 	private Double cena = 0.0;
 	private String opis = "";
 

@@ -175,7 +175,9 @@ body {
   width: 200px;
   height: 25px;
   padding-left: 10px;
-  font-size: 200px;
+  background: #FFC0CB !important;
+  color: #FF1493 !important;
+  font-size: 20px !important;
   border-radius: 30px;
 }
 
