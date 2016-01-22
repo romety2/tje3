@@ -1,18 +1,16 @@
 package com.zakladPogrzebowy.domena;
 
-import java.util.Date;
-
 public class Pogrzeb {
 
 	private Long id;
-	private Date data = new Date();
+	private String data = "rrrr-mm-dd";
 	private Double cena = 0.0;
 	private String opis = "";
 
 	 public Pogrzeb() {
 	}
 
-	public Pogrzeb(Date data, Double cena, String opis)
+	public Pogrzeb(String data, Double cena, String opis)
 	{
 	this.data = data;
 	this.cena = cena;
@@ -26,10 +24,10 @@ public class Pogrzeb {
 		this.id = id;
 	}
 	
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

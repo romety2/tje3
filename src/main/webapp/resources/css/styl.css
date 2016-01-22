@@ -6,7 +6,7 @@ body {
   font-size: 20px;
 }
 
-table{
+.tabelaDane{
   border-style: double;
   border-color: #000000;
   border-width: 5px;
@@ -14,7 +14,7 @@ table{
   text-align: center;
 }
 
-th{
+.tabelaDane th{
   border-style: solid;
   border-color: #000000;
   border-width: 2px;
@@ -22,7 +22,7 @@ th{
   padding: 2px;
 }
 
-td{
+.tabelaDane td{
   border-style: solid;
   border-color: #000000;
   border-width: 2px;
@@ -136,7 +136,7 @@ td{
   border-radius: 20px; 
   position: absolute;
   text-align: center;
-  left: 35%;
+  left: 37%;
   top: 2%;
   height: auto;
   width: auto;
@@ -170,3 +170,12 @@ td{
   width: 100%;
   height: auto;
 }
+
+.poleTekstowe {
+  width: 200px;
+  height: 25px;
+  padding-left: 10px;
+  font-size: 200px;
+  border-radius: 30px;
+}
+

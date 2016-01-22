@@ -7,9 +7,24 @@
 	<ui:define name="pusto">
 		<h:form>
 			<div align="center">
-				<div class="przycisk">
-					<h:commandButton styleClass="zapisz" value="#{wd.zapisz}" action="home" />
-				</div>
+
+				<h:form id="personform">
+					<h:panelGrid columns="2">
+
+						<h:outputText value="#{wd.rodzaj}" />
+						<h:inputText id="rodzaj" styleClass="poleTekstowe" value="#{trumnaBean.trumna.rodzaj}" />
+
+						<h:outputText value="#{wd.cena}" />
+						<h:inputText id="cena" styleClass="poleTekstowe" value="#{trumnaBean.trumna.cena}" />
+	
+						<h:outputText value="#{wd.ilosc}" />
+						<h:inputText id="ilosc" styleClass="poleTekstowe" value="#{trumnaBean.trumna.ilosc}" />
+
+					</h:panelGrid>
+					<div class="przycisk">
+						<h:commandButton value="#{wd.zapisz}" styleClass="zapisz" action="#{trumnaBean.dodaj}" />
+					</div>
+				</h:form>
 			</div>
 		</h:form>
 	</ui:define>

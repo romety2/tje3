@@ -20,7 +20,7 @@ public class TrumnaManager {
 		tr.setCena(trumna.getCena());
 		tr.setIlosc(trumna.getIlosc());
 
-		trumny.add(trumna);
+		trumny.add(tr);
 	}
 
 	public List<Trumna> dajWszystkie() {

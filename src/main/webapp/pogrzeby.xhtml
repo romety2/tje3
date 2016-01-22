@@ -10,18 +10,12 @@
 				<div class="naglowek">
 					<h:outputText value="#{wd.pogrzebyDuze}"/>
 				</div>
-				<h:dataTable value="#{pogrzebBean.wszystkie}" var="pozycja">
+				<h:dataTable styleClass="tabelaDane" value="#{pogrzebBean.wszystkie}" var="pozycja">
 					<h:column>
 						<f:facet name="header">
 							<h:outputText value="#{wd.data}"/>
 						</f:facet>
 						<h:outputText value="#{pozycja.data}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{wd.trumna}"/>
-						</f:facet>
-						<h:outputText value="#{pozycja.trumna}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">
@@ -47,7 +41,7 @@
 					</h:column>
 				</h:dataTable>
 				<div class="przycisk">
-					<h:commandButton styleClass="dodaj" value="#{wd.dodaj}" action="home" />
+					<h:commandButton styleClass="dodaj" value="#{wd.dodaj}" action="dodajP" />
 				</div>
 			</div>
 		</h:form>

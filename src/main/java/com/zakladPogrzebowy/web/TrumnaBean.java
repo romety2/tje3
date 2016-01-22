@@ -38,8 +38,7 @@ public class TrumnaBean implements Serializable {
 	
 	public String dodaj() {
 		tm.dodaj(trumna);
-		return "Trumny";
-		//return null;
+		return "trumny";
 	}
 
 	/*public String edytuj() {

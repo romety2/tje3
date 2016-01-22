@@ -7,42 +7,24 @@
 	<ui:define name="pusto">
 		<h:form>
 			<div align="center">
-				<div class="naglowek">
-					<h:outputText value="#{wd.trumnyDuze}"/>
-				</div>
-				<h:dataTable value="#{trumnaBean.wszystkieTrumny}" var="pozycja">
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{wd.rodzaj}"/>
-						</f:facet>
-						<h:outputText value="#{pozycja.rodzaj}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{wd.cena}"/>
-						</f:facet>
-						<h:outputText value="#{pozycja.cena}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{wd.ilosc}"/>
-						</f:facet>
-						<h:outputText value="#{pozycja.ilosc}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-						</f:facet>
-						<div class="link">
-							<h:commandLink styleClass="akcja"
-							value="#{wd.edytuj} " action="home" />
-							<h:commandLink styleClass="akcja"
-							value="#{wd.usun}" action="home"/>
-						</div>
-					</h:column>
-				</h:dataTable>
-				<div class="przycisk">
-					<h:commandButton styleClass="dodaj" value="#{wd.dodaj}" action="home" />
-				</div>
+
+				<h:form id="personform">
+					<h:panelGrid columns="2">
+
+						<h:outputText value="#{wd.data}" />
+						<h:inputText id="data" styleClass="poleTekstowe" value="#{pogrzebBean.pogrzeb.data}" />
+
+						<h:outputText value="#{wd.cena}" />
+						<h:inputText id="cena" styleClass="poleTekstowe" value="#{pogrzebBean.pogrzeb.cena}" />
+	
+						<h:outputText value="#{wd.opis}" />
+						<h:inputText id="opis" styleClass="poleTekstowe" value="#{pogrzebBean.pogrzeb.opis}" />
+
+					</h:panelGrid>
+					<div class="przycisk">
+						<h:commandButton value="#{wd.zapisz}" styleClass="zapisz" action="#{pogrzebBean.dodaj}" />
+					</div>
+				</h:form>
 			</div>
 		</h:form>
 	</ui:define>

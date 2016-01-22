@@ -37,8 +37,7 @@ public class PogrzebBean implements Serializable {
 	
 	public String dodaj() {
 		pm.dodaj(pogrzeb);
-		return "Pogrzeby";
-		//return null;
+		return "pogrzeby";
 	}
 
 	/*public String edytuj() {
