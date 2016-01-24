@@ -17,21 +17,21 @@
 				<h:form>
 					<div align="center">
 						<div class="naglowek">
-							<h:outputText value="Logowanie"/>
+							<h:outputText value="#{wd.logowanie}"/>
 						</div>
 
 						<h:form id="loginform">
 							<h:panelGrid columns="2">
 
-								<h:outputText styleClass="tekstPT" value="Login"/>
+								<h:outputText styleClass="tekstPT" value="#{wd.login}"/>
 								<h:inputText id="login" styleClass="poleTekstowe" value="#{loginBean.mojLogin}"/>
 
-								<h:outputText styleClass="tekstPT" value="Hasło"/>
+								<h:outputText styleClass="tekstPT" value="#{wd.haslo}"/>
 								<h:inputSecret id="haslo"  styleClass="poleTekstowe" value="#{loginBean.mojeHaslo}"/>
 
 							</h:panelGrid>
 							<div class="przycisk">
-								<h:commandButton value="Zaloguj"  styleClass="zapisz" action="#{loginBean.zaloguj}"/>
+								<h:commandButton value="#{wd.zaloguj}"  styleClass="zapisz" action="#{loginBean.zaloguj}"/>
 							</div>
 						</h:form>
 						<h:messages />
