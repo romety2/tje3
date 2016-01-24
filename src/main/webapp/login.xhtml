@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+		<ui:insert name="windowTitle">
+			<h:outputText value="#{wd.zakladPogrzebowy}"/>
+		</ui:insert>
+	</title>
+</h:head>
+<h:body>
+  <h:outputStylesheet library="css" name="styl.css" target="body" />
+	  <div class="pusto">
+				<h:form>
+					<div align="center">
+						<div class="naglowek">
+							<h:outputText value="Logowanie"/>
+						</div>
+
+						<h:form id="loginform">
+							<h:panelGrid columns="2">
+
+								<h:outputText styleClass="tekstPT" value="Login"/>
+								<h:inputText id="login" styleClass="poleTekstowe" value="#{loginBean.mojLogin}"/>
+
+								<h:outputText styleClass="tekstPT" value="Hasło"/>
+								<h:inputSecret id="haslo"  styleClass="poleTekstowe" value="#{loginBean.mojeHaslo}"/>
+
+							</h:panelGrid>
+							<div class="przycisk">
+								<h:commandButton value="Zaloguj"  styleClass="zapisz" action="#{loginBean.zaloguj}"/>
+							</div>
+						</h:form>
+						<h:messages />
+					</div>
+				</h:form>
+          </div>
+</h:body>
+</html>

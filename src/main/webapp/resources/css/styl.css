@@ -16,7 +16,7 @@ body {
 
 .tabelaDane th{
   border-style: solid;
-  border-color: #000000;
+  border-color: #  border-style: solid;000000;
   border-width: 2px;
   background-color: #FFDAB9;
   padding: 2px;
@@ -179,5 +179,12 @@ body {
   color: #FF1493 !important;
   font-size: 20px !important;
   border-radius: 30px;
+}
+
+.tekstPT {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Calibri, sans-serif;
+  color: #4B0082;
 }
 

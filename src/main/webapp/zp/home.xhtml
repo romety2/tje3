@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/zp/szablony/ramka.xhtml">
+	<ui:define name="tresc">
+		<div class="s1">
+			<h:outputText value="#{wd.zakladPogrzebowy}"/>
+		</div>
+		<div class="s2">
+			<h:outputText value="#{wd.wlasciciel}"/>
+		</div>
+		<div class="s3">
+			<div class="link">
+				<a class="email" href="#{wd.emailOdnosnik}">
+					<h:outputText value="#{wd.email}"/>
+				</a>
+			</div>
+		</div>
+		<h:outputText value="#{wd.opisZakladuPogrzebowego}"/>
+		<ul class="uslugi">
+			<li><h:outputText value="#{wd.usluga1}"/></li>
+			<li><h:outputText value="#{wd.usluga2}"/></li>
+			<li><h:outputText value="#{wd.usluga3}"/></li>
+			<li><h:outputText value="#{wd.usluga4}"/></li>
+			<li><h:outputText value="#{wd.usluga5}"/></li>
+			<li><h:outputText value="#{wd.usluga6}"/></li>
+		</ul>
+	</ui:define>
+</ui:composition>

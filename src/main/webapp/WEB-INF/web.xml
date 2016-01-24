@@ -4,4 +4,19 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>jsf</display-name>
+
+	<filter>
+		<filter-name>filtr</filter-name>
+		<filter-class>com.zakladPogrzebowy.filtry.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>filtr</filter-name>
+		<url-pattern>/zp/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>zp/home.jsf</welcome-file>
+	</welcome-file-list>
+
 </web-app>
